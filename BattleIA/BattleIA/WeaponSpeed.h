@@ -8,6 +8,12 @@ class CWeaponSpeed:
 public:
 	CWeaponSpeed();
 	~CWeaponSpeed();
+
+private:
+	size_t	m_level;
+	float	m_value;
+
+	void	computeValue();
 };
 
 #endif

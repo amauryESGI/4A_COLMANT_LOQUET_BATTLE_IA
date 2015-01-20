@@ -7,6 +7,12 @@ class CDamage:
 public:
 	CDamage();
 	~CDamage();
+
+private:
+	size_t	m_level;
+	float	m_value;
+
+	void	computeValue();
 };
 
 #endif

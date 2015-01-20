@@ -7,6 +7,12 @@ class CRegeneration:
 public:
 	CRegeneration();
 	~CRegeneration();
+
+private:
+	size_t	m_level;
+	float	m_value;
+
+	void	computeValue();
 };
 
 #endif

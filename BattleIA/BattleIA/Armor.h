@@ -7,6 +7,12 @@ class CArmor:
 public:
 	CArmor();
 	~CArmor();
+
+private:
+	size_t	m_level;
+	float	m_value;
+
+	void	computeValue();
 };
 
 #endif

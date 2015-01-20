@@ -7,6 +7,12 @@ class CScope:
 public:
 	CScope();
 	~CScope();
+
+private:
+	size_t	m_level;
+	float	m_value;
+
+	void	computeValue();
 };
 
 #endif

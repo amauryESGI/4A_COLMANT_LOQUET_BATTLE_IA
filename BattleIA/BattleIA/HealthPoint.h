@@ -7,6 +7,12 @@ class CHealthPoint:
 public:
 	CHealthPoint();
 	~CHealthPoint();
+
+private:
+	size_t	m_level;
+	float	m_value;
+
+	void	computeValue();
 };
 
 #endif
