@@ -8,9 +8,13 @@ public:
 	CHealthPoint();
 	~CHealthPoint();
 
+	void	setCurrentHealth(const size_t health);
+	size_t	getCurrentHealth() const;
+
 private:
 	size_t	m_level;
 	float	m_value;
+	size_t	m_currentHealth;
 
 	void	computeValue();
 };
