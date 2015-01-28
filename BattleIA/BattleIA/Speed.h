@@ -1,5 +1,5 @@
-#ifndef _SPEED
-#define _SPEED
+#ifndef _SPEED_H
+#define _SPEED_H
 #include "Capacity.h"
 
 class CSpeed:

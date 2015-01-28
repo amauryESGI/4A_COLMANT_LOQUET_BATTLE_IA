@@ -1,6 +1,15 @@
 #ifndef _CAPACITY_H
 #define _CAPACITY_H
 
+enum ECapacities : unsigned int {
+	Speed,
+	HealthPoint,
+	Armor,
+	Regeneration,
+	Damage,
+	Scope,
+	WeaponSpeed
+};
 
 class CCapacity
 {

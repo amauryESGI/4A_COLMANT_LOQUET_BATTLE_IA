@@ -8,7 +8,7 @@ public:
 	CHealthPoint();
 	~CHealthPoint();
 
-	void	setCurrentHealth(const size_t health);
+	void	setCurrentHealth(size_t health);
 	size_t	getCurrentHealth() const;
 
 private:

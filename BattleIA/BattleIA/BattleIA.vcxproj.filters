@@ -25,6 +25,18 @@
     <Filter Include="Fichiers sources\Capacity\Abstract">
       <UniqueIdentifier>{5684cf3b-333e-4e55-b0f3-b29771d24491}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Fichiers d%27en-tête\Units">
+      <UniqueIdentifier>{acefca67-e364-4e55-9643-2958016abbb5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Units">
+      <UniqueIdentifier>{5cff2731-85ed-4e62-b8ce-c5a1b6cade19}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Units\Abstract">
+      <UniqueIdentifier>{06b2876e-4d4c-4039-bea0-20ed4720b84e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Units\Abstract">
+      <UniqueIdentifier>{d204569c-d94c-4aef-bf3d-4c6b0d08b3f5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -63,6 +75,12 @@
     <ClInclude Include="Capacity.h">
       <Filter>Fichiers d%27en-tête\Capacity\Abstract</Filter>
     </ClInclude>
+    <ClInclude Include="Unit.h">
+      <Filter>Fichiers d%27en-tête\Units\Abstract</Filter>
+    </ClInclude>
+    <ClInclude Include="Point.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -94,6 +112,12 @@
     </ClCompile>
     <ClCompile Include="WeaponSpeed.cpp">
       <Filter>Fichiers sources\Capacity</Filter>
+    </ClCompile>
+    <ClCompile Include="Unit.cpp">
+      <Filter>Fichiers sources\Units\Abstract</Filter>
+    </ClCompile>
+    <ClCompile Include="Point.cpp">
+      <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
