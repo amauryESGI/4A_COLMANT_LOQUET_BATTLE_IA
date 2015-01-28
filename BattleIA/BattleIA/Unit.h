@@ -19,7 +19,7 @@ public:
 
 	int		getId() const;
 	int		getLevel() const;
-	CPoint	getPos()const;
+	CPoint	getPos() const;
 	void	refresh();
 	void	setPos();
 	bool	shoot() const;
@@ -37,38 +37,17 @@ public:
 
 	CCapacity& operator[](const unsigned int id)
 	{
-		switch (id)
-		{
-		case Speed:
-			return m_speed;
-		case HealthPoint:
-			return m_healthPoint;
-		case Armor:
-			return m_armor;
-		case Regeneration:
-			return m_regeneration;
-		case Damage:
-			return m_damage;
-		case Scope:
-			return m_scope;
-		case WeaponSpeed:
-			return m_weaponSpeed;
-		default:
+		if (id > 6)
 			throw "Error index out of range";
-		}
+
+		return *m_capacities[id];
 	}
 
 private:
-	int				m_id;
-	int				m_level;
-	CPoint			m_pos;
-	CArmor			m_armor;
-	CDamage			m_damage;
-	CHealthPoint	m_healthPoint;
-	CRegeneration	m_regeneration;
-	CScope			m_scope;
-	CSpeed			m_speed;
-	CWeaponSpeed	m_weaponSpeed;
+	int			m_id;
+	int			m_level;
+	CPoint		m_pos;
+	CCapacity	*m_capacities[7];
 };
 
 #endif
