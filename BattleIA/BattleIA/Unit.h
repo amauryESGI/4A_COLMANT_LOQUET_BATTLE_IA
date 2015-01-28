@@ -26,6 +26,7 @@ public:
 	void	takeDamage(float value);
 	bool	isAlive() const;
 
+
 	CArmor&			getArmor();
 	CDamage&		getDamage();
 	CHealthPoint&	getHealthPoint();
@@ -34,25 +35,26 @@ public:
 	CSpeed&			getSpeed();
 	CWeaponSpeed&	getWeaponSpeed();
 
-	// TODO: Float or Obj ?
-	float operator[](const unsigned int id) {
-		switch (id) {
+	CCapacity& operator[](const unsigned int id)
+	{
+		switch (id)
+		{
 		case Speed:
-			return m_speed.getValue();
+			return m_speed;
 		case HealthPoint:
-			return m_healthPoint.getValue();
+			return m_healthPoint;
 		case Armor:
-			return m_armor.getValue();
+			return m_armor;
 		case Regeneration:
-			return m_regeneration.getValue();
+			return m_regeneration;
 		case Damage:
-			return m_damage.getValue();
+			return m_damage;
 		case Scope:
-			return m_scope.getValue();
+			return m_scope;
 		case WeaponSpeed:
-			return m_weaponSpeed.getValue();
+			return m_weaponSpeed;
 		default:
-			return 0;
+			throw "Error index out of range";
 		}
 	}
 

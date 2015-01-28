@@ -6,16 +6,14 @@ CPoint::CPoint() {
 	m_y = 0;
 }
 
-CPoint::CPoint(const unsigned int x, const unsigned int y) {
-	m_x = x;
-	m_y = y;
-}
+CPoint::CPoint(const unsigned int x, const unsigned int y) :  m_x(x)
+															, m_y(y)
+{}
 
 // TODO: Check Error .h
-//CPoint::CPoint(const CPoint p) {
-//	m_x = p.getX();
-//	m_y = p.getY();
-//}
+CPoint::CPoint(const CPoint& p) : m_x(p.m_x)
+								, m_y(p.m_y)
+{}
 
 CPoint::~CPoint() {
 }

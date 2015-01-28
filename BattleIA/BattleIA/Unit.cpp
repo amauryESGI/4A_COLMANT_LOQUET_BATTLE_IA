@@ -1,15 +1,16 @@
 #include "stdafx.h"
 #include "Unit.h"
 
-CUnit::CUnit(int level) {
-	m_level = level;
-
-	for (int i = 0; i < m_level; i++) {
+CUnit::CUnit(int level) : m_level(level)
+{
+	for (int i = 0; i < m_level; i++)
+	{
 
 	}
 }
 
-CUnit::~CUnit() {}
+CUnit::~CUnit()
+{}
 
 int CUnit::getId() const {
 	return m_id;
@@ -43,7 +44,7 @@ void CUnit::takeDamage(float value) {
 }
 
 bool CUnit::isAlive() const {
-	return m_healthPoint.getValue > 0 ? true, false;
+	return m_healthPoint.getValue > 0;
 }
 
 CArmor& CUnit::getArmor() {

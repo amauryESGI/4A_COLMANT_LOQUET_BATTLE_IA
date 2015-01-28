@@ -5,8 +5,7 @@ class CPoint {
 public:
 	CPoint();
 	CPoint(const unsigned int x, const unsigned int y);
-	// TODO : Erreur constructeur par copie CPoint
-	//CPoint(const CPoint p);
+	CPoint(const CPoint& p);
 	~CPoint();
 
 	unsigned int getX() const;
