@@ -1,9 +1,9 @@
 #include "stdafx.h"
 
 
-CActionMove::CActionMove()
-{
-}
+CActionMove::CActionMove(CUnit unit, CPoint pos) : CAction(unit), 
+													m_pos(pos)
+{}
 
 
 CActionMove::~CActionMove()

@@ -2,14 +2,14 @@
 #define _CACTIONMOVE_H
 #include "stdafx.h"
 
-class CActionMove : CAction
+class CActionMove : public CAction
 {
 public:
-	CActionMove();
+	CActionMove(CUnit unit, CPoint pos);
 	~CActionMove();
 
 private:
-	CPoint pos;
+	CPoint m_pos;
 };
 
 #endif

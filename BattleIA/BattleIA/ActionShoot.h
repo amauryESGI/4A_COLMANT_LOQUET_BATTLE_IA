@@ -2,7 +2,7 @@
 #define _CATIONSHOOT_H
 #include "stdafx.h"
 
-class CActionShoot : CAction
+class CActionShoot : public CAction
 {
 public:
 	CActionShoot(CUnit unit1, CUnit unit2);
