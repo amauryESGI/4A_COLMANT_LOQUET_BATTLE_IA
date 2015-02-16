@@ -1,6 +1,4 @@
 #include "stdafx.h"
-#include "Capacity.h"
-
 
 CCapacity::CCapacity()
 {}
@@ -26,4 +24,8 @@ size_t CCapacity::getLevel()
 float CCapacity::getValue()
 {
 	return m_value;
+}
+void CCapacity::setLevel(size_t level)
+{
+	m_level = level;
 }

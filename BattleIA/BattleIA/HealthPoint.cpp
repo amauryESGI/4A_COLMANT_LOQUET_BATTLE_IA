@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "HealthPoint.h"
+
 
 
 CHealthPoint::CHealthPoint()
@@ -13,9 +13,8 @@ void CHealthPoint::computeValue() {
 	m_value = (m_level + 1) * 10;
 }
 
-void CHealthPoint::setCurrentHealth(size_t health) {
+void CHealthPoint::setCurrentHealth(float health) {
 	health += m_currentHealth;
-
 	if (health > m_value) {
 		m_currentHealth = m_value;
 	} else if (health < m_value) {

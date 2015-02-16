@@ -1,6 +1,6 @@
 #ifndef _SCOPE_H
 #define _SCOPE_H
-#include "Capacity.h"
+#include "stdafx.h"
 class CScope:
 	public CCapacity
 {
@@ -9,9 +9,6 @@ public:
 	~CScope();
 
 private:
-	size_t	m_level;
-	float	m_value;
-
 	void	computeValue();
 };
 

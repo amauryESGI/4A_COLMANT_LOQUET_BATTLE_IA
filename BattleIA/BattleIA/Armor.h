@@ -1,6 +1,6 @@
 #ifndef _ARMOR_H
 #define _ARMOR_H
-#include "Capacity.h"
+#include "stdafx.h"
 class CArmor:
 	public CCapacity
 {
@@ -9,9 +9,6 @@ public:
 	~CArmor();
 
 private:
-	size_t	m_level;
-	float	m_value;
-
 	void	computeValue();
 };
 

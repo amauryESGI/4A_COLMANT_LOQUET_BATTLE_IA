@@ -1,6 +1,7 @@
 #ifndef _DAMAGE_H
 #define _DAMAGE_H
-#include "Capacity.h"
+#include "stdafx.h"
+
 class CDamage:
 	public CCapacity
 {
@@ -9,9 +10,6 @@ public:
 	~CDamage();
 
 private:
-	size_t	m_level;
-	float	m_value;
-
 	void	computeValue();
 };
 

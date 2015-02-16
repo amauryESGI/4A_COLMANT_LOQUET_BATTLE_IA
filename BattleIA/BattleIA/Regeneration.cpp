@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "Regeneration.h"
+
 
 
 CRegeneration::CRegeneration()

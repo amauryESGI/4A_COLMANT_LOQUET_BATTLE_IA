@@ -25,17 +25,17 @@
     <Filter Include="Fichiers sources\Capacity\Abstract">
       <UniqueIdentifier>{5684cf3b-333e-4e55-b0f3-b29771d24491}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Fichiers d%27en-tête\Units">
-      <UniqueIdentifier>{acefca67-e364-4e55-9643-2958016abbb5}</UniqueIdentifier>
+    <Filter Include="Fichiers d%27en-tête\Action">
+      <UniqueIdentifier>{91ef9384-21d8-46a2-bc61-c2dd743eb437}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Fichiers sources\Units">
-      <UniqueIdentifier>{5cff2731-85ed-4e62-b8ce-c5a1b6cade19}</UniqueIdentifier>
+    <Filter Include="Fichiers d%27en-tête\Action\Abstract">
+      <UniqueIdentifier>{fb14852e-40ef-4560-b346-0ef0c3821076}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Fichiers d%27en-tête\Units\Abstract">
-      <UniqueIdentifier>{06b2876e-4d4c-4039-bea0-20ed4720b84e}</UniqueIdentifier>
+    <Filter Include="Fichiers sources\Action">
+      <UniqueIdentifier>{bb372557-b8ba-4545-ba11-5761ae0473d6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Fichiers sources\Units\Abstract">
-      <UniqueIdentifier>{d204569c-d94c-4aef-bf3d-4c6b0d08b3f5}</UniqueIdentifier>
+    <Filter Include="Fichiers sources\Action\Abstract">
+      <UniqueIdentifier>{0ab1c8d5-e758-45f9-bfd1-dd3db3158a6e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -46,9 +46,6 @@
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="targetver.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="resource.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="Armor.h">
@@ -75,11 +72,26 @@
     <ClInclude Include="Capacity.h">
       <Filter>Fichiers d%27en-tête\Capacity\Abstract</Filter>
     </ClInclude>
-    <ClInclude Include="Unit.h">
-      <Filter>Fichiers d%27en-tête\Units\Abstract</Filter>
-    </ClInclude>
     <ClInclude Include="Point.h">
       <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="IA.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="Army.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="Unit.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="Action.h">
+      <Filter>Fichiers d%27en-tête\Action\Abstract</Filter>
+    </ClInclude>
+    <ClInclude Include="ActionMove.h">
+      <Filter>Fichiers d%27en-tête\Action</Filter>
+    </ClInclude>
+    <ClInclude Include="ActionShoot.h">
+      <Filter>Fichiers d%27en-tête\Action</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -113,11 +125,26 @@
     <ClCompile Include="WeaponSpeed.cpp">
       <Filter>Fichiers sources\Capacity</Filter>
     </ClCompile>
-    <ClCompile Include="Unit.cpp">
-      <Filter>Fichiers sources\Units\Abstract</Filter>
-    </ClCompile>
     <ClCompile Include="Point.cpp">
       <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="IA.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Army.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Unit.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Action.cpp">
+      <Filter>Fichiers sources\Action\Abstract</Filter>
+    </ClCompile>
+    <ClCompile Include="ActionMove.cpp">
+      <Filter>Fichiers sources\Action</Filter>
+    </ClCompile>
+    <ClCompile Include="ActionShoot.cpp">
+      <Filter>Fichiers sources\Action</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

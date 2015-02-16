@@ -1,6 +1,6 @@
 #ifndef _SPEED_H
 #define _SPEED_H
-#include "Capacity.h"
+#include "stdafx.h"
 
 class CSpeed:
 	public CCapacity
@@ -10,9 +10,6 @@ public:
 	~CSpeed();
 
 private:
-	size_t	m_level;
-	float	m_value;
-
 	void	computeValue();
 };
 

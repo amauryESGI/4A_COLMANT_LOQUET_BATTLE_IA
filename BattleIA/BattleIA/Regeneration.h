@@ -1,6 +1,6 @@
 #ifndef _REGENERATION_H
 #define _REGENERATION_H
-#include "Capacity.h"
+#include "stdafx.h"
 class CRegeneration:
 	public CCapacity
 {
@@ -9,9 +9,6 @@ public:
 	~CRegeneration();
 
 private:
-	size_t	m_level;
-	float	m_value;
-
 	void	computeValue();
 };
 

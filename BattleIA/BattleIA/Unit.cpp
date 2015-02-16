@@ -1,133 +1,135 @@
 #include "stdafx.h"
-#include "Unit.h"
 
-CUnit::CUnit(int level) : m_level(level)
+int CUnit::m_id = 0;
+
+CUnit::CUnit(int level): m_level(level)
 {
-	// TODO : Define ID
-	// m_id = ??
+	m_id++;
 	m_pos = CPoint(0, 0);
 
 	m_capacities[Speed]			= new CSpeed();
 	m_capacities[HealthPoint]	= new CHealthPoint();
 	m_capacities[Armor]			= new CArmor();
-	m_capacities[Regeneration]	= new CRegeneration();
+	m_capacities[Regeneration]  = new CRegeneration();
 	m_capacities[Damage]		= new CDamage();
 	m_capacities[Scope]			= new CScope();
 	m_capacities[WeaponSpeed]	= new CWeaponSpeed();
 
 	for (int i = 0; i < m_level; i++)
 	{
-		// TODO : Define lvl of capacities
+		m_capacities[std::rand() % 6]->upgrade();
 	}
+
+}
+
+CUnit::CUnit(IACODE codeIA, int speed, int health, int armor, int regeneration, int damage, int scope, int weaponSpeed)
+{
+	m_id++;
+	m_pos = CPoint(0, 0);
+	m_codeIA = codeIA;
+	m_capacities[Speed]			= new CSpeed();
+	m_capacities[Speed]->setLevel(speed);
+	m_capacities[HealthPoint]	= new CHealthPoint();
+	m_capacities[HealthPoint]->setLevel(health);
+	m_capacities[Armor]			= new CArmor();
+	m_capacities[Armor]->setLevel(health);
+	m_capacities[Regeneration]  = new CRegeneration();
+	m_capacities[Regeneration]->setLevel(health);
+	m_capacities[Damage]		= new CDamage();
+	m_capacities[Damage]->setLevel(health);
+	m_capacities[Scope]			= new CScope();
+	m_capacities[Scope]->setLevel(health);
+	m_capacities[WeaponSpeed]	= new CWeaponSpeed();
+	m_capacities[WeaponSpeed]->setLevel(health);
+
 }
 
 CUnit::~CUnit()
 {}
 
-int CUnit::getId() const {
+int CUnit::getId() const
+{
 	return m_id;
 }
 
-int CUnit::getLevel() const {
+int CUnit::getLevel() const
+{
 	return m_level;
 }
 
-CPoint CUnit::getPos() const {
+CPoint CUnit::getPos() const
+{
 	return m_pos;
 }
 
-void CUnit::refresh() {
-	((CHealthPoint*)m_capacities[HealthPoint])->setCurrentHealth(m_capacities[Regeneration]->getValue());
-	((CWeaponSpeed*)m_capacities[WeaponSpeed])->turn();
+void CUnit::refresh()
+{
+	dynamic_cast<CHealthPoint*>(m_capacities[HealthPoint])->setCurrentHealth(m_capacities[Regeneration]->getValue());
+	dynamic_cast<CWeaponSpeed*>(m_capacities[WeaponSpeed])->turn();
 }
 
-void CUnit::setPos() {
-	// TODO : Define setPos()
+void CUnit::setPos(CPoint pos)
+{
+	m_pos = pos;
 }
 
-bool CUnit::shoot() const {
-	return ((CWeaponSpeed*)m_capacities[WeaponSpeed])->canShoot();
+bool CUnit::shoot() const
+{
+	if (dynamic_cast<CWeaponSpeed*>( m_capacities[WeaponSpeed] )->canShoot())
+	{
+		dynamic_cast<CWeaponSpeed*>( m_capacities[WeaponSpeed] )->shoot();
+		return true;
+	}
+	return false;
 }
 
-void CUnit::takeDamage(float value) {
-	value = -value + m_capacities[Armor]->getValue();
-	if (value < 0)
-		((CHealthPoint*)m_capacities[HealthPoint])->setCurrentHealth(value);
+void CUnit::takeDamage(float value)
+{
+	value -= m_capacities[Armor]->getValue();
+	dynamic_cast<CHealthPoint&>(*m_capacities[HealthPoint]).setCurrentHealth(value);
 }
 
-bool CUnit::isAlive() const {
+bool CUnit::isAlive() const
+{
 	return m_capacities[HealthPoint]->getValue() > 0;
 }
 
-CArmor& CUnit::getArmor() {
-	return *((CArmor*)m_capacities[Armor]);
+CArmor& CUnit::getArmor()
+{
+	return dynamic_cast<CArmor&>(*m_capacities[Armor]);
 }
 
-CDamage& CUnit::getDamage() {
-	return *((CDamage*)m_capacities[Damage]);
+CDamage& CUnit::getDamage()
+{
+	return dynamic_cast<CDamage&>(*m_capacities[Damage]);
 }
 
-CHealthPoint& CUnit::getHealthPoint() {
-	return *((CHealthPoint*)m_capacities[HealthPoint]);
+CHealthPoint& CUnit::getHealthPoint()
+{
+	return dynamic_cast<CHealthPoint&>(*m_capacities[HealthPoint]);
 }
 
-CRegeneration& CUnit::getRegeneration() {
-	return *((CRegeneration*)m_capacities[Regeneration]);
+CRegeneration& CUnit::getRegeneration()
+{
+	return dynamic_cast<CRegeneration&>(*m_capacities[Regeneration]);
 }
 
-CScope& CUnit::getScope() {
-	return *((CScope*)m_capacities[Scope]);
+CScope& CUnit::getScope()
+{
+	return dynamic_cast<CScope&>(*m_capacities[Scope]);
 }
 
-CSpeed& CUnit::getSpeed() {
-	return *((CSpeed*)m_capacities[Speed]);
+CSpeed& CUnit::getSpeed()
+{
+	return dynamic_cast<CSpeed&>(*m_capacities[Speed]);
 }
 
-CWeaponSpeed& CUnit::getWeaponSpeed() {
-	return *((CWeaponSpeed*)m_capacities[WeaponSpeed]);
+CWeaponSpeed& CUnit::getWeaponSpeed()
+{
+	return dynamic_cast<CWeaponSpeed&>(*m_capacities[WeaponSpeed]);
 }
 
-#pragma region Old Version
-
-//bool CUnit::shoot() const {
-//	return m_weaponSpeed.canShoot();
-//}
-//
-//void CUnit::takeDamage(float value) {
-//	value = -value + m_armor.getValue();
-//	if (value < 0)
-//		m_healthPoint.setCurrentHealth(value);
-//}
-//
-//bool CUnit::isAlive() const {
-//	return m_healthPoint.getValue > 0;
-//}
-
-//CArmor& CUnit::getArmor() {
-//	return m_armor;
-//}
-//
-//CDamage& CUnit::getDamage() {
-//	return m_damage;
-//}
-//
-//CHealthPoint& CUnit::getHealthPoint() {
-//	return m_healthPoint;
-//}
-//
-//CRegeneration& CUnit::getRegeneration() {
-//	return m_regeneration;
-//}
-//
-//CScope& CUnit::getScope() {
-//	return m_scope;
-//}
-//
-//CSpeed& CUnit::getSpeed() {
-//	return m_speed;
-//}
-//
-//CWeaponSpeed& CUnit::getWeaponSpeed() {
-//	return m_weaponSpeed;
-//}
-#pragma endregion Old Version
+IACODE CUnit::getIACode() const
+{
+	return m_codeIA;
+}

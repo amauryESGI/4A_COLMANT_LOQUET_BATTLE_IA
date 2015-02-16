@@ -1,5 +1,6 @@
 #ifndef _POINT_H
 #define _POINT_H
+#include "stdafx.h"
 
 class CPoint {
 public:
@@ -10,6 +11,19 @@ public:
 
 	unsigned int getX() const;
 	unsigned int getY() const;
+
+	CPoint			operator+( const CPoint& p ) const;
+	CPoint			operator-( const CPoint& p ) const;
+	CPoint			operator*( const float f ) const;
+	CPoint			operator/( const float f ) const;
+	CPoint&			operator+=( const CPoint& p );
+	CPoint&			operator-=( const CPoint& p );
+	CPoint&			operator*=( const float f );
+	CPoint&			operator/=( const float f );
+	bool			operator<( const CPoint& p );
+	CPoint			operator-( );
+
+	static float	distance(CPoint p1, CPoint p2);
 
 private:
 	unsigned int m_x;

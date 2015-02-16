@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "WeaponSpeed.h"
+
 
 
 CWeaponSpeed::CWeaponSpeed()
@@ -27,6 +27,5 @@ void CWeaponSpeed::shoot() {
 }
 
 bool CWeaponSpeed::canShoot() const {
-	// TODO: A TESTER m_coolDown? false : true;
-	return m_coolDown > 0 ? false : true;
+	return m_coolDown == 0 ? false : true;
 }

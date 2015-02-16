@@ -1,7 +1,7 @@
 #ifndef _WEAPONSPEED_H
 #define _WEAPONSPEED_H
 
-#include "Capacity.h"
+#include "stdafx.h"
 class CWeaponSpeed:
 	public CCapacity
 {
@@ -15,10 +15,7 @@ public:
 	bool	canShoot() const;
 
 private:
-	size_t	m_level;
-	float	m_value;
 	size_t	m_coolDown;
-
 	void	computeValue();
 };
 

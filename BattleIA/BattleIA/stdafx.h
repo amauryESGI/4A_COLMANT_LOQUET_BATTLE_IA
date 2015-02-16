@@ -9,6 +9,24 @@
 
 #include <stdio.h>
 #include <tchar.h>
+#include <vector>
+#include <cmath>
+#include "Capacity.h"
+#include "Capacity.h"
+#include "Armor.h"
+#include "Damage.h"
+#include "HealthPoint.h"
+#include "Regeneration.h"
+#include "Scope.h"
+#include "Speed.h"
+#include "WeaponSpeed.h"
+#include "Point.h"
+#include "Unit.h"
+#include "Army.h"
+#include "Action.h"
+#include "ActionShoot.h"
+#include "ActionMove.h"
+#include "IA.h"
 
 
 

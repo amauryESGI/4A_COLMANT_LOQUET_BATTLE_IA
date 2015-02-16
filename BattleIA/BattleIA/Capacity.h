@@ -21,8 +21,9 @@ public:
 	void	downgrade();
 	size_t	getLevel();
 	float	getValue();
+	virtual void	setLevel(size_t level);
 
-private:
+protected:
 	size_t	m_level;
 	float	m_value;
 
