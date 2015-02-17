@@ -24,6 +24,7 @@ public:
 	CPoint			operator-( );
 
 	static float	distance(CPoint p1, CPoint p2);
+	static CPoint&  getEscapePoint(const CPoint &p, const CPoint &enemy);
 
 private:
 	unsigned int m_x;

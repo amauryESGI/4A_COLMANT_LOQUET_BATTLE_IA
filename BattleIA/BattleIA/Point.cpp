@@ -1,5 +1,4 @@
 #include "stdafx.h"
-#include "Point.h"
 
 CPoint::CPoint() {
 	m_x = 0;
@@ -74,4 +73,19 @@ bool CPoint::operator<( const CPoint& p )
 float CPoint::distance(CPoint p1, CPoint p2)
 {
 	return ( pow(sqrt(p2.getX() - p1.getX()), 2) + pow(sqrt(p2.getY() - p1.getY()), 2) );
+}
+
+CPoint& CPoint::getEscapePoint(const CPoint &p, const CPoint &enemy) 
+{
+	if (std::rand() % 1 == 0) //TODO : c'est dégueulasseuh
+		if (enemy.m_x < p.m_x)
+			return CPoint(p.m_x + 1, p.m_y);
+		else
+			return CPoint(p.m_x - 1, p.m_y);
+	else
+		if (enemy.m_y < p.m_y)
+			return CPoint(p.m_x, p.m_y + 1);
+		else
+			return CPoint(p.m_x, p.m_y - 1);
+
 }
