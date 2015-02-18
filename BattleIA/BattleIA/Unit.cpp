@@ -19,7 +19,7 @@ CUnit::CUnit(int level): m_level(level)
 	{
 		m_capacities[std::rand() % 6]->upgrade();
 	}
-
+	m_codeIA = IACODE(std::rand() % 16);
 }
 
 CUnit::CUnit(IACODE codeIA, int speed, int health, int armor, int regeneration, int damage, int scope, int weaponSpeed)

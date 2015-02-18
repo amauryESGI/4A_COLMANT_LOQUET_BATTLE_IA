@@ -1,6 +1,6 @@
 #include "stdafx.h"
 
-CAction& CIA::operator()(CUnit unit, CArmy army1, CArmy army2)
+CAction* CIA::operator()(CUnit unit, CArmy army1, CArmy army2)
 {
 	CUnit *enemy;
 	switch (unit.getIACode())
@@ -59,7 +59,7 @@ CAction& CIA::operator()(CUnit unit, CArmy army1, CArmy army2)
 
 	if (CPoint::distance(unit.getPos(), enemy->getPos()) < unit.getScope().getValue()
 		&& unit.getWeaponSpeed().getValue() == 0)
-		return CActionShoot(unit, *enemy);
+		return new CActionShoot(unit, *enemy);
 	else
-		return CActionMove(unit, CPoint::getEscapePoint(unit.getPos(), enemy->getPos())); //TODO : refaire ça, avec tous les tests
+		return new CActionMove(unit, CPoint::getEscapePoint(unit.getPos(), enemy->getPos())); //TODO : refaire ça, avec tous les tests
 }
