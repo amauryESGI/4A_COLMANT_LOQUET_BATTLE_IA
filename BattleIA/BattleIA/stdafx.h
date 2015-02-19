@@ -4,14 +4,13 @@
 //
 
 #pragma once
-
+ 
 #include "targetver.h"
 #include <iostream>
 #include <stdio.h>
 #include <tchar.h>
 #include <vector>
 #include <cmath>
-#include "Capacity.h"
 #include "Capacity.h"
 #include "Armor.h"
 #include "Damage.h"

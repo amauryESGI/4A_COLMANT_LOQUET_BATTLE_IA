@@ -5,10 +5,6 @@
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-	char *a = "toto";
-	std::string s = a;
-	s.c_str();
-
 	CArmy arm1(10, 2);
 	CArmy arm2(8, 3);
 	CIA ia;

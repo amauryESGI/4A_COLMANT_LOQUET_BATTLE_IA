@@ -63,7 +63,4 @@ private:
 	IACODE		m_codeIA;
 };
 
-
-
 #endif
-

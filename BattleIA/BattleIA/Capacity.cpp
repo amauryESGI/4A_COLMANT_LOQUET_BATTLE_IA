@@ -1,6 +1,6 @@
 #include "stdafx.h"
 
-CCapacity::CCapacity()
+CCapacity::CCapacity() : m_level(1)
 {}
 
 CCapacity::~CCapacity()

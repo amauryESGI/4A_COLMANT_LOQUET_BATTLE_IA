@@ -1,5 +1,6 @@
 #ifndef _CAPACITY_H
 #define _CAPACITY_H
+#include "stdafx.h"
 
 enum ECapacities : unsigned int {
 	Speed,
@@ -17,17 +18,17 @@ public:
 	CCapacity();
 	~CCapacity();
 
-	void	upgrade();
-	void	downgrade();
-	size_t	getLevel();
-	float	getValue();
+	virtual void	upgrade();
+	void			downgrade();
+	size_t			getLevel();
+	float			getValue();
 	virtual void	setLevel(size_t level);
-
+	
 protected:
-	size_t	m_level;
-	float	m_value;
+	size_t			m_level;
+	float			m_value;
 
-	void virtual	computeValue() = 0;
+	virtual void 	computeValue() = 0;
 };
 
 #endif
