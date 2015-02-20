@@ -77,7 +77,7 @@ float CPoint::distance(CPoint p1, CPoint p2)
 
 CPoint& CPoint::getEscapePoint(const CPoint &p, const CPoint &enemy) 
 {
-	if (std::rand() % 1 == 0) //TODO : c'est dégueulasseuh
+	if (rand() % 1 == 0) //TODO : c'est dégueulasseuh
 		if (enemy.m_x < p.m_x) //prendre en compte la vitesse (mettre en param ?!)
 			return CPoint(p.m_x + 1, p.m_y);
 		else
@@ -90,7 +90,7 @@ CPoint& CPoint::getEscapePoint(const CPoint &p, const CPoint &enemy)
 
 }
 
-std::ostream& operator<<(std::ostream& out, const CPoint* point)
+ostream& operator<<(ostream& out, const CPoint* point)
 {
 	return out << "(" << point->getX() << ", " << point->getY() << ")";
 }

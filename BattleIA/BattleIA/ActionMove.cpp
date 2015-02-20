@@ -11,6 +11,6 @@ CActionMove::~CActionMove()
 
 void CActionMove::execute()
 {
-	std::cout << "Unit " << m_unit.getId() << " go at pos : " << m_pos << std::endl;
+	cout << "Unit " << m_unit.getId() << " go at pos : " << m_pos << endl;
 	m_unit.setPos(*m_pos); //TODO : translation ?
 }

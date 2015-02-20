@@ -6,10 +6,10 @@ class CArmy
 {
 public:
 	CArmy(int nbUnit, int level);
-	CArmy(std::vector<CUnit*> units);
+	CArmy(vector<CUnit*> units);
 	~CArmy();
 
-	std::vector<CUnit*> getUnitsList();
+	vector<CUnit*> getUnitsList();
 	CUnit& getUnit(int id);
 	int size();
 	CUnit& getNearestUnit(const CPoint& p);
@@ -19,7 +19,7 @@ public:
 	void purge();
 
 private:
-	std::vector<CUnit*> m_units;
+	vector<CUnit*> m_units;
 
 };
 

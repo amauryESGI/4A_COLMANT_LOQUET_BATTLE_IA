@@ -6,7 +6,7 @@ CArmy::CArmy(int nbUnit, int level)
 	for (int i = 0; i < nbUnit; ++i)
 		m_units.push_back(new CUnit(level));
 }
-CArmy::CArmy(std::vector<CUnit*> units)
+CArmy::CArmy(vector<CUnit*> units)
 {
 	m_units = units;
 }
@@ -14,7 +14,7 @@ CArmy::CArmy(std::vector<CUnit*> units)
 CArmy::~CArmy()
 {}
 
-std::vector<CUnit*> CArmy::getUnitsList()
+vector<CUnit*> CArmy::getUnitsList()
 {
 	return m_units;
 }
@@ -70,7 +70,7 @@ CUnit& CArmy::getHighestUnit(int capa_index)
 
 void CArmy::purge()
 {
-	std::vector<int> index;
+	vector<int> index;
 	for (uint i = 0; i < m_units.size(); ++i)
 		if (m_units[i]->getHealthPoint().getValue() == 0)
 			index.push_back(i);

@@ -4,13 +4,20 @@
 //
 
 #pragma once
- 
+
 #include "targetver.h"
 #include <iostream>
 #include <stdio.h>
 #include <tchar.h>
 #include <vector>
 #include <cmath>
+
+#define cout		std::cout
+#define endl		std::endl
+#define vector		std::vector
+#define ostream		std::ostream
+#define rand		std::rand
+
 #include "Capacity.h"
 #include "Armor.h"
 #include "Damage.h"

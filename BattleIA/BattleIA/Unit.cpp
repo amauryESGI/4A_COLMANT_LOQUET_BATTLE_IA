@@ -16,9 +16,9 @@ CUnit::CUnit(int level): m_level(level)
 	m_capacities[WeaponSpeed]	= new CWeaponSpeed();
 
 	for (int i = 0; i < m_level; i++)
-		m_capacities[std::rand() % 6 ]->upgrade();
+		m_capacities[rand() % 6 ]->upgrade();
 
-	m_codeIA = IACODE(std::rand() % 16);
+	m_codeIA = IACODE(rand() % 16);
 }
 
 CUnit::CUnit(IACODE codeIA, int speed, int health, int armor, int regeneration, int damage, int scope, int weaponSpeed)
