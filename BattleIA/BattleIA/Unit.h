@@ -24,30 +24,30 @@ enum IACODE { LD // ennemi le plus proche
 class CUnit
 {
 public:
-	CUnit(int level);
-	CUnit(IACODE codeIA, int speed, int health, int armor, int regeneration, int damage, int scope, int weaponSpeed);
+	CUnit(const int level);
+	CUnit(const IACODE codeIA, const int speed, const int health, const int armor, const int regeneration, const int damage, const int scope, const int weaponSpeed);
 	~CUnit();
 
 	int		getId() const;
 	int		getLevel() const;
 	CPoint	getPos() const;
 	IACODE	getIACode() const;
-	void	refresh();
-	void	setPos(CPoint pos);
+	void	refresh() const;
+	void	setPos(const CPoint &pos);
 	bool	shoot() const;
-	void	takeDamage(float value);
+	void	takeDamage(const float value);
 	bool	isAlive() const;
 
 
-	CArmor&			getArmor();
-	CDamage&		getDamage();
-	CHealthPoint&	getHealthPoint();
-	CRegeneration&	getRegeneration();
-	CScope&			getScope();
-	CSpeed&			getSpeed();
-	CWeaponSpeed&	getWeaponSpeed();
+	CArmor&			getArmor() const;
+	CDamage&		getDamage() const;
+	CHealthPoint&	getHealthPoint() const;
+	CRegeneration&	getRegeneration() const;
+	CScope&			getScope() const;
+	CSpeed&			getSpeed() const;
+	CWeaponSpeed&	getWeaponSpeed() const;
 
-	CCapacity& operator[](const unsigned int id)
+	CCapacity& operator[](const unsigned int id) const
 	{
 		if (id > 6)
 			throw "Error index out of range ... How did you do that O_O";

@@ -2,7 +2,7 @@
 
 
 
-CDamage::CDamage()
+CDamage::CDamage() : CCapacity()
 {}
 
 

@@ -2,11 +2,10 @@
 
 int CUnit::m_id = 0;
 
-CUnit::CUnit(int level): m_level(level)
+CUnit::CUnit(const int level): m_level(level) //TODO : seter position
+							, m_pos(0,0)
 {
 	m_id++;
-	m_pos = CPoint(0, 0);
-
 	m_capacities[Speed]			= new CSpeed();
 	m_capacities[HealthPoint]	= new CHealthPoint();
 	m_capacities[Armor]			= new CArmor();
@@ -21,11 +20,10 @@ CUnit::CUnit(int level): m_level(level)
 	m_codeIA = IACODE(rand() % 16);
 }
 
-CUnit::CUnit(IACODE codeIA, int speed, int health, int armor, int regeneration, int damage, int scope, int weaponSpeed)
+CUnit::CUnit(const IACODE codeIA, const int speed, const int health, const int armor, const int regeneration, const int damage, const int scope, const int weaponSpeed)
+	: m_codeIA(codeIA), m_pos(0,0)
 {
 	m_id++;
-	m_pos = CPoint(0, 0);
-	m_codeIA = codeIA;
 	m_capacities[Speed]			= new CSpeed();
 	m_capacities[Speed]->setLevel(speed);
 	m_capacities[HealthPoint]	= new CHealthPoint();
@@ -61,13 +59,13 @@ CPoint CUnit::getPos() const
 	return m_pos;
 }
 
-void CUnit::refresh()
+void CUnit::refresh() const
 {
 	dynamic_cast<CHealthPoint*>(m_capacities[HealthPoint])->setCurrentHealth(m_capacities[Regeneration]->getValue());
 	dynamic_cast<CWeaponSpeed*>(m_capacities[WeaponSpeed])->turn();
 }
 
-void CUnit::setPos(CPoint pos)
+void CUnit::setPos(const CPoint &pos)
 {
 	m_pos = pos;
 }
@@ -93,37 +91,37 @@ bool CUnit::isAlive() const
 	return m_capacities[HealthPoint]->getValue() > 0;
 }
 
-CArmor& CUnit::getArmor()
+CArmor& CUnit::getArmor() const
 {
 	return dynamic_cast<CArmor&>(*m_capacities[Armor]);
 }
 
-CDamage& CUnit::getDamage()
+CDamage& CUnit::getDamage() const
 {
 	return dynamic_cast<CDamage&>(*m_capacities[Damage]);
 }
 
-CHealthPoint& CUnit::getHealthPoint()
+CHealthPoint& CUnit::getHealthPoint() const
 {
 	return dynamic_cast<CHealthPoint&>(*m_capacities[HealthPoint]);
 }
 
-CRegeneration& CUnit::getRegeneration()
+CRegeneration& CUnit::getRegeneration() const
 {
 	return dynamic_cast<CRegeneration&>(*m_capacities[Regeneration]);
 }
 
-CScope& CUnit::getScope()
+CScope& CUnit::getScope() const
 {
 	return dynamic_cast<CScope&>(*m_capacities[Scope]);
 }
 
-CSpeed& CUnit::getSpeed()
+CSpeed& CUnit::getSpeed() const
 {
 	return dynamic_cast<CSpeed&>(*m_capacities[Speed]);
 }
 
-CWeaponSpeed& CUnit::getWeaponSpeed()
+CWeaponSpeed& CUnit::getWeaponSpeed() const
 {
 	return dynamic_cast<CWeaponSpeed&>(*m_capacities[WeaponSpeed]);
 }

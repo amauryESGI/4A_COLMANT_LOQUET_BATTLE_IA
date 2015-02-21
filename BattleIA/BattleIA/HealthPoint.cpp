@@ -2,7 +2,7 @@
 
 
 
-CHealthPoint::CHealthPoint()
+CHealthPoint::CHealthPoint() : CCapacity()
 {}
 
 

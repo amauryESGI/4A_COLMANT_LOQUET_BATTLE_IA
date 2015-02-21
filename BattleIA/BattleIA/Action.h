@@ -5,7 +5,7 @@
 class CAction
 {
 public:
-	CAction(CUnit unit);
+	CAction(const CUnit unit);
 	~CAction();
 	virtual void execute() = 0;
 

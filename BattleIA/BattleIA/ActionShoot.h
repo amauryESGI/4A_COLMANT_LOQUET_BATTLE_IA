@@ -5,7 +5,7 @@
 class CActionShoot : public CAction
 {
 public:
-	CActionShoot(CUnit unit1, CUnit unit2);
+	CActionShoot(const CUnit &unit1, const CUnit &unit2);
 	~CActionShoot();
 	void execute();
 

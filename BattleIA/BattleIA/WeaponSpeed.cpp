@@ -2,7 +2,7 @@
 
 
 
-CWeaponSpeed::CWeaponSpeed()
+CWeaponSpeed::CWeaponSpeed() : CCapacity()
 {}
 
 

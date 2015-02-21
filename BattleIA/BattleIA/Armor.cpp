@@ -1,6 +1,6 @@
 #include "stdafx.h"
 
-CArmor::CArmor()
+CArmor::CArmor() : CCapacity()
 {}
 
 

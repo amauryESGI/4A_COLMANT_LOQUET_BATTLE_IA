@@ -1,6 +1,6 @@
 #include "stdafx.h"
 
-CAction* CIA::operator()(CUnit unit, CArmy army1, CArmy army2)
+CAction* CIA::operator()(CUnit unit, CArmy army1, CArmy army2) const
 {
 	CUnit *enemy;
 	switch (unit.getIACode())

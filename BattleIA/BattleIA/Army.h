@@ -5,18 +5,18 @@
 class CArmy
 {
 public:
-	CArmy(int nbUnit, int level);
-	CArmy(vector<CUnit*> units);
+	CArmy(const int nbUnit, const int level);
+	CArmy(const vector<CUnit*> units);
 	~CArmy();
 
-	vector<CUnit*> getUnitsList();
-	CUnit& getUnit(int id);
-	int size();
-	CUnit& getNearestUnit(const CPoint& p);
-	CUnit& getFurtherUnit(const CPoint& p);
-	CUnit& getLowestUnit(int capa_index);
-	CUnit& getHighestUnit(int capa_index);
-	void purge();
+	vector<CUnit*>		getUnitsList() const;
+	CUnit&				getUnit(int id) const;
+	int					size();
+	CUnit&				getNearestUnit(const CPoint& p) const;
+	CUnit&				getFurtherUnit(const CPoint& p) const;
+	CUnit&				getLowestUnit(int capa_index) const;
+	CUnit&				getHighestUnit(int capa_index) const;
+	void				purge();
 
 private:
 	vector<CUnit*> m_units;

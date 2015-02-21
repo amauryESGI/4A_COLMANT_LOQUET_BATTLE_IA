@@ -2,7 +2,7 @@
 
 
 
-CRegeneration::CRegeneration()
+CRegeneration::CRegeneration() : CCapacity()
 {}
 
 

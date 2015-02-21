@@ -17,6 +17,7 @@
 #define vector		std::vector
 #define ostream		std::ostream
 #define rand		std::rand
+#define uint		unsigned int
 
 #include "Capacity.h"
 #include "Armor.h"

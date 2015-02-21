@@ -2,7 +2,8 @@
 #define _CAPACITY_H
 #include "stdafx.h"
 
-enum ECapacities : unsigned int {
+enum ECapacities: unsigned int
+{
 	Speed,
 	HealthPoint,
 	Armor,
@@ -20,10 +21,10 @@ public:
 
 	virtual void	upgrade();
 	void			downgrade();
-	size_t			getLevel();
-	float			getValue();
+	size_t			getLevel() const;
+	float			getValue() const;
 	virtual void	setLevel(size_t level);
-	
+
 protected:
 	size_t			m_level;
 	float			m_value;

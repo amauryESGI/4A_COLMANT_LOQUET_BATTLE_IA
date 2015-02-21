@@ -9,8 +9,8 @@ public:
 	CPoint(const CPoint& p);
 	~CPoint();
 
-	unsigned int getX() const;
-	unsigned int getY() const;
+	unsigned int	getX() const;
+	unsigned int	getY() const;
 
 	CPoint			operator+( const CPoint& p ) const;
 	CPoint			operator-( const CPoint& p ) const;
@@ -20,15 +20,18 @@ public:
 	CPoint&			operator-=( const CPoint& p );
 	CPoint&			operator*=( const float f );
 	CPoint&			operator/=( const float f );
-	bool			operator<( const CPoint& p );
-	CPoint			operator-( );
+	bool			operator<( const CPoint& p ) const;
+	CPoint			operator-( ) const;
 
-	static float	distance(CPoint p1, CPoint p2);
+	friend ostream& operator<<(ostream& out, const CPoint& point);
+
+	static float	distance(const CPoint &p1, const CPoint &p2);
 	static CPoint&  getEscapePoint(const CPoint &p, const CPoint &enemy);
 
+
 private:
-	unsigned int m_x;
-	unsigned int m_y;
+	uint m_x;
+	uint m_y;
 };
 
 

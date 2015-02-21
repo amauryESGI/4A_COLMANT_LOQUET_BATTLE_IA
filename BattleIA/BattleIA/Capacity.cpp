@@ -17,11 +17,11 @@ void CCapacity::downgrade()
 		--m_level;
 	computeValue();
 }
-size_t CCapacity::getLevel()
+size_t CCapacity::getLevel() const
 {
 	return m_level;
 }
-float CCapacity::getValue()
+float CCapacity::getValue() const
 {
 	return m_value;
 }

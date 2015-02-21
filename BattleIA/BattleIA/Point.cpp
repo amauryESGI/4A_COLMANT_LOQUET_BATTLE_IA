@@ -5,8 +5,8 @@ CPoint::CPoint() {
 	m_y = 0;
 }
 
-CPoint::CPoint(const unsigned int x, const unsigned int y) :  m_x(x)
-															, m_y(y)
+CPoint::CPoint(const uint x, const uint y) :  m_x(x)
+											, m_y(y)
 {}
 
 // TODO: Check Error .h
@@ -65,17 +65,17 @@ CPoint& CPoint::operator/=( const float f )
 	this->m_y /= f;
 	return *this;
 }
-bool CPoint::operator<( const CPoint& p )
+bool CPoint::operator<( const CPoint& p ) const
 {
 	return ( this->m_x < p.getX() && this->m_y < p.getY() );
 }
 
-float CPoint::distance(CPoint p1, CPoint p2)
+float CPoint::distance(const CPoint &p1, const CPoint &p2)
 {
 	return ( pow(sqrt(p2.getX() - p1.getX()), 2) + pow(sqrt(p2.getY() - p1.getY()), 2) );
 }
 
-CPoint& CPoint::getEscapePoint(const CPoint &p, const CPoint &enemy) 
+CPoint& CPoint::getEscapePoint(const CPoint &p, const CPoint &enemy)
 {
 	if (rand() % 1 == 0) //TODO : c'est dégueulasseuh
 		if (enemy.m_x < p.m_x) //prendre en compte la vitesse (mettre en param ?!)
@@ -90,7 +90,7 @@ CPoint& CPoint::getEscapePoint(const CPoint &p, const CPoint &enemy)
 
 }
 
-ostream& operator<<(ostream& out, const CPoint* point)
+ostream& operator<<(ostream& out, const CPoint& point)
 {
-	return out << "(" << point->getX() << ", " << point->getY() << ")";
+	return out << "(" << point.getX() << ", " << point.getY() << ")";
 }

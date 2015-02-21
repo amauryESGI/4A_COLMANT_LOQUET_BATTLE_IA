@@ -2,7 +2,7 @@
 
 
 
-CScope::CScope()
+CScope::CScope() : CCapacity()
 {}
 
 
