@@ -2,7 +2,7 @@
 
 
 
-CWeaponSpeed::CWeaponSpeed() : CCapacity()
+CWeaponSpeed::CWeaponSpeed(): CCapacity(), m_coolDown(0) //TODO : default value ?!
 {}
 
 

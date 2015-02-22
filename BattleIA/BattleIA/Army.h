@@ -6,7 +6,7 @@ class CArmy
 {
 public:
 	CArmy(const int nbUnit, const int level);
-	CArmy(const vector<CUnit*> units);
+	CArmy(const vector<CUnit*> &units);
 	~CArmy();
 
 	vector<CUnit*>		getUnitsList() const;

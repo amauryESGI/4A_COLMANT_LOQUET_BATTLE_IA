@@ -21,7 +21,7 @@ CUnit::CUnit(const int level): m_level(level) //TODO : seter position
 }
 
 CUnit::CUnit(const IACODE codeIA, const int speed, const int health, const int armor, const int regeneration, const int damage, const int scope, const int weaponSpeed)
-	: m_codeIA(codeIA), m_pos(0,0)
+	: m_codeIA(codeIA), m_pos(0, 0), //TODO : m_level(0)
 {
 	m_id++;
 	m_capacities[Speed]			= new CSpeed();

@@ -6,10 +6,8 @@ CArmy::CArmy(const int nbUnit, const int level)
 	for (int i = 0; i < nbUnit; ++i)
 		m_units.push_back(new CUnit(level));
 }
-CArmy::CArmy(const vector<CUnit*> units)
-{
-	m_units = units;
-}
+CArmy::CArmy(const vector<CUnit*> &units): m_units(units)
+{}
 
 CArmy::~CArmy()
 {}
