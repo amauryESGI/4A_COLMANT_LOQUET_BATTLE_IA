@@ -20,7 +20,7 @@ public:
 	~CCapacity();
 
 	virtual void	upgrade();
-	void			downgrade();
+	virtual	void	downgrade();
 	size_t			getLevel() const;
 	float			getValue() const;
 	virtual void	setLevel(size_t level);

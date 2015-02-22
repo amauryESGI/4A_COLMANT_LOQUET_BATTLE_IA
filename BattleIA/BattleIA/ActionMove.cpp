@@ -1,6 +1,5 @@
 #include "stdafx.h"
 
-
 CActionMove::CActionMove(const CUnit &unit, const CPoint &pos) : CAction(unit), 
 																 m_pos(pos)
 {}

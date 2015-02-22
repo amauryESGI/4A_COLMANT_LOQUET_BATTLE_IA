@@ -1,7 +1,5 @@
 #include "stdafx.h"
 
-
-
 CHealthPoint::CHealthPoint(): CCapacity(), m_currentHealth(10) //TODO : default value ?!
 {}
 

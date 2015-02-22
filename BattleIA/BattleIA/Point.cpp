@@ -72,7 +72,7 @@ bool CPoint::operator<( const CPoint& p ) const
 
 float CPoint::distance(const CPoint &p1, const CPoint &p2)
 {
-	return ( pow(sqrt(p2.getX() - p1.getX()), 2) + pow(sqrt(p2.getY() - p1.getY()), 2) );
+	return ( sqrt( pow(p2.getX() - p1.getX(), 2) + pow(p2.getX()- p1.getX(), 2)));
 }
 
 CPoint& CPoint::getEscapePoint(const CPoint &p, const CPoint &enemy)

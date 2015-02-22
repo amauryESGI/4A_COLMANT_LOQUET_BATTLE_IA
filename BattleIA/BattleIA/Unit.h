@@ -47,13 +47,7 @@ public:
 	CSpeed&			getSpeed() const;
 	CWeaponSpeed&	getWeaponSpeed() const;
 
-	CCapacity& operator[](const unsigned int id) const
-	{
-		if (id > 6)
-			throw "Error index out of range ... How did you do that O_O";
-
-		return *m_capacities[id];
-	}
+	CCapacity& operator[](const unsigned int id) const;
 
 private:
 	static int	m_id;
