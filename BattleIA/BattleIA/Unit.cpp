@@ -3,7 +3,7 @@
 int CUnit::m_id = 0;
 
 CUnit::CUnit(const int level): m_level(level) //TODO : seter position
-, m_pos(0, 0)
+								, m_pos(0, 0)
 {
 	m_id++;
 	m_capacities[Speed] = new CSpeed();
