@@ -9,13 +9,13 @@ public:
 	CWeaponSpeed();
 	~CWeaponSpeed();
 
-	size_t	getCoolDown() const;
+	uint	getCoolDown() const;
 	void	turn();
 	void	shoot();
 	bool	canShoot() const;
 
 private:
-	size_t	m_coolDown;
+	uint	m_coolDown;
 	void	computeValue();
 };
 

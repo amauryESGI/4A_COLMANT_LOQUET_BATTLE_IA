@@ -21,12 +21,13 @@ public:
 
 	virtual void	upgrade();
 	virtual	void	downgrade();
-	size_t			getLevel() const;
+	uint			getLevel() const;
 	float			getValue() const;
-	virtual void	setLevel(size_t level);
+	virtual void	setLevel(uint level);
+	virtual void	setValue(float value);
 
 protected:
-	size_t			m_level;
+	uint			m_level;
 	float			m_value;
 
 	virtual void 	computeValue() = 0;

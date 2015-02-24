@@ -13,7 +13,7 @@ void CWeaponSpeed::computeValue() {
 	m_value = 1000 / (m_level + 1);
 }
 
-size_t CWeaponSpeed::getCoolDown() const {
+uint CWeaponSpeed::getCoolDown() const {
 	return m_coolDown;
 }
 

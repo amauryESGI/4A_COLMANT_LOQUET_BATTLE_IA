@@ -6,13 +6,13 @@ CUnit::CUnit(const int level): m_level(level) //TODO : seter position
 								, m_pos(0, 0)
 {
 	m_id++;
-	m_capacities[Speed] = new CSpeed();
-	m_capacities[HealthPoint] = new CHealthPoint();
-	m_capacities[Armor] = new CArmor();
-	m_capacities[Regeneration] = new CRegeneration();
-	m_capacities[Damage] = new CDamage();
-	m_capacities[Scope] = new CScope();
-	m_capacities[WeaponSpeed] = new CWeaponSpeed();
+	m_capacities[Speed]			= new CSpeed();
+	m_capacities[HealthPoint]	= new CHealthPoint();
+	m_capacities[Armor]			= new CArmor();
+	m_capacities[Regeneration]	= new CRegeneration();
+	m_capacities[Damage]		= new CDamage();
+	m_capacities[Scope]			= new CScope();
+	m_capacities[WeaponSpeed]	= new CWeaponSpeed();
 
 	for (int i = 0; i < m_level; i++)
 		m_capacities[rand() % 6]->upgrade();
@@ -61,7 +61,7 @@ CPoint CUnit::getPos() const
 
 void CUnit::refresh() const
 {
-	dynamic_cast<CHealthPoint*>( m_capacities[HealthPoint] )->setCurrentHealth(m_capacities[Regeneration]->getValue());
+	dynamic_cast<CHealthPoint*>( m_capacities[HealthPoint] )->setValue(m_capacities[Regeneration]->getValue());
 	dynamic_cast<CWeaponSpeed*>( m_capacities[WeaponSpeed] )->turn();
 }
 

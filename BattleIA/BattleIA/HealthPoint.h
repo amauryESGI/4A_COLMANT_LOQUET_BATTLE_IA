@@ -9,11 +9,11 @@ public:
 	CHealthPoint();
 	~CHealthPoint();
 
-	void	setCurrentHealth(float health);
-	size_t	getCurrentHealth() const;
+	void	setMaxLife(float health);
+	uint	getMaxLife() const;
 
 private:
-	size_t	m_currentHealth;
+	uint	m_maxLife;
 
 	void	computeValue();
 };
