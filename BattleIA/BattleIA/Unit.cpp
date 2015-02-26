@@ -83,7 +83,7 @@ bool CUnit::shoot() const
 void CUnit::takeDamage(float value)
 {
 	value -= m_capacities[Armor]->getValue();
-	dynamic_cast<CHealthPoint&>( *m_capacities[HealthPoint] ).setCurrentHealth(value);
+	dynamic_cast<CHealthPoint&>( *m_capacities[HealthPoint] ).setValue(value);
 }
 
 bool CUnit::isAlive() const
