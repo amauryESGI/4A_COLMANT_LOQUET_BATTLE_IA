@@ -2,15 +2,18 @@
 #define _POINT_H
 #include "stdafx.h"
 
-class CPoint {
+class CPoint
+{
 public:
 	CPoint();
-	CPoint(const unsigned int x, const unsigned int y);
+	CPoint(const uint x, const uint y);
 	CPoint(const CPoint& p);
 	~CPoint();
 
 	unsigned int	getX() const;
 	unsigned int	getY() const;
+	void			setX(const uint x);
+	void			setY(const uint y);
 
 	CPoint			operator+( const CPoint& p ) const;
 	CPoint			operator-( const CPoint& p ) const;
@@ -18,15 +21,14 @@ public:
 	CPoint			operator/( const float f ) const;
 	CPoint&			operator+=( const CPoint& p );
 	CPoint&			operator-=( const CPoint& p );
-	CPoint&			operator*=( const float f );
-	CPoint&			operator/=( const float f );
+	CPoint&			operator*=( const uint f );
+	CPoint&			operator/=( const uint f );
 	bool			operator<( const CPoint& p ) const;
 	CPoint			operator-( ) const;
 
-	friend ostream& operator<<(ostream& out, const CPoint& point);
+	friend ostream& operator<<( ostream& out, const CPoint& point );
 
 	static float	distance(const CPoint &p1, const CPoint &p2);
-	static CPoint&  getEscapePoint(const CPoint &p, const CPoint &enemy);
 
 
 private:

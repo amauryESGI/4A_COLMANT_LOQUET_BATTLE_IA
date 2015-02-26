@@ -53,13 +53,46 @@ CAction* CIA::operator()(CUnit unit, CArmy army1, CArmy army2) const
 	case H6: // ennemi qui a le plus de cooldown
 		enemy = &army2.getHighestUnit(ECapacities::WeaponSpeed);
 		break;
-	default :
+	default:
 		throw "code ia not found";
 	}
 
-	if (CPoint::distance(unit.getPos(), enemy->getPos()) < unit.getScope().getValue()
-		&& unit.getWeaponSpeed().getValue() == 0)
+	if (CPoint::distance(unit.getPos(), enemy->getPos()) <= unit.getScope().getValue()
+		&& unit.getWeaponSpeed().getValue() > 0)
 		return new CActionShoot(unit, *enemy);
-	else
-		return new CActionMove(unit, CPoint::getEscapePoint(unit.getPos(), enemy->getPos())); //TODO : refaire ça, avec tous les tests
+	else if (unit.getWeaponSpeed().getValue() > 0
+			 && CPoint::distance(unit.getPos(), enemy->getPos()) > unit.getScope().getValue())
+	{
+		CPoint targetPos = unit.getPos();
+		for (int i = 0; i < unit.getSpeed().getValue(); ++i)
+		{
+			if (unit.getPos().getX() < enemy->getPos().getX())
+				targetPos.setX(targetPos.getX() + 1);
+			else if (unit.getPos().getX() > enemy->getPos().getX())
+				targetPos.setX(targetPos.getX() - 1);
+
+			if (unit.getPos().getY() < enemy->getPos().getY())
+				targetPos.setX(targetPos.getY() + 1);
+			else if (unit.getPos().getY() > enemy->getPos().getY())
+				targetPos.setX(targetPos.getY() - 1);
+		}
+		return new CActionMove(unit, targetPos);
+	}
+	else if (unit.getScope().getValue() == 0)
+	{
+		CPoint targetPos = unit.getPos();
+		for (int i = 0; i < unit.getSpeed().getValue(); ++i)
+		{
+			if (unit.getPos().getX() < enemy->getPos().getX())
+				targetPos.setX(targetPos.getX() - 1);
+			else if (unit.getPos().getX() > enemy->getPos().getX())
+				targetPos.setX(targetPos.getX() + 1);
+
+			if (unit.getPos().getY() < enemy->getPos().getY())
+				targetPos.setX(targetPos.getY() - 1);
+			else if (unit.getPos().getY() > enemy->getPos().getY())
+				targetPos.setX(targetPos.getY() + 1);
+		}
+		return new CActionMove(unit, targetPos);
+	}
 }
