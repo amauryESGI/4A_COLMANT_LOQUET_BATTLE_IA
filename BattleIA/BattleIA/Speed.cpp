@@ -2,7 +2,7 @@
 
 
 
-CSpeed::CSpeed() : CCapacity()
+CSpeed::CSpeed(): CCapacity()
 {}
 
 

@@ -5,7 +5,7 @@
 class CIA
 {
 public:
-	CAction* operator()(CUnit unit, CArmy army1, CArmy army2) const;
+	CAction* operator()(CUnit *unit, const CArmy &army1, const CArmy &army2) const;
 };
 
 #endif

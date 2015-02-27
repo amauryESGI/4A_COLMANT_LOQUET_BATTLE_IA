@@ -1,11 +1,11 @@
 #include "stdafx.h"
 
-int CUnit::m_id = 0;
-
-CUnit::CUnit(const int level): m_level(level) //TODO : seter position
-								, m_pos(0, 0)
+CUnit::CUnit(const int level): m_id(0)
+								, m_level(level)
+								, m_pos(CPoint(rand() % 50, rand() % 50))
+								, m_codeIA(IACODE(rand() % 16))
+								, m_armyName("")
 {
-	m_id++;
 	m_capacities[Speed]			= new CSpeed();
 	m_capacities[HealthPoint]	= new CHealthPoint();
 	m_capacities[Armor]			= new CArmor();
@@ -17,13 +17,18 @@ CUnit::CUnit(const int level): m_level(level) //TODO : seter position
 	for (int i = 0; i < m_level; i++)
 		m_capacities[rand() % 6]->upgrade();
 
-	m_codeIA = IACODE(rand() % 16);
+	//m_codeIA = IACODE(rand() % 16);
+
+	//m_pos = CPoint(rand() % 50, rand() % 50); //TODO : a voir ...
 }
 
 CUnit::CUnit(const IACODE codeIA, const int speed, const int health, const int armor, const int regeneration, const int damage, const int scope, const int weaponSpeed)
-	: m_codeIA(codeIA), m_pos(0, 0)//, TODO : m_level(0)
+	: m_id(0) 
+	, m_level(speed + health + armor + regeneration + damage + scope + weaponSpeed)
+	, m_pos(CPoint(rand() % 50, rand() % 50))
+	, m_codeIA(codeIA)
+	, m_armyName("")
 {
-	m_id++;
 	m_capacities[Speed] = new CSpeed();
 	m_capacities[Speed]->setLevel(speed);
 	m_capacities[HealthPoint] = new CHealthPoint();
@@ -39,6 +44,7 @@ CUnit::CUnit(const IACODE codeIA, const int speed, const int health, const int a
 	m_capacities[WeaponSpeed] = new CWeaponSpeed();
 	m_capacities[WeaponSpeed]->setLevel(health);
 
+	//m_pos = CPoint(rand() % 50, rand() % 50); //TODO : a voir ...
 }
 
 CUnit::~CUnit()
@@ -82,7 +88,14 @@ bool CUnit::shoot() const
 
 void CUnit::takeDamage(float value)
 {
-	value -= m_capacities[Armor]->getValue();
+	if (value - m_capacities[Armor]->getValue() < 0)
+		return;
+	else
+		value -= m_capacities[Armor]->getValue();
+	if (getHealthPoint().getValue() - value < 0)
+		value = 0;
+	else
+		value = getHealthPoint().getValue() - value;
 	dynamic_cast<CHealthPoint&>( *m_capacities[HealthPoint] ).setValue(value);
 }
 
@@ -137,4 +150,17 @@ CWeaponSpeed& CUnit::getWeaponSpeed() const
 IACODE CUnit::getIACode() const
 {
 	return m_codeIA;
+}
+
+string CUnit::getArmyName() const
+{
+	return m_armyName;
+}
+void CUnit::setArmyName(const string& name)
+{
+	m_armyName = name;
+}
+void CUnit::setID(uint id)
+{
+	m_id = id;
 }

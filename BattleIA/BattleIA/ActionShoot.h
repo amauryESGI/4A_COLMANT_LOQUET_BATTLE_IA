@@ -5,12 +5,12 @@
 class CActionShoot : public CAction
 {
 public:
-	CActionShoot(const CUnit &unit1, const CUnit &unit2);
+	CActionShoot(CUnit *unit1, CUnit *unit2);
 	~CActionShoot();
 	void execute();
 
 private:
-	CUnit m_target;
+	CUnit *m_target;
 };
 
 #endif

@@ -1,8 +1,8 @@
 #include "stdafx.h"
 
 
-CActionShoot::CActionShoot(const CUnit &unit1, const CUnit &unit2) :  CAction(unit1),
-																	m_target(unit2)
+CActionShoot::CActionShoot(CUnit *unit1, CUnit *unit2) :  CAction(unit1),
+															m_target(unit2)
 {}
 
 CActionShoot::~CActionShoot()
@@ -11,8 +11,22 @@ CActionShoot::~CActionShoot()
 void CActionShoot::execute()
 {
 	//TODO : bouger jusqu'a etre a portée. 
-	cout << "unit " << m_unit.getId() << " shoot !" << endl;
-	m_unit.shoot();
-	cout << "enemy " << m_target.getId() << " took " << m_unit[ECapacities::Damage].getValue() << " damages !" << endl;
-	m_target.takeDamage(m_unit[ECapacities::Damage].getValue());
+	
+	m_unit->shoot();
+	
+	m_target->takeDamage(m_unit->getDamage().getValue());
+	cout << "Unite " 
+		 << m_unit->getId() 
+		 << " (Armee " 
+		 << m_unit->getArmyName() 
+		 << ")" 
+		 << " attaque Unite " 
+		 << m_target->getId() 
+		 << " (Armee " 
+		 << m_target->getArmyName() 
+		 << ")" 
+		 <<  " qui n'a plus que  " 
+		 << m_target->getHealthPoint().getValue() 
+		 << " HP" 
+		 << endl;
 }

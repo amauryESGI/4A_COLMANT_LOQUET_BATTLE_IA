@@ -5,12 +5,12 @@
 class CAction
 {
 public:
-	CAction(const CUnit &unit);
+	CAction(CUnit *unit);
 	~CAction();
 	virtual void execute() = 0;
 
 protected:
-	CUnit m_unit;
+	CUnit *m_unit;
 };
 
 #endif

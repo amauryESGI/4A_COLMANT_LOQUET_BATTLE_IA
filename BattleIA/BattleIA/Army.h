@@ -5,8 +5,8 @@
 class CArmy
 {
 public:
-	CArmy(const int nbUnit, const int level);
-	CArmy(const vector<CUnit*> &units);
+	CArmy(const int nbUnit, const int level, string name);
+	CArmy(const vector<CUnit*> &units, string name);
 	~CArmy();
 
 	vector<CUnit*>		getUnitsList() const;
@@ -18,8 +18,10 @@ public:
 	CUnit&				getHighestUnit(int capa_index) const;
 	void				purge();
 
+	string				getName() const;
 private:
-	vector<CUnit*> m_units;
+	vector<CUnit*>	m_units;
+	string			m_name;
 
 };
 

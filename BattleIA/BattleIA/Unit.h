@@ -37,7 +37,10 @@ public:
 	bool	shoot() const;
 	void	takeDamage(const float value);
 	bool	isAlive() const;
-
+	string			getArmyName() const;
+	void			setArmyName(const string& name);
+	uint			getID() const;
+	void			setID(uint id);
 
 	CArmor&			getArmor() const;
 	CDamage&		getDamage() const;
@@ -46,15 +49,16 @@ public:
 	CScope&			getScope() const;
 	CSpeed&			getSpeed() const;
 	CWeaponSpeed&	getWeaponSpeed() const;
-
+	
 	CCapacity& operator[](const unsigned int id) const;
 
 private:
-	static int	m_id;
+	uint		m_id;
 	int			m_level;
 	CPoint		m_pos;
 	CCapacity	*m_capacities[7];
 	IACODE		m_codeIA;
+	string		m_armyName;
 };
 
 #endif

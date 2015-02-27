@@ -17,8 +17,8 @@ public:
 
 	CPoint			operator+( const CPoint& p ) const;
 	CPoint			operator-( const CPoint& p ) const;
-	CPoint			operator*( const float f ) const;
-	CPoint			operator/( const float f ) const;
+	CPoint			operator*( const uint f ) const;
+	CPoint			operator/( const uint f ) const;
 	CPoint&			operator+=( const CPoint& p );
 	CPoint&			operator-=( const CPoint& p );
 	CPoint&			operator*=( const uint f );

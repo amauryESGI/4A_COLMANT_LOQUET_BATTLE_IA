@@ -5,11 +5,11 @@
 class CActionMove : public CAction
 {
 public:
-	CActionMove(const CUnit &unit, const CPoint &pos);
+	CActionMove(CUnit *unit, CPoint *pos);
 	~CActionMove();
 	void execute();
 private:
-	CPoint m_pos;
+	CPoint *m_pos;
 };
 
 #endif

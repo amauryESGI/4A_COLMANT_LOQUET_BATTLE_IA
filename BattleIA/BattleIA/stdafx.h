@@ -11,12 +11,14 @@
 #include <tchar.h>
 #include <vector>
 #include <cmath>
+#include <string>
 
 #define cout		std::cout
 #define endl		std::endl
 #define vector		std::vector
 #define ostream		std::ostream
 #define rand		std::rand
+#define string		std::string
 #define uint		unsigned int
 
 #include "Capacity.h"

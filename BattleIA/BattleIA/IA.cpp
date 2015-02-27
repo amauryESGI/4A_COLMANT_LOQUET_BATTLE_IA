@@ -1,15 +1,15 @@
 #include "stdafx.h"
 
-CAction* CIA::operator()(CUnit unit, CArmy army1, CArmy army2) const
+CAction* CIA::operator()(CUnit *unit, const CArmy &army1, const CArmy &army2) const
 {
 	CUnit *enemy;
-	switch (unit.getIACode())
+	switch (unit->getIACode())
 	{
 	case LD: // ennemi le plus proche
-		enemy = &army2.getNearestUnit(unit.getPos());
+		enemy = &army2.getNearestUnit(unit->getPos());
 		break;
 	case HD: // ennemi le plus loin
-		enemy = &army2.getFurtherUnit(unit.getPos());
+		enemy = &army2.getFurtherUnit(unit->getPos());
 		break;
 	case L0: // ennemi qui a le moins de vitesse
 		enemy = &army2.getLowestUnit(ECapacities::Speed);
@@ -57,42 +57,42 @@ CAction* CIA::operator()(CUnit unit, CArmy army1, CArmy army2) const
 		throw "code ia not found";
 	}
 
-	if (CPoint::distance(unit.getPos(), enemy->getPos()) <= unit.getScope().getValue()
-		&& unit.getWeaponSpeed().getValue() > 0)
-		return new CActionShoot(unit, *enemy);
-	else if (unit.getWeaponSpeed().getValue() > 0
-			 && CPoint::distance(unit.getPos(), enemy->getPos()) > unit.getScope().getValue())
+	if (CPoint::distance(unit->getPos(), enemy->getPos()) <= unit->getScope().getValue()
+		&& unit->getWeaponSpeed().getValue() == 0)
+		return new CActionShoot(unit, enemy);
+	else if (unit->getWeaponSpeed().getValue() == 0
+			 && CPoint::distance(unit->getPos(), enemy->getPos()) > unit->getScope().getValue())
 	{
-		CPoint targetPos = unit.getPos();
-		for (int i = 0; i < unit.getSpeed().getValue(); ++i)
+		CPoint targetPos = unit->getPos();
+		for (int i = 0; i < unit->getSpeed().getValue(); ++i)
 		{
-			if (unit.getPos().getX() < enemy->getPos().getX())
+			if (targetPos.getX() < enemy->getPos().getX())
 				targetPos.setX(targetPos.getX() + 1);
-			else if (unit.getPos().getX() > enemy->getPos().getX())
+			else if (targetPos.getX() > enemy->getPos().getX())
 				targetPos.setX(targetPos.getX() - 1);
 
-			if (unit.getPos().getY() < enemy->getPos().getY())
-				targetPos.setX(targetPos.getY() + 1);
-			else if (unit.getPos().getY() > enemy->getPos().getY())
-				targetPos.setX(targetPos.getY() - 1);
+			if (targetPos.getY() < enemy->getPos().getY())
+				targetPos.setY(targetPos.getY() + 1);
+			else if (targetPos.getY() > enemy->getPos().getY())
+				targetPos.setY(targetPos.getY() - 1);
 		}
-		return new CActionMove(unit, targetPos);
+		return new CActionMove(unit, &targetPos);
 	}
-	else if (unit.getScope().getValue() == 0)
+	else if (unit->getWeaponSpeed().getValue() > 0)
 	{
-		CPoint targetPos = unit.getPos();
-		for (int i = 0; i < unit.getSpeed().getValue(); ++i)
+		CPoint targetPos = unit->getPos();
+		for (int i = 0; i < unit->getSpeed().getValue(); ++i)
 		{
-			if (unit.getPos().getX() < enemy->getPos().getX())
+			if (unit->getPos().getX() < enemy->getPos().getX())
 				targetPos.setX(targetPos.getX() - 1);
-			else if (unit.getPos().getX() > enemy->getPos().getX())
+			else if (unit->getPos().getX() > enemy->getPos().getX())
 				targetPos.setX(targetPos.getX() + 1);
 
-			if (unit.getPos().getY() < enemy->getPos().getY())
+			if (unit->getPos().getY() < enemy->getPos().getY())
 				targetPos.setX(targetPos.getY() - 1);
-			else if (unit.getPos().getY() > enemy->getPos().getY())
+			else if (unit->getPos().getY() > enemy->getPos().getY())
 				targetPos.setX(targetPos.getY() + 1);
 		}
-		return new CActionMove(unit, targetPos);
+		return new CActionMove(unit, &targetPos);
 	}
 }

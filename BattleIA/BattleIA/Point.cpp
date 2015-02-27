@@ -25,6 +25,15 @@ uint CPoint::getY() const {
 	return m_y;
 }
 
+void CPoint::setX(const uint x)
+{
+	 m_x = x;
+}
+void CPoint::setY(const uint y)
+{
+	m_y = y;
+}
+
 CPoint CPoint::operator+( const CPoint& p ) const
 {
 	return CPoint(this->getX() + p.getX(), this->getY() + p.getY());
@@ -33,11 +42,11 @@ CPoint CPoint::operator-( const CPoint& p ) const
 {
 	return CPoint(this->getX() - p.getX(), this->getY() - p.getY());
 }
-CPoint CPoint::operator*( const float f ) const
+CPoint CPoint::operator*( const uint f ) const
 {
 	return CPoint(this->getX() * f, this->getY() * f);
 }
-CPoint CPoint::operator/( const float f ) const
+CPoint CPoint::operator/( const uint f ) const
 {
 	return CPoint(this->getX() / f, this->getY() / f);
 }
@@ -72,7 +81,7 @@ bool CPoint::operator<( const CPoint& p ) const
 
 float CPoint::distance(const CPoint &p1, const CPoint &p2)
 {
-	return ( sqrt( pow(p2.getX() - p1.getX(), 2) + pow(p2.getX()- p1.getX(), 2)));
+	return sqrt( pow(p2.getX() - p1.getX(), 2) + pow(p2.getY()- p1.getY(), 2));
 }
 
 ostream& operator<<(ostream& out, const CPoint& point)

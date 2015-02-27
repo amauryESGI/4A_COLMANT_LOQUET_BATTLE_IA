@@ -1,8 +1,9 @@
 #include "stdafx.h"
 
-CActionMove::CActionMove(const CUnit &unit, const CPoint &pos) : CAction(unit), 
-																 m_pos(pos)
-{}
+CActionMove::CActionMove(CUnit *unit, CPoint *pos) : CAction(unit)
+{
+	m_pos = new CPoint(pos->getX(), pos->getY());
+}
 
 
 CActionMove::~CActionMove()
@@ -10,6 +11,13 @@ CActionMove::~CActionMove()
 
 void CActionMove::execute()
 {
-	cout << "Unit " << m_unit.getId() << " go at pos : " << m_pos << endl;
-	m_unit.setPos(m_pos); //TODO : translation ?
+	m_unit->setPos(*m_pos); //TODO : translation ?
+	cout << "Unite " 
+		 << m_unit->getId() 
+		 << " (Armee " 
+		 << m_unit->getArmyName() 
+		 << ")" 
+		 << " bouge en position " 
+		 << *m_pos 
+		 << endl;
 }
