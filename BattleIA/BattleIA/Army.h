@@ -19,6 +19,8 @@ public:
 	void				purge();
 
 	string				getName() const;
+
+	void				refreshAllUnit();
 private:
 	vector<CUnit*>	m_units;
 	string			m_name;

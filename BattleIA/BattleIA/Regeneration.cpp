@@ -10,5 +10,5 @@ CRegeneration::~CRegeneration()
 {}
 
 void CRegeneration::computeValue() {
-	m_value = m_level * 3;
+	m_value = m_level / 1000;
 }

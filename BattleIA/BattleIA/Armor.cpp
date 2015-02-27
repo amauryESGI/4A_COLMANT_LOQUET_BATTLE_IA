@@ -9,5 +9,5 @@ CArmor::~CArmor()
 
 void CArmor::computeValue()
 {
-	m_value = m_level * 2;
+	m_value = m_level / 2;
 }

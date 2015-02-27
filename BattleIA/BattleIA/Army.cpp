@@ -89,3 +89,9 @@ void CArmy::purge()
 	for (uint i = 0; i < index.size(); ++i)
 		m_units.erase(m_units.begin() + index[i]);
 }
+
+void CArmy::refreshAllUnit()
+{
+	for (uint i = 0; i < m_units.size(); ++i)
+		m_units[i]->refresh();
+}
