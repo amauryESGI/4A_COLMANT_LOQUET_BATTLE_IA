@@ -14,7 +14,7 @@ CWeaponSpeed::~CWeaponSpeed()
  */
 void CWeaponSpeed::computeValue()
 {
-	m_value = 1000 / ( m_level + 1 );
+	m_value = 10 / ( m_level + 1 );
 }
 /**
  * Get the cool down of the weapon
@@ -45,5 +45,5 @@ void CWeaponSpeed::shoot()
  */
 bool CWeaponSpeed::canShoot() const
 {
-	return m_coolDown == 0 ? false : true;
+	return m_coolDown == 0 ? true : false;
 }

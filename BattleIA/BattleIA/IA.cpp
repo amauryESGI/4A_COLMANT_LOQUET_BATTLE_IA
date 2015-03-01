@@ -65,9 +65,9 @@ CAction* CIA::operator()(CUnit *unit, const CArmy &army1, const CArmy &army2) co
 	}
 
 	if (CPoint::distance(unit->getPos(), enemy->getPos()) <= unit->getScope().getValue()
-		&& unit->getWeaponSpeed().getValue() == 0)
+		&& unit->getWeaponSpeed().getCoolDown() == 0)
 		return new CActionShoot(unit, enemy);
-	else if (unit->getWeaponSpeed().getValue() == 0
+	else if (unit->getWeaponSpeed().getCoolDown() == 0
 			 && CPoint::distance(unit->getPos(), enemy->getPos()) > unit->getScope().getValue())
 	{
 		CPoint targetPos = unit->getPos();
@@ -83,23 +83,29 @@ CAction* CIA::operator()(CUnit *unit, const CArmy &army1, const CArmy &army2) co
 			else if (targetPos.getY() > enemy->getPos().getY())
 				targetPos.setY(targetPos.getY() - 1);
 		}
-		return new CActionMove(unit, &targetPos);
+		return new CActionMove(unit, targetPos);
 	}
-	else if (unit->getWeaponSpeed().getValue() > 0)
+	else if (unit->getWeaponSpeed().getCoolDown() > 0)
 	{
 		CPoint targetPos = unit->getPos();
 		for (int i = 0; i < unit->getSpeed().getValue(); ++i)
 		{
 			if (unit->getPos().getX() < enemy->getPos().getX())
-				targetPos.setX(targetPos.getX() - 1);
+				targetPos.setX(targetPos.getX() == 0 ? 0 : targetPos.getX() - 1);
 			else if (unit->getPos().getX() > enemy->getPos().getX())
 				targetPos.setX(targetPos.getX() + 1);
-
+			else
+			{
+				targetPos.setX(rand() % 1 == 0 ? targetPos.getX() + 1 : targetPos.getX() == 0 ? 0 : targetPos.getX() - 1);
+			}
 			if (unit->getPos().getY() < enemy->getPos().getY())
-				targetPos.setX(targetPos.getY() - 1);
+				targetPos.setY(targetPos.getY() == 0 ? 0 : targetPos.getY() - 1);
 			else if (unit->getPos().getY() > enemy->getPos().getY())
-				targetPos.setX(targetPos.getY() + 1);
+				targetPos.setY(targetPos.getY() + 1);
+			else
+				targetPos.setY(rand() % 1 == 0 ? targetPos.getY() + 1 : targetPos.getY() == 0 ? 0 : targetPos.getY() - 1);
+
 		}
-		return new CActionMove(unit, &targetPos);
+		return new CActionMove(unit, targetPos);
 	}
 }

@@ -32,7 +32,7 @@ public:
 	CPoint			getPos() const;
 	IACODE			getIACode() const;
 	void			refresh() const;
-	void			setPos(const CPoint &pos);
+	void			setPos(CPoint *pos);
 	bool			shoot() const;
 	void			takeDamage(const float value);
 	bool			isAlive() const;
@@ -54,7 +54,7 @@ public:
 private:
 	uint			m_id;
 	uint			m_level;
-	CPoint			m_pos;
+	CPoint			*m_pos;
 	CCapacity		*m_capacities[7];
 	IACODE			m_codeIA;
 	string			m_armyName;

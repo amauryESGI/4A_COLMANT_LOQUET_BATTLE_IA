@@ -13,27 +13,54 @@ void getInput(int *i, int *t, int *n, int *x, int *y);
 int _tmain(int argc, _TCHAR* argv[])
 {
 	int I, T, N, X, Y;
-	char buff[10];
 	getInput(&I, &T, &N, &X, &Y);
 	vector<CArmy> armies;
-	for (int i = 0; i < N; ++i)
-		armies.push_back(CArmy(X, Y, to_string(i)));
+	vector<uint>  scores;
+	for (uint l = 0; l < N; ++l)
+		armies.push_back(CArmy(X, Y, to_string(l)));
 	CIA ia;
 	uint i = 0, j = 0, k = 0, lap = 0;
-	for (i = 0; i < N; ++i)
+	for (i = 0; i < I; ++i)
 	{
-		for (j = i == 0 ? ++j : j; j < N - 1; j = j == i ? j+2 : ++j)
+		for (j = 0; j < N; ++j)
 		{
-			j = j == i ? ++j : j;
-			for (k = 0; k < I; ++k)
+			CArmy army1(armies[j].getUnitsList(), armies[j].getName());
+			for (k = j == 0 ? ++k : 0; k < N - 1; k = k == j-1 ? k+2 : ++k)
 			{
+				CArmy army2(armies[k].getUnitsList(), armies[k].getName());
+				int m = 0, n = 0, lap = 0;
+				while(true)
+				{
+					cout << "**************** tour " << lap << " ****************" << endl;
+					if (m < army1.getUnitsList().size())
+					{
+						ia(army1.getUnitsList()[m], army1, army2)->execute();
+						army2.purge();
+					}
+					if (m < army2.getUnitsList().size())
+					{
+						ia(army2.getUnitsList()[m], army2, army1)->execute();
+						army1.purge();
+					}
+					if (army1.getUnitsList().size() > 0)
+						m = m < army1.getUnitsList().size()-1 ? m + 1 : 0;
+					else
+						break;
+					if (army2.getUnitsList().size() > 0)
+						n = n < army1.getUnitsList().size()-1 ? n + 1 : 0;
+					else
+						break;
+					++lap;
+					//Sleep(1000);
+				}
 
 			}
-		}
+		}		
 	}
 	
 	
-	/*while(i < )
+	
+	/*while(true)
 	{
 		cout << "**************** tour " << lap << " ****************" << endl;
 		if (i < army1.getUnitsList().size())
@@ -121,10 +148,10 @@ int _tmain(int argc, _TCHAR* argv[])
 		else
 			break;
 		++lap;
+		army1.refreshAllUnit();
+		army2.refreshAllUnit();
 		Sleep(1000);
 	}
-
-
 	cout << "fin de la partie" << endl 
 		 << "Score: " << endl
 		 << "Army " << army1.getName() << " : " << army1.getUnitsList().size() << endl

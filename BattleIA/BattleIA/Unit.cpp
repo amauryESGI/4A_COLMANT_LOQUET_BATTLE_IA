@@ -5,7 +5,7 @@
  */
 CUnit::CUnit(const uint level): m_id(0) //default value 0
 								, m_level(level)
-								, m_pos(CPoint(rand() % 500, rand() % 500)) //random position between 0 and 500
+								, m_pos(new CPoint(rand() % 50, rand() % 50)) //random position between 0 and 500
 								, m_codeIA(IACODE(rand() % 16)) //random IACODE between 0 and 16
 								, m_armyName("") //default name ""
 {
@@ -16,6 +16,14 @@ CUnit::CUnit(const uint level): m_id(0) //default value 0
 	m_capacities[Damage]		= new CDamage();
 	m_capacities[Scope]			= new CScope();
 	m_capacities[WeaponSpeed]	= new CWeaponSpeed();
+	m_capacities[Speed]			->upgrade();
+	m_capacities[HealthPoint]	->upgrade();
+	m_capacities[Armor]			->upgrade();
+	m_capacities[Regeneration]	->upgrade();
+	m_capacities[Damage]		->upgrade();
+	m_capacities[Scope]			->upgrade();
+	m_capacities[WeaponSpeed]	->upgrade();
+
 
 	for (int i = 0; i < m_level; i++)
 		m_capacities[rand() % 6]->upgrade();
@@ -39,7 +47,7 @@ CUnit::CUnit(const uint level): m_id(0) //default value 0
 CUnit::CUnit(const IACODE codeIA, const uint speed, const uint health, const uint armor, const uint regeneration, const uint damage, const uint scope, const uint weaponSpeed)
 	: m_id(0) 
 	, m_level(speed + health + armor + regeneration + damage + scope + weaponSpeed)
-	, m_pos(CPoint(rand() % 50, rand() % 50))
+	, m_pos(new CPoint(rand() % 50, rand() % 50))
 	, m_codeIA(codeIA)
 	, m_armyName("")
 {
@@ -85,21 +93,21 @@ uint CUnit::getLevel() const
  */
 CPoint CUnit::getPos() const
 {
-	return m_pos;
+	return *m_pos;
 }
 /**
  * Refresh the unit, regenerate it and decrement the cooldown
  */
 void CUnit::refresh() const
 {
-	dynamic_cast<CHealthPoint*>( m_capacities[HealthPoint] )->setValue(m_capacities[Regeneration]->getValue());
+	dynamic_cast<CHealthPoint*>( m_capacities[HealthPoint] )->setValue(getHealthPoint().getValue() + getRegeneration().getValue());
 	dynamic_cast<CWeaponSpeed*>( m_capacities[WeaponSpeed] )->turn();
 }
 /**
  * Set the position of the unit
  * @param const CPoint& pos - the position
  */
-void CUnit::setPos(const CPoint &pos)
+void CUnit::setPos(CPoint *pos)
 {
 	m_pos = pos;
 }
@@ -123,7 +131,8 @@ bool CUnit::shoot() const
 void CUnit::takeDamage(float value)
 {
 	if (value - m_capacities[Armor]->getValue() < 0)
-		return;
+		value = getHealthPoint().getValue() - 1;
+		//return;
 	else
 		value -= m_capacities[Armor]->getValue();
 	if (getHealthPoint().getValue() - value < 0)

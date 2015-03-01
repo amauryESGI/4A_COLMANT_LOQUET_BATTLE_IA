@@ -5,7 +5,7 @@
 class CActionMove : public CAction
 {
 public:
-	CActionMove(CUnit *unit, CPoint *pos);
+	CActionMove(CUnit *unit, CPoint pos);
 	~CActionMove();
 	void execute();
 private:

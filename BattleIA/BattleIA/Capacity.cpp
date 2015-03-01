@@ -2,7 +2,7 @@
 /**
  * Default constructor of CCapacity
  */
-CCapacity::CCapacity(): m_level(1), m_value(0)
+CCapacity::CCapacity(): m_level(0), m_value(0)
 {}
 
 CCapacity::~CCapacity()
