@@ -14,20 +14,24 @@ int _tmain(int argc, _TCHAR* argv[])
 {
 	int I, T, N, X, Y;
 	getInput(&I, &T, &N, &X, &Y);
-	vector<CArmy> armies;
+	vector<CArmy*> armies;
 	vector<uint>  scores;
 	for (uint l = 0; l < N; ++l)
-		armies.push_back(CArmy(X, Y, to_string(l)));
+	{
+		armies.push_back(new CArmy(X, Y, to_string(l)));
+		scores.push_back(0);
+	}
 	CIA ia;
 	uint i = 0, j = 0, k = 0, lap = 0;
 	for (i = 0; i < I; ++i)
 	{
 		for (j = 0; j < N; ++j)
 		{
-			CArmy army1(armies[j].getUnitsList(), armies[j].getName());
-			for (k = j == 0 ? ++k : 0; k < N - 1; k = k == j-1 ? k+2 : ++k)
+			for (k = j == N ? N : j+1; k < N; k = ++k)
 			{
-				CArmy army2(armies[k].getUnitsList(), armies[k].getName());
+				CArmy army1(*armies[j]);
+				CArmy army2(*armies[k]);
+				cout << "Armee " << army1.getName() << " contre armee " << army2.getName() << endl;
 				int m = 0, n = 0, lap = 0;
 				while(true)
 				{
@@ -37,9 +41,9 @@ int _tmain(int argc, _TCHAR* argv[])
 						ia(army1.getUnitsList()[m], army1, army2)->execute();
 						army2.purge();
 					}
-					if (m < army2.getUnitsList().size())
+					if (n < army2.getUnitsList().size())
 					{
-						ia(army2.getUnitsList()[m], army2, army1)->execute();
+						ia(army2.getUnitsList()[n], army2, army1)->execute();
 						army1.purge();
 					}
 					if (army1.getUnitsList().size() > 0)
@@ -51,39 +55,22 @@ int _tmain(int argc, _TCHAR* argv[])
 					else
 						break;
 					++lap;
+					army1.refreshAllUnit();
+					army2.refreshAllUnit();
 					//Sleep(1000);
 				}
-
+				if(army2.getUnitsList().size() == 0)
+					scores[j] += army1.getUnitsList().size();
+				else
+					scores[k] += army2.getUnitsList().size();
+				if (scores[j] >= T || scores[k] >= T)
+					goto end;
 			}
-		}		
+		}	
 	}
+end:;
 	
-	
-	
-	/*while(true)
-	{
-		cout << "**************** tour " << lap << " ****************" << endl;
-		if (i < army1.getUnitsList().size())
-		{
-			ia(army1.getUnitsList()[i], army1, army2)->execute();
-			army2.purge();
-		}
-		if (i < army2.getUnitsList().size())
-		{
-			ia(army2.getUnitsList()[i], army2, army1)->execute();
-			army1.purge();
-		}
-		if (army1.getUnitsList().size() > 0)
-			i = i < army1.getUnitsList().size()-1 ? i + 1 : 0;
-		else
-			break;
-		if (army2.getUnitsList().size() > 0)
-			j = j < army1.getUnitsList().size()-1 ? j + 1 : 0;
-		else
-			break;
-		++lap;
-		Sleep(1000);
-	}*/
+
 
 }
 /**
@@ -122,8 +109,8 @@ void getInput(int *i, int *t, int *n, int *x, int *y)
 #ifdef _MAIN_B
 int _tmain(int argc, _TCHAR* argv[])
 {
-	CArmy army1(5, 15, "A");
-	CArmy army2(5, 15, "B");
+	CArmy army1(10, 100, "A");
+	CArmy army2(10, 100, "B");
 	CIA ia;	
 	int i = 0, j = 0, lap = 0;
 	while(true)
@@ -134,9 +121,9 @@ int _tmain(int argc, _TCHAR* argv[])
 			ia(army1.getUnitsList()[i], army1, army2)->execute();
 			army2.purge();
 		}
-		if (i < army2.getUnitsList().size())
+		if (j < army2.getUnitsList().size())
 		{
-			ia(army2.getUnitsList()[i], army2, army1)->execute();
+			ia(army2.getUnitsList()[j], army2, army1)->execute();
 			army1.purge();
 		}
 		if (army1.getUnitsList().size() > 0)
@@ -150,7 +137,7 @@ int _tmain(int argc, _TCHAR* argv[])
 		++lap;
 		army1.refreshAllUnit();
 		army2.refreshAllUnit();
-		Sleep(1000);
+		Sleep(500);
 	}
 	cout << "fin de la partie" << endl 
 		 << "Score: " << endl

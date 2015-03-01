@@ -73,15 +73,20 @@ CAction* CIA::operator()(CUnit *unit, const CArmy &army1, const CArmy &army2) co
 		CPoint targetPos = unit->getPos();
 		for (int i = 0; i < unit->getSpeed().getValue(); ++i)
 		{
-			if (targetPos.getX() < enemy->getPos().getX())
-				targetPos.setX(targetPos.getX() + 1);
-			else if (targetPos.getX() > enemy->getPos().getX())
-				targetPos.setX(targetPos.getX() - 1);
-
-			if (targetPos.getY() < enemy->getPos().getY())
-				targetPos.setY(targetPos.getY() + 1);
-			else if (targetPos.getY() > enemy->getPos().getY())
-				targetPos.setY(targetPos.getY() - 1);
+			if (targetPos.getX() != enemy->getPos().getX())
+			{
+				if (targetPos.getX() < enemy->getPos().getX())
+					targetPos.setX(targetPos.getX() + 1);
+				else if (targetPos.getX() > enemy->getPos().getX())
+					targetPos.setX(targetPos.getX() - 1);
+			}
+			if (targetPos.getY() != enemy->getPos().getY())
+			{
+				if (targetPos.getY() < enemy->getPos().getY())
+					targetPos.setY(targetPos.getY() + 1);
+				else if (targetPos.getY() > enemy->getPos().getY())
+					targetPos.setY(targetPos.getY() - 1);
+			}			
 		}
 		return new CActionMove(unit, targetPos);
 	}

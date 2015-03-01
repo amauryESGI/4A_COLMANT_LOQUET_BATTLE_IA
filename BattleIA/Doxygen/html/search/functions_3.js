@@ -1,0 +1,27 @@
+var searchData=
+[
+  ['getarmor',['getArmor',['../class_c_unit.html#a635b034a7d30a4bea58ba5eb1b312f3e',1,'CUnit']]],
+  ['getarmyname',['getArmyName',['../class_c_unit.html#a1c9059f4fc18809f18f4968bd5ec0a8c',1,'CUnit']]],
+  ['getcooldown',['getCoolDown',['../class_c_weapon_speed.html#ac9118acdd4315bcef3213ecd7456aa72',1,'CWeaponSpeed']]],
+  ['getdamage',['getDamage',['../class_c_unit.html#a9dda5d4789249c4ea4bdf9a1e9c1f346',1,'CUnit']]],
+  ['getfurtherunit',['getFurtherUnit',['../class_c_army.html#a5791b01916452c2135e12e65eb879213',1,'CArmy']]],
+  ['gethealthpoint',['getHealthPoint',['../class_c_unit.html#ab733cdcc12b5cfdd1a952daeeb353e9f',1,'CUnit']]],
+  ['gethighestunit',['getHighestUnit',['../class_c_army.html#aaf54df4ec7dc67cbb0b4cc84b217ed72',1,'CArmy']]],
+  ['getiacode',['getIACode',['../class_c_unit.html#a9a6a2691892629e4e93822f12aacb56c',1,'CUnit']]],
+  ['getid',['getId',['../class_c_unit.html#aa594b4f0a932af738de2e8477e6ea2a4',1,'CUnit::getId() const '],['../class_c_unit.html#a9758ec5d1ea3acf545f40214b063881d',1,'CUnit::getID() const ']]],
+  ['getlevel',['getLevel',['../class_c_capacity.html#ac80078c6c7563f84f99412c61dad6efc',1,'CCapacity::getLevel()'],['../class_c_unit.html#a3a3232b63ea7d2232295a4253c21b6e9',1,'CUnit::getLevel()']]],
+  ['getlowestunit',['getLowestUnit',['../class_c_army.html#ae4f0784ab79ac1a3d9f7559c295c9681',1,'CArmy']]],
+  ['getmaxlife',['getMaxLife',['../class_c_health_point.html#a0532f875a01d743c12ebab53549d044f',1,'CHealthPoint']]],
+  ['getname',['getName',['../class_c_army.html#a830cb4bfca8e0a8fb2c4834755323f2f',1,'CArmy']]],
+  ['getnearestunit',['getNearestUnit',['../class_c_army.html#aca6121209e682ba606ae5221b898a306',1,'CArmy']]],
+  ['getpos',['getPos',['../class_c_unit.html#a2c58fa9dbd8adb0bc77cffba2808af21',1,'CUnit']]],
+  ['getregeneration',['getRegeneration',['../class_c_unit.html#adc04d3757bf5f7c94e59aec13ff16802',1,'CUnit']]],
+  ['getscope',['getScope',['../class_c_unit.html#aaa07718e845a5fa48a97fb1a04a89280',1,'CUnit']]],
+  ['getspeed',['getSpeed',['../class_c_unit.html#a912df58aa0baf850be9b7773a4e2eb4a',1,'CUnit']]],
+  ['getunit',['getUnit',['../class_c_army.html#a80b7a28152bede37ecfec0911616bc01',1,'CArmy']]],
+  ['getunitslist',['getUnitsList',['../class_c_army.html#ac724882ca24a7763e486af8e47b82f8f',1,'CArmy']]],
+  ['getvalue',['getValue',['../class_c_capacity.html#aa550f072592397f64e444a6a1ee94224',1,'CCapacity']]],
+  ['getweaponspeed',['getWeaponSpeed',['../class_c_unit.html#a70872fa3c40fed3fcd8375464623f039',1,'CUnit']]],
+  ['getx',['getX',['../class_c_point.html#ad5b78a15c934f550528e116e312a2494',1,'CPoint']]],
+  ['gety',['getY',['../class_c_point.html#a4e7c3964ebfe7f9e43045627a00b6430',1,'CPoint']]]
+];

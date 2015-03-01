@@ -1,0 +1,73 @@
+.TH "CActionShoot" 3 "Sun Mar 1 2015" "Version Round1" "BattleIA" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+CActionShoot \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ActionShoot\&.h>\fP
+.PP
+Inherits \fBCAction\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCActionShoot\fP (\fBCUnit\fP *unit1, \fBCUnit\fP *unit2)"
+.br
+.ti -1c
+.RI "\fB~CActionShoot\fP ()"
+.br
+.ti -1c
+.RI "void \fBexecute\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBCUnit\fP * \fBm_target\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 5 of file ActionShoot\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "CActionShoot::CActionShoot (\fBCUnit\fP * unit1, \fBCUnit\fP * unit2)"
+Default constructor of \fBCActionShoot\fP 
+.PP
+\fBParameters:\fP
+.RS 4
+\fICUnit*\fP unit1 - the unit 
+.br
+\fICunit*\fP unit2 - the target 
+.RE
+.PP
+
+.PP
+Definition at line 8 of file ActionShoot\&.cpp\&.
+.SS "CActionShoot::~CActionShoot ()"
+
+.PP
+Definition at line 12 of file ActionShoot\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void CActionShoot::execute ()\fC [virtual]\fP"
+Execute actionShoot 
+.PP
+Implements \fBCAction\fP\&.
+.PP
+Definition at line 18 of file ActionShoot\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBCUnit\fP* CActionShoot::m_target\fC [private]\fP"
+
+.PP
+Definition at line 13 of file ActionShoot\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for BattleIA from the source code\&.

@@ -1,5 +1,7 @@
 #ifndef _CACTION_H
 #define _CACTION_H
+// Action.h : Classe mere
+//
 #include "stdafx.h"
 
 class CAction

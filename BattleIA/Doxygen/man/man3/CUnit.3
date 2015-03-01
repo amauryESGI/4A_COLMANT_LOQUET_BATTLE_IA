@@ -1,0 +1,405 @@
+.TH "CUnit" 3 "Sun Mar 1 2015" "Version Round1" "BattleIA" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+CUnit \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Unit\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCUnit\fP (const \fBuint\fP level)"
+.br
+.ti -1c
+.RI "\fBCUnit\fP (const \fBIACODE\fP codeIA, const \fBuint\fP speed, const \fBuint\fP health, const \fBuint\fP armor, const \fBuint\fP regeneration, const \fBuint\fP damage, const \fBuint\fP scope, const \fBuint\fP weaponSpeed)"
+.br
+.ti -1c
+.RI "\fB~CUnit\fP ()"
+.br
+.ti -1c
+.RI "\fBuint\fP \fBgetId\fP () const "
+.br
+.ti -1c
+.RI "\fBuint\fP \fBgetLevel\fP () const "
+.br
+.ti -1c
+.RI "\fBCPoint\fP \fBgetPos\fP () const "
+.br
+.ti -1c
+.RI "\fBIACODE\fP \fBgetIACode\fP () const "
+.br
+.ti -1c
+.RI "void \fBrefresh\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetPos\fP (\fBCPoint\fP *pos)"
+.br
+.ti -1c
+.RI "bool \fBshoot\fP () const "
+.br
+.ti -1c
+.RI "void \fBtakeDamage\fP (const float value)"
+.br
+.ti -1c
+.RI "bool \fBisAlive\fP () const "
+.br
+.ti -1c
+.RI "\fBstring\fP \fBgetArmyName\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetArmyName\fP (const \fBstring\fP &name)"
+.br
+.ti -1c
+.RI "\fBuint\fP \fBgetID\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetID\fP (const \fBuint\fP id)"
+.br
+.ti -1c
+.RI "\fBCArmor\fP & \fBgetArmor\fP () const "
+.br
+.ti -1c
+.RI "\fBCDamage\fP & \fBgetDamage\fP () const "
+.br
+.ti -1c
+.RI "\fBCHealthPoint\fP & \fBgetHealthPoint\fP () const "
+.br
+.ti -1c
+.RI "\fBCRegeneration\fP & \fBgetRegeneration\fP () const "
+.br
+.ti -1c
+.RI "\fBCScope\fP & \fBgetScope\fP () const "
+.br
+.ti -1c
+.RI "\fBCSpeed\fP & \fBgetSpeed\fP () const "
+.br
+.ti -1c
+.RI "\fBCWeaponSpeed\fP & \fBgetWeaponSpeed\fP () const "
+.br
+.ti -1c
+.RI "\fBCCapacity\fP & \fBoperator[]\fP (const unsigned int id) const "
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBuint\fP \fBm_id\fP"
+.br
+.ti -1c
+.RI "\fBuint\fP \fBm_level\fP"
+.br
+.ti -1c
+.RI "\fBCPoint\fP * \fBm_pos\fP"
+.br
+.ti -1c
+.RI "\fBCCapacity\fP * \fBm_capacities\fP [7]"
+.br
+.ti -1c
+.RI "\fBIACODE\fP \fBm_codeIA\fP"
+.br
+.ti -1c
+.RI "\fBstring\fP \fBm_armyName\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 23 of file Unit\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "CUnit::CUnit (const \fBuint\fP level)"
+constructor of \fBCUnit\fP 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIconst\fP unsigned int level - the global level of the unit 
+.RE
+.PP
+
+.PP
+Definition at line 6 of file Unit\&.cpp\&.
+.SS "CUnit::CUnit (const \fBIACODE\fP codeIA, const \fBuint\fP speed, const \fBuint\fP health, const \fBuint\fP armor, const \fBuint\fP regeneration, const \fBuint\fP damage, const \fBuint\fP scope, const \fBuint\fP weaponSpeed)"
+constructor of \fBCUnit\fP 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIconst\fP IACODE codeIA - the ia code of the unit 
+.br
+\fIconst\fP uint speed - the speed level of the unit 
+.br
+\fIconst\fP uint health - the health level of the unit 
+.br
+\fIconst\fP uint armor - the armor level of the unit 
+.br
+\fIconst\fP uint regeneration - the regeneration level of the unit 
+.br
+\fIconst\fP uint damage - the global damage of the unit 
+.br
+\fIconst\fP uint scope - the global scope of the unit 
+.br
+\fIconst\fP uint weaponSpeed - the weaponSpeed level of the unit 
+.RE
+.PP
+
+.PP
+Definition at line 46 of file Unit\&.cpp\&.
+.SS "CUnit::~CUnit ()"
+
+.PP
+Definition at line 83 of file Unit\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBCArmor\fP & CUnit::getArmor () const"
+Get the armor of the unit 
+.PP
+\fBReturns:\fP
+.RS 4
+\fBCArmor\fP& - reference of the armor 
+.RE
+.PP
+
+.PP
+Definition at line 178 of file Unit\&.cpp\&.
+.SS "\fBstring\fP CUnit::getArmyName () const"
+Get the name of the unit 
+.PP
+\fBReturns:\fP
+.RS 4
+string - the name 
+.RE
+.PP
+
+.PP
+Definition at line 242 of file Unit\&.cpp\&.
+.SS "\fBCDamage\fP & CUnit::getDamage () const"
+Get the damage of the unit 
+.PP
+\fBReturns:\fP
+.RS 4
+\fBCDamage\fP& - reference of the damage 
+.RE
+.PP
+
+.PP
+Definition at line 186 of file Unit\&.cpp\&.
+.SS "\fBCHealthPoint\fP & CUnit::getHealthPoint () const"
+Get the health point of the unit 
+.PP
+\fBReturns:\fP
+.RS 4
+\fBCHealthPoint\fP& - reference of the health point 
+.RE
+.PP
+
+.PP
+Definition at line 194 of file Unit\&.cpp\&.
+.SS "\fBIACODE\fP CUnit::getIACode () const"
+Get the ia code of the unit 
+.PP
+\fBReturns:\fP
+.RS 4
+IACODE - the ia code 
+.RE
+.PP
+
+.PP
+Definition at line 234 of file Unit\&.cpp\&.
+.SS "\fBuint\fP CUnit::getId () const"
+Get the id of the unit 
+.PP
+\fBReturns:\fP
+.RS 4
+int - the id 
+.RE
+.PP
+
+.PP
+Definition at line 89 of file Unit\&.cpp\&.
+.SS "\fBuint\fP CUnit::getID () const"
+
+.SS "\fBuint\fP CUnit::getLevel () const"
+Get the level of the unit 
+.PP
+\fBReturns:\fP
+.RS 4
+int - the level 
+.RE
+.PP
+
+.PP
+Definition at line 97 of file Unit\&.cpp\&.
+.SS "\fBCPoint\fP CUnit::getPos () const"
+Get the position of the unit 
+.PP
+\fBReturns:\fP
+.RS 4
+\fBCPoint\fP - the position 
+.RE
+.PP
+
+.PP
+Definition at line 105 of file Unit\&.cpp\&.
+.SS "\fBCRegeneration\fP & CUnit::getRegeneration () const"
+Get the regeneration of the unit 
+.PP
+\fBReturns:\fP
+.RS 4
+\fBCRegeneration\fP& - reference of the regeneration 
+.RE
+.PP
+
+.PP
+Definition at line 202 of file Unit\&.cpp\&.
+.SS "\fBCScope\fP & CUnit::getScope () const"
+Get the scopte of the unit 
+.PP
+\fBReturns:\fP
+.RS 4
+\fBCScope\fP& - reference of the scope 
+.RE
+.PP
+
+.PP
+Definition at line 210 of file Unit\&.cpp\&.
+.SS "\fBCSpeed\fP & CUnit::getSpeed () const"
+Get the speed of the unit 
+.PP
+\fBReturns:\fP
+.RS 4
+CSeed& - reference of the speed 
+.RE
+.PP
+
+.PP
+Definition at line 218 of file Unit\&.cpp\&.
+.SS "\fBCWeaponSpeed\fP & CUnit::getWeaponSpeed () const"
+Get the weapon speed of the unit 
+.PP
+\fBReturns:\fP
+.RS 4
+\fBCWeaponSpeed\fP& - reference of the weapond speed 
+.RE
+.PP
+
+.PP
+Definition at line 226 of file Unit\&.cpp\&.
+.SS "bool CUnit::isAlive () const"
+check if the unit is alive 
+.PP
+\fBReturns:\fP
+.RS 4
+bool true / false - true if the unit is alive, false in the other case 
+.RE
+.PP
+
+.PP
+Definition at line 159 of file Unit\&.cpp\&.
+.SS "\fBCCapacity\fP & CUnit::operator[] (const unsigned int id) const"
+operator[] - Get the capacity from an ID 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIconst\fP unsigned int id - the id of the capacity 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBCCapacity\fP& - the capacity 
+.RE
+.PP
+
+.PP
+Definition at line 168 of file Unit\&.cpp\&.
+.SS "void CUnit::refresh () const"
+Refresh the unit, regenerate it and decrement the cooldown 
+.PP
+Definition at line 112 of file Unit\&.cpp\&.
+.SS "void CUnit::setArmyName (const \fBstring\fP & name)"
+Set the name of the unit 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIconst\fP string& - the name 
+.RE
+.PP
+
+.PP
+Definition at line 250 of file Unit\&.cpp\&.
+.SS "void CUnit::setID (const \fBuint\fP id)"
+Set the id of the unit 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIconst\fP unsigned int - the id 
+.RE
+.PP
+
+.PP
+Definition at line 258 of file Unit\&.cpp\&.
+.SS "void CUnit::setPos (\fBCPoint\fP * pos)"
+Set the position of the unit 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIconst\fP \fBCPoint\fP& pos - the position 
+.RE
+.PP
+
+.PP
+Definition at line 121 of file Unit\&.cpp\&.
+.SS "bool CUnit::shoot () const"
+Check if the unit can shoot and shoot in this case 
+.PP
+\fBReturns:\fP
+.RS 4
+bool true / false - true if the unit has shoot, false in the other case 
+.RE
+.PP
+
+.PP
+Definition at line 129 of file Unit\&.cpp\&.
+.SS "void CUnit::takeDamage (const float value)"
+Take damages, the damages are substract with the armor's value of the unit 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfloat\fP value - the value of the damages 
+.RE
+.PP
+
+.PP
+Definition at line 142 of file Unit\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBstring\fP CUnit::m_armyName\fC [private]\fP"
+
+.PP
+Definition at line 60 of file Unit\&.h\&.
+.SS "\fBCCapacity\fP* CUnit::m_capacities[7]\fC [private]\fP"
+
+.PP
+Definition at line 58 of file Unit\&.h\&.
+.SS "\fBIACODE\fP CUnit::m_codeIA\fC [private]\fP"
+
+.PP
+Definition at line 59 of file Unit\&.h\&.
+.SS "\fBuint\fP CUnit::m_id\fC [private]\fP"
+
+.PP
+Definition at line 55 of file Unit\&.h\&.
+.SS "\fBuint\fP CUnit::m_level\fC [private]\fP"
+
+.PP
+Definition at line 56 of file Unit\&.h\&.
+.SS "\fBCPoint\fP* CUnit::m_pos\fC [private]\fP"
+
+.PP
+Definition at line 57 of file Unit\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for BattleIA from the source code\&.

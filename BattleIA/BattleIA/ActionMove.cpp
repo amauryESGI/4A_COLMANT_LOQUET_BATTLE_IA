@@ -1,9 +1,12 @@
 #include "stdafx.h"
 
-CActionMove::CActionMove(CUnit *unit, CPoint pos) : CAction(unit)
-{
-	m_pos = new CPoint(pos.getX(), pos.getY());
-}
+/**
+ * Default constructor of CAction
+ * @param CUnit* unit - the unit
+ * @param CPoint pois - the position to move
+ */
+CActionMove::CActionMove(CUnit *unit, CPoint pos): CAction(unit), m_pos(new CPoint(pos.getX(), pos.getY()))
+{}
 
 
 CActionMove::~CActionMove()

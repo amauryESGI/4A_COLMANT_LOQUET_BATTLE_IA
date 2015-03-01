@@ -1,0 +1,110 @@
+.TH "CWeaponSpeed" 3 "Sun Mar 1 2015" "Version Round1" "BattleIA" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+CWeaponSpeed \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <WeaponSpeed\&.h>\fP
+.PP
+Inherits \fBCCapacity\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCWeaponSpeed\fP ()"
+.br
+.ti -1c
+.RI "\fB~CWeaponSpeed\fP ()"
+.br
+.ti -1c
+.RI "\fBuint\fP \fBgetCoolDown\fP () const "
+.br
+.ti -1c
+.RI "void \fBturn\fP ()"
+.br
+.ti -1c
+.RI "void \fBshoot\fP ()"
+.br
+.ti -1c
+.RI "bool \fBcanShoot\fP () const "
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBcomputeValue\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBuint\fP \fBm_coolDown\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 5 of file WeaponSpeed\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "CWeaponSpeed::CWeaponSpeed ()"
+Default constructor of \fBCWeaponSpeed\fP 
+.PP
+Definition at line 6 of file WeaponSpeed\&.cpp\&.
+.SS "CWeaponSpeed::~CWeaponSpeed ()"
+
+.PP
+Definition at line 10 of file WeaponSpeed\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool CWeaponSpeed::canShoot () const"
+Check if unit can shoot 
+.PP
+\fBReturns:\fP
+.RS 4
+bool true if cooldown is 0, false in the other case 
+.RE
+.PP
+
+.PP
+Definition at line 46 of file WeaponSpeed\&.cpp\&.
+.SS "void CWeaponSpeed::computeValue ()\fC [private]\fP, \fC [virtual]\fP"
+Set the value for WeaponSpeed when Upgrade() is called 
+.PP
+Implements \fBCCapacity\fP\&.
+.PP
+Definition at line 15 of file WeaponSpeed\&.cpp\&.
+.SS "\fBuint\fP CWeaponSpeed::getCoolDown () const"
+Get the cool down of the weapon 
+.PP
+\fBReturns:\fP
+.RS 4
+unsigned int - the cooldown 
+.RE
+.PP
+
+.PP
+Definition at line 23 of file WeaponSpeed\&.cpp\&.
+.SS "void CWeaponSpeed::shoot ()"
+Shoot someone, set cooldown to the default value 
+.PP
+Definition at line 38 of file WeaponSpeed\&.cpp\&.
+.SS "void CWeaponSpeed::turn ()"
+called at the end of a turn to decrement the cooldown 
+.PP
+Definition at line 30 of file WeaponSpeed\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBuint\fP CWeaponSpeed::m_coolDown\fC [private]\fP"
+
+.PP
+Definition at line 18 of file WeaponSpeed\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for BattleIA from the source code\&.

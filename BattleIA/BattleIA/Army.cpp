@@ -29,7 +29,21 @@ CArmy::CArmy(const vector<CUnit*> &units, const string name): m_units(units), m_
 		m_units[i]->setID(i);
 	}
 }
-
+/**
+ * copy constructor of CArmy
+ * @param const army& units - the army
+ */
+CArmy::CArmy(const CArmy &army): m_name(army.m_name)
+{
+	 for (int i = 0; i < army.getUnitsList().size(); ++i)
+	 {
+		 CUnit *unit = new CUnit(army.getUnit(i).getIACode(), army.getUnit(i).getSpeed().getValue(), army.getUnit(i).getHealthPoint().getValue(), army.getUnit(i).getScope().getValue(), army.getUnit(i).getArmor().getValue(), army.getUnit(i).getRegeneration().getValue(), army.getUnit(i).getDamage().getValue(), army.getUnit(i).getWeaponSpeed().getValue());
+		 unit->setArmyName(m_name);
+		 unit->setID(army.getUnit(i).getId());
+		 unit->setPos(new CPoint(army.getUnit(i).getPos()));
+		 m_units.push_back(unit);
+	 }
+}
 CArmy::~CArmy()
 {}
 /**

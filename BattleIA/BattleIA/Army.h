@@ -7,6 +7,7 @@ class CArmy
 public:
 	CArmy(const uint nbUnit, const uint level, string name);
 	CArmy(const vector<CUnit*> &units, string name);
+	CArmy(const CArmy& army);
 	~CArmy();
 
 	vector<CUnit*>		getUnitsList() const;

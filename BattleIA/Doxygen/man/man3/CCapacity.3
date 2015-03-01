@@ -1,0 +1,135 @@
+.TH "CCapacity" 3 "Sun Mar 1 2015" "Version Round1" "BattleIA" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+CCapacity \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Capacity\&.h>\fP
+.PP
+Inherited by \fBCArmor\fP, \fBCDamage\fP, \fBCHealthPoint\fP, \fBCRegeneration\fP, \fBCScope\fP, \fBCSpeed\fP, and \fBCWeaponSpeed\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCCapacity\fP ()"
+.br
+.ti -1c
+.RI "\fB~CCapacity\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBupgrade\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBdowngrade\fP ()"
+.br
+.ti -1c
+.RI "\fBuint\fP \fBgetLevel\fP () const "
+.br
+.ti -1c
+.RI "float \fBgetValue\fP () const "
+.br
+.ti -1c
+.RI "virtual void \fBsetLevel\fP (\fBuint\fP level)"
+.br
+.ti -1c
+.RI "virtual void \fBsetValue\fP (float value)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBcomputeValue\fP ()=0"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBuint\fP \fBm_level\fP"
+.br
+.ti -1c
+.RI "float \fBm_value\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 16 of file Capacity\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "CCapacity::CCapacity ()"
+Default constructor of \fBCCapacity\fP 
+.PP
+Definition at line 5 of file Capacity\&.cpp\&.
+.SS "CCapacity::~CCapacity ()"
+
+.PP
+Definition at line 8 of file Capacity\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual void CCapacity::computeValue ()\fC [protected]\fP, \fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBCWeaponSpeed\fP, \fBCHealthPoint\fP, \fBCDamage\fP, \fBCSpeed\fP, \fBCArmor\fP, \fBCRegeneration\fP, and \fBCScope\fP\&.
+.SS "void CCapacity::downgrade ()\fC [virtual]\fP"
+Downgrade a capacity 
+.PP
+Definition at line 22 of file Capacity\&.cpp\&.
+.SS "\fBuint\fP CCapacity::getLevel () const"
+Get the level of a capacity 
+.PP
+Definition at line 31 of file Capacity\&.cpp\&.
+.SS "float CCapacity::getValue () const"
+Get the value of the capacity 
+.PP
+\fBReturns:\fP
+.RS 4
+float value - the value 
+.RE
+.PP
+
+.PP
+Definition at line 40 of file Capacity\&.cpp\&.
+.SS "void CCapacity::setLevel (\fBuint\fP level)\fC [virtual]\fP"
+Set the level of a capacity 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIunsigned\fP int level - the level 
+.RE
+.PP
+
+.PP
+Definition at line 48 of file Capacity\&.cpp\&.
+.SS "void CCapacity::setValue (float value)\fC [virtual]\fP"
+Set the value of a capacity 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfloat\fP value - the value 
+.RE
+.PP
+
+.PP
+Definition at line 56 of file Capacity\&.cpp\&.
+.SS "void CCapacity::upgrade ()\fC [virtual]\fP"
+Upgrade a capacity 
+.PP
+Definition at line 14 of file Capacity\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBuint\fP CCapacity::m_level\fC [protected]\fP"
+
+.PP
+Definition at line 30 of file Capacity\&.h\&.
+.SS "float CCapacity::m_value\fC [protected]\fP"
+
+.PP
+Definition at line 31 of file Capacity\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for BattleIA from the source code\&.

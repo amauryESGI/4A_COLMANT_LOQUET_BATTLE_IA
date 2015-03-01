@@ -1,0 +1,96 @@
+.TH "CHealthPoint" 3 "Sun Mar 1 2015" "Version Round1" "BattleIA" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+CHealthPoint \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <HealthPoint\&.h>\fP
+.PP
+Inherits \fBCCapacity\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCHealthPoint\fP ()"
+.br
+.ti -1c
+.RI "\fB~CHealthPoint\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetMaxLife\fP (float health)"
+.br
+.ti -1c
+.RI "\fBuint\fP \fBgetMaxLife\fP () const "
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBcomputeValue\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBuint\fP \fBm_maxLife\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 5 of file HealthPoint\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "CHealthPoint::CHealthPoint ()"
+Default constructor of \fBCHealthPoint\fP 
+.PP
+Definition at line 5 of file HealthPoint\&.cpp\&.
+.SS "CHealthPoint::~CHealthPoint ()"
+
+.PP
+Definition at line 11 of file HealthPoint\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void CHealthPoint::computeValue ()\fC [private]\fP, \fC [virtual]\fP"
+Set the maxValue for HealthPoint when Upgrade() is called 
+.PP
+Implements \fBCCapacity\fP\&.
+.PP
+Definition at line 17 of file HealthPoint\&.cpp\&.
+.SS "\fBuint\fP CHealthPoint::getMaxLife () const"
+get the max life of the capacity HealthPoint 
+.PP
+\fBReturns:\fP
+.RS 4
+unsigned int - the max life 
+.RE
+.PP
+
+.PP
+Definition at line 39 of file HealthPoint\&.cpp\&.
+.SS "void CHealthPoint::setMaxLife (float health)"
+Set the max life of the capacity healthpoint 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIint\fP health - the max life 
+.RE
+.PP
+
+.PP
+Definition at line 25 of file HealthPoint\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBuint\fP CHealthPoint::m_maxLife\fC [private]\fP"
+
+.PP
+Definition at line 16 of file HealthPoint\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for BattleIA from the source code\&.

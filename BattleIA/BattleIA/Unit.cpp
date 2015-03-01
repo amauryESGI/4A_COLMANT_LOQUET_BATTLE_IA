@@ -4,25 +4,25 @@
  * @param const unsigned int level - the global level of the unit
  */
 CUnit::CUnit(const uint level): m_id(0) //default value 0
-								, m_level(level)
-								, m_pos(new CPoint(rand() % 50, rand() % 50)) //random position between 0 and 500
-								, m_codeIA(IACODE(rand() % 16)) //random IACODE between 0 and 16
-								, m_armyName("") //default name ""
+, m_level(level)
+, m_pos(new CPoint(rand() % 50, rand() % 50)) //random position between 0 and 500
+, m_codeIA(IACODE(rand() % 16)) //random IACODE between 0 and 16
+, m_armyName("") //default name ""
 {
-	m_capacities[Speed]			= new CSpeed();
-	m_capacities[HealthPoint]	= new CHealthPoint();
-	m_capacities[Armor]			= new CArmor();
-	m_capacities[Regeneration]	= new CRegeneration();
-	m_capacities[Damage]		= new CDamage();
-	m_capacities[Scope]			= new CScope();
-	m_capacities[WeaponSpeed]	= new CWeaponSpeed();
-	m_capacities[Speed]			->upgrade();
-	m_capacities[HealthPoint]	->upgrade();
-	m_capacities[Armor]			->upgrade();
-	m_capacities[Regeneration]	->upgrade();
-	m_capacities[Damage]		->upgrade();
-	m_capacities[Scope]			->upgrade();
-	m_capacities[WeaponSpeed]	->upgrade();
+	m_capacities[Speed] = new CSpeed();
+	m_capacities[HealthPoint] = new CHealthPoint();
+	m_capacities[Armor] = new CArmor();
+	m_capacities[Regeneration] = new CRegeneration();
+	m_capacities[Damage] = new CDamage();
+	m_capacities[Scope] = new CScope();
+	m_capacities[WeaponSpeed] = new CWeaponSpeed();
+	m_capacities[Speed]->upgrade();
+	m_capacities[HealthPoint]->upgrade();
+	m_capacities[Armor]->upgrade();
+	m_capacities[Regeneration]->upgrade();
+	m_capacities[Damage]->upgrade();
+	m_capacities[Scope]->upgrade();
+	m_capacities[WeaponSpeed]->upgrade();
 
 
 	for (int i = 0; i < m_level; i++)
@@ -31,7 +31,6 @@ CUnit::CUnit(const uint level): m_id(0) //default value 0
 	//m_codeIA = IACODE(rand() % 16);
 
 	//m_pos = CPoint(rand() % 50, rand() % 50);
-	cout << endl << m_capacities[Speed]->getLevel();
 }
 /**
  * constructor of CUnit
@@ -45,28 +44,40 @@ CUnit::CUnit(const uint level): m_id(0) //default value 0
  * @param const uint weaponSpeed - the weaponSpeed level of the unit
  */
 CUnit::CUnit(const IACODE codeIA, const uint speed, const uint health, const uint armor, const uint regeneration, const uint damage, const uint scope, const uint weaponSpeed)
-	: m_id(0) 
-	, m_level(speed + health + armor + regeneration + damage + scope + weaponSpeed)
+	: m_id(0)
+	, m_level(( speed + health + armor + regeneration + damage + scope + weaponSpeed ) / 7)
 	, m_pos(new CPoint(rand() % 50, rand() % 50))
 	, m_codeIA(codeIA)
 	, m_armyName("")
 {
 	m_capacities[Speed] = new CSpeed();
-	m_capacities[Speed]->setLevel(speed);
 	m_capacities[HealthPoint] = new CHealthPoint();
-	m_capacities[HealthPoint]->setLevel(health);
 	m_capacities[Armor] = new CArmor();
-	m_capacities[Armor]->setLevel(health);
 	m_capacities[Regeneration] = new CRegeneration();
-	m_capacities[Regeneration]->setLevel(health);
 	m_capacities[Damage] = new CDamage();
-	m_capacities[Damage]->setLevel(health);
 	m_capacities[Scope] = new CScope();
-	m_capacities[Scope]->setLevel(health);
 	m_capacities[WeaponSpeed] = new CWeaponSpeed();
-	m_capacities[WeaponSpeed]->setLevel(health);
+	m_capacities[HealthPoint]->upgrade();
+	m_capacities[Armor]->upgrade();
+	m_capacities[Regeneration]->upgrade();
+	m_capacities[Damage]->upgrade();
+	m_capacities[Scope]->upgrade();
+	m_capacities[WeaponSpeed]->upgrade();
 
-	//m_pos = CPoint(rand() % 50, rand() % 50);
+	for (int i = 0; i <= speed; ++i)
+		m_capacities[Speed]->upgrade();
+	for (int i = 0; i <= health; ++i)
+		m_capacities[HealthPoint]->upgrade();
+	for (int i = 0; i <= armor; ++i)
+		m_capacities[Armor]->upgrade();
+	for (int i = 0; i <= regeneration; ++i)
+		m_capacities[Regeneration]->upgrade();
+	for (int i = 0; i <= armor; ++i)
+		m_capacities[Damage]->upgrade();
+	for (int i = 0; i <= damage; ++i)
+		m_capacities[Scope]->upgrade();
+	for (int i = 0; i <= weaponSpeed; ++i)
+		m_capacities[WeaponSpeed]->upgrade();
 }
 
 CUnit::~CUnit()
@@ -132,7 +143,7 @@ void CUnit::takeDamage(float value)
 {
 	if (value - m_capacities[Armor]->getValue() < 0)
 		value = getHealthPoint().getValue() - 1;
-		//return;
+	//return;
 	else
 		value -= m_capacities[Armor]->getValue();
 	if (getHealthPoint().getValue() - value < 0)

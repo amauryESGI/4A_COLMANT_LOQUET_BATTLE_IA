@@ -1,0 +1,61 @@
+.TH "CAction" 3 "Sun Mar 1 2015" "Version Round1" "BattleIA" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+CAction \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Action\&.h>\fP
+.PP
+Inherited by \fBCActionMove\fP, and \fBCActionShoot\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCAction\fP (\fBCUnit\fP *unit)"
+.br
+.ti -1c
+.RI "\fB~CAction\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBexecute\fP ()=0"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBCUnit\fP * \fBm_unit\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 7 of file Action\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "CAction::CAction (\fBCUnit\fP * unit)"
+Default constructor of \fBCArmor\fP 
+.PP
+Definition at line 6 of file Action\&.cpp\&.
+.SS "CAction::~CAction ()"
+
+.PP
+Definition at line 10 of file Action\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual void CAction::execute ()\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBCActionMove\fP, and \fBCActionShoot\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBCUnit\fP* CAction::m_unit\fC [protected]\fP"
+
+.PP
+Definition at line 15 of file Action\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for BattleIA from the source code\&.

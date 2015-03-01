@@ -1,0 +1,251 @@
+.TH "CArmy" 3 "Sun Mar 1 2015" "Version Round1" "BattleIA" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+CArmy \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Army\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCArmy\fP (const \fBuint\fP nbUnit, const \fBuint\fP level, \fBstring\fP name)"
+.br
+.ti -1c
+.RI "\fBCArmy\fP (const \fBvector\fP< \fBCUnit\fP * > &units, \fBstring\fP name)"
+.br
+.ti -1c
+.RI "\fBCArmy\fP (const \fBCArmy\fP &army)"
+.br
+.ti -1c
+.RI "\fB~CArmy\fP ()"
+.br
+.ti -1c
+.RI "\fBvector\fP< \fBCUnit\fP * > \fBgetUnitsList\fP () const "
+.br
+.ti -1c
+.RI "\fBCUnit\fP & \fBgetUnit\fP (\fBuint\fP id) const "
+.br
+.ti -1c
+.RI "\fBuint\fP \fBsize\fP ()"
+.br
+.ti -1c
+.RI "\fBCUnit\fP & \fBgetNearestUnit\fP (const \fBCPoint\fP &p) const "
+.br
+.ti -1c
+.RI "\fBCUnit\fP & \fBgetFurtherUnit\fP (const \fBCPoint\fP &p) const "
+.br
+.ti -1c
+.RI "\fBCUnit\fP & \fBgetLowestUnit\fP (\fBuint\fP capa_index) const "
+.br
+.ti -1c
+.RI "\fBCUnit\fP & \fBgetHighestUnit\fP (\fBuint\fP capa_index) const "
+.br
+.ti -1c
+.RI "void \fBpurge\fP ()"
+.br
+.ti -1c
+.RI "\fBstring\fP \fBgetName\fP () const "
+.br
+.ti -1c
+.RI "void \fBrefreshAllUnit\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBvector\fP< \fBCUnit\fP * > \fBm_units\fP"
+.br
+.ti -1c
+.RI "\fBstring\fP \fBm_name\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 5 of file Army\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "CArmy::CArmy (const \fBuint\fP nbUnit, const \fBuint\fP level, \fBstring\fP name)"
+constructor of \fBCArmy\fP 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIconst\fP unsigned int nbUnit - the number of unit of the army 
+.br
+\fIconst\fP unsigned int level - the global level of all unit of the army 
+.br
+\fIconst\fP string name - the name of the army 
+.RE
+.PP
+
+.PP
+Definition at line 9 of file Army\&.cpp\&.
+.SS "CArmy::CArmy (const \fBvector\fP< \fBCUnit\fP * > & units, \fBstring\fP name)"
+constructor of \fBCArmy\fP 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIconst\fP vector<CUnit*>& units - the list of units of the army 
+.br
+\fIconst\fP string name - the name of the army 
+.RE
+.PP
+
+.PP
+Definition at line 24 of file Army\&.cpp\&.
+.SS "CArmy::CArmy (const \fBCArmy\fP & army)"
+copy constructor of \fBCArmy\fP 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIconst\fP army& units - the army 
+.RE
+.PP
+
+.PP
+Definition at line 36 of file Army\&.cpp\&.
+.SS "CArmy::~CArmy ()"
+
+.PP
+Definition at line 47 of file Army\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBCUnit\fP & CArmy::getFurtherUnit (const \fBCPoint\fP & p) const"
+Get further unit from a point 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIconst\fP \fBCPoint\fP& - the point 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBCUnit\fP& - reference of the further unit 
+.RE
+.PP
+
+.PP
+Definition at line 96 of file Army\&.cpp\&.
+.SS "\fBCUnit\fP & CArmy::getHighestUnit (\fBuint\fP capa_index) const"
+Get the higher unit of the passed capacity id 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIint\fP capa_index - the index of the capacity 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBCUnit\fP& - the unit 
+.RE
+.PP
+
+.PP
+Definition at line 124 of file Army\&.cpp\&.
+.SS "\fBCUnit\fP & CArmy::getLowestUnit (\fBuint\fP capa_index) const"
+Get the lowest unit of the passed capacity id 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIint\fP capa_index - the index of the capacity 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBCUnit\fP& - the unit 
+.RE
+.PP
+
+.PP
+Definition at line 110 of file Army\&.cpp\&.
+.SS "\fBstring\fP CArmy::getName () const"
+Get the name of the Army 
+.PP
+\fBReturns:\fP
+.RS 4
+std::string - the name 
+.RE
+.PP
+
+.PP
+Definition at line 137 of file Army\&.cpp\&.
+.SS "\fBCUnit\fP & CArmy::getNearestUnit (const \fBCPoint\fP & p) const"
+Get the nearest unit from a point 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIconst\fP \fBCPoint\fP& - the point 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBCUnit\fP& - reference of the nearest unit 
+.RE
+.PP
+
+.PP
+Definition at line 82 of file Army\&.cpp\&.
+.SS "\fBCUnit\fP & CArmy::getUnit (\fBuint\fP id) const"
+Get unit from an ID 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIunsigned\fP int id - the id of the unit to return 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBCUnit\fP - the unit for this id 
+.RE
+.PP
+
+.PP
+Definition at line 62 of file Army\&.cpp\&.
+.SS "\fBvector\fP< \fBCUnit\fP * > CArmy::getUnitsList () const"
+get the unit list 
+.PP
+\fBReturns:\fP
+.RS 4
+vector<CUnit*> - the list unit 
+.RE
+.PP
+
+.PP
+Definition at line 53 of file Army\&.cpp\&.
+.SS "void CArmy::purge ()"
+Purge the army to delete all dead units 
+.PP
+Definition at line 144 of file Army\&.cpp\&.
+.SS "void CArmy::refreshAllUnit ()"
+refresh all the unit of the army 
+.PP
+Definition at line 156 of file Army\&.cpp\&.
+.SS "\fBuint\fP CArmy::size ()"
+Get the current number of units in the army 
+.PP
+\fBReturns:\fP
+.RS 4
+unsigned int - the number of unit 
+.RE
+.PP
+
+.PP
+Definition at line 73 of file Army\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBstring\fP CArmy::m_name\fC [private]\fP"
+
+.PP
+Definition at line 27 of file Army\&.h\&.
+.SS "\fBvector\fP<\fBCUnit\fP*> CArmy::m_units\fC [private]\fP"
+
+.PP
+Definition at line 26 of file Army\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for BattleIA from the source code\&.

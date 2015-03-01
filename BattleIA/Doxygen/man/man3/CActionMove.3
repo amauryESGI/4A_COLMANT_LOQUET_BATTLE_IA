@@ -1,0 +1,73 @@
+.TH "CActionMove" 3 "Sun Mar 1 2015" "Version Round1" "BattleIA" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+CActionMove \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ActionMove\&.h>\fP
+.PP
+Inherits \fBCAction\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCActionMove\fP (\fBCUnit\fP *unit, \fBCPoint\fP pos)"
+.br
+.ti -1c
+.RI "\fB~CActionMove\fP ()"
+.br
+.ti -1c
+.RI "void \fBexecute\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBCPoint\fP * \fBm_pos\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 5 of file ActionMove\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "CActionMove::CActionMove (\fBCUnit\fP * unit, \fBCPoint\fP pos)"
+Default constructor of \fBCAction\fP 
+.PP
+\fBParameters:\fP
+.RS 4
+\fICUnit*\fP unit - the unit 
+.br
+\fI\fBCPoint\fP\fP pois - the position to move 
+.RE
+.PP
+
+.PP
+Definition at line 8 of file ActionMove\&.cpp\&.
+.SS "CActionMove::~CActionMove ()"
+
+.PP
+Definition at line 12 of file ActionMove\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void CActionMove::execute ()\fC [virtual]\fP"
+Execute actionMove 
+.PP
+Implements \fBCAction\fP\&.
+.PP
+Definition at line 18 of file ActionMove\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBCPoint\fP* CActionMove::m_pos\fC [private]\fP"
+
+.PP
+Definition at line 12 of file ActionMove\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for BattleIA from the source code\&.

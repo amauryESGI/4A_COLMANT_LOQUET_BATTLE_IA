@@ -1,0 +1,373 @@
+.TH "CPoint" 3 "Sun Mar 1 2015" "Version Round1" "BattleIA" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+CPoint \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Point\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCPoint\fP ()"
+.br
+.ti -1c
+.RI "\fBCPoint\fP (const \fBuint\fP x, const \fBuint\fP y)"
+.br
+.ti -1c
+.RI "\fBCPoint\fP (const \fBCPoint\fP &p)"
+.br
+.ti -1c
+.RI "\fB~CPoint\fP ()"
+.br
+.ti -1c
+.RI "unsigned int \fBgetX\fP () const "
+.br
+.ti -1c
+.RI "unsigned int \fBgetY\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetX\fP (const \fBuint\fP x)"
+.br
+.ti -1c
+.RI "void \fBsetY\fP (const \fBuint\fP y)"
+.br
+.ti -1c
+.RI "\fBCPoint\fP \fBoperator+\fP (const \fBCPoint\fP &p) const "
+.br
+.ti -1c
+.RI "\fBCPoint\fP \fBoperator-\fP (const \fBCPoint\fP &p) const "
+.br
+.ti -1c
+.RI "\fBCPoint\fP \fBoperator*\fP (const \fBuint\fP f) const "
+.br
+.ti -1c
+.RI "\fBCPoint\fP \fBoperator/\fP (const \fBuint\fP f) const "
+.br
+.ti -1c
+.RI "\fBCPoint\fP & \fBoperator+=\fP (const \fBCPoint\fP &p)"
+.br
+.ti -1c
+.RI "\fBCPoint\fP & \fBoperator-=\fP (const \fBCPoint\fP &p)"
+.br
+.ti -1c
+.RI "\fBCPoint\fP & \fBoperator*=\fP (const \fBuint\fP f)"
+.br
+.ti -1c
+.RI "\fBCPoint\fP & \fBoperator/=\fP (const \fBuint\fP f)"
+.br
+.ti -1c
+.RI "bool \fBoperator<\fP (const \fBCPoint\fP &p) const "
+.br
+.ti -1c
+.RI "\fBCPoint\fP \fBoperator-\fP () const "
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static float \fBdistance\fP (const \fBCPoint\fP &p1, const \fBCPoint\fP &p2)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBuint\fP \fBm_x\fP"
+.br
+.ti -1c
+.RI "\fBuint\fP \fBm_y\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "\fBostream\fP & \fBoperator<<\fP (\fBostream\fP &out, const \fBCPoint\fP &point)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 5 of file Point\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "CPoint::CPoint ()"
+Default constructor of \fBCPoint\fP 
+.PP
+Definition at line 5 of file Point\&.cpp\&.
+.SS "CPoint::CPoint (const \fBuint\fP x, const \fBuint\fP y)"
+constructor of \fBCPoint\fP 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIconst\fP uint x - the x coord of the point 
+.br
+\fIconst\fP uint y - the y coord of the point 
+.RE
+.PP
+
+.PP
+Definition at line 14 of file Point\&.cpp\&.
+.SS "CPoint::CPoint (const \fBCPoint\fP & p)"
+constructor of \fBCPoint\fP 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIconst\fP \fBCPoint\fP& p - the point 
+.RE
+.PP
+
+.PP
+Definition at line 21 of file Point\&.cpp\&.
+.SS "CPoint::~CPoint ()"
+
+.PP
+Definition at line 25 of file Point\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "float CPoint::distance (const \fBCPoint\fP & p1, const \fBCPoint\fP & p2)\fC [static]\fP"
+Get the distance between two point 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI\fBCPoint\fP\fP &p1 - the first point 
+.br
+\fI\fBCPoint\fP\fP &p2 - the other point 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+float - the distance between the two points 
+.RE
+.PP
+
+.PP
+Definition at line 152 of file Point\&.cpp\&.
+.SS "\fBuint\fP CPoint::getX () const"
+Get the x coord of the point 
+.PP
+\fBReturns:\fP
+.RS 4
+unsigned int - the x coord 
+.RE
+.PP
+
+.PP
+Definition at line 31 of file Point\&.cpp\&.
+.SS "\fBuint\fP CPoint::getY () const"
+Get the y coord of the point 
+.PP
+\fBReturns:\fP
+.RS 4
+unsigned int - the y coord 
+.RE
+.PP
+
+.PP
+Definition at line 38 of file Point\&.cpp\&.
+.SS "\fBCPoint\fP CPoint::operator* (const \fBuint\fP i) const"
+operator* to multiply two points 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIconst\fP unsigned int - the factor to multiply 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBCPoint\fP - the point mutiplied with the facor 
+.RE
+.PP
+
+.PP
+Definition at line 80 of file Point\&.cpp\&.
+.SS "\fBCPoint\fP & CPoint::operator*= (const \fBuint\fP i)"
+operator*= to multiply a point to the current point 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIconst\fP \fBCPoint\fP& p - the point to multiply 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBCPoint\fP - the point multiplied to the current point 
+.RE
+.PP
+
+.PP
+Definition at line 120 of file Point\&.cpp\&.
+.SS "\fBCPoint\fP CPoint::operator+ (const \fBCPoint\fP & p) const"
+operator+ to add two points 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIconst\fP \fBCPoint\fP& p - the point to add 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBCPoint\fP - the two points added 
+.RE
+.PP
+
+.PP
+Definition at line 62 of file Point\&.cpp\&.
+.SS "\fBCPoint\fP & CPoint::operator+= (const \fBCPoint\fP & p)"
+operator+= to add a point to the current point 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIconst\fP \fBCPoint\fP& p - the point to add 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBCPoint\fP - the point added to the current point 
+.RE
+.PP
+
+.PP
+Definition at line 98 of file Point\&.cpp\&.
+.SS "\fBCPoint\fP CPoint::operator- (const \fBCPoint\fP & p) const"
+operator- to substract two points 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIconst\fP \fBCPoint\fP& p - the point to substract 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBCPoint\fP - the two points substracted 
+.RE
+.PP
+
+.PP
+Definition at line 71 of file Point\&.cpp\&.
+.SS "\fBCPoint\fP CPoint::operator- () const"
+
+.SS "\fBCPoint\fP & CPoint::operator-= (const \fBCPoint\fP & p)"
+operator-= to substract a point to the current point 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIconst\fP \fBCPoint\fP& p - the point to substract 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBCPoint\fP - the point substracteds to the current point 
+.RE
+.PP
+
+.PP
+Definition at line 109 of file Point\&.cpp\&.
+.SS "\fBCPoint\fP CPoint::operator/ (const \fBuint\fP i) const"
+operator/ to divide two points 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIconst\fP unsigned int - the factor to divid 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBCPoint\fP - the point divided with the facor 
+.RE
+.PP
+
+.PP
+Definition at line 89 of file Point\&.cpp\&.
+.SS "\fBCPoint\fP & CPoint::operator/= (const \fBuint\fP i)"
+operator/= to divide a point to the current point 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIconst\fP \fBCPoint\fP& p - the point to divide 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBCPoint\fP - the point divided to the current point 
+.RE
+.PP
+
+.PP
+Definition at line 131 of file Point\&.cpp\&.
+.SS "bool CPoint::operator< (const \fBCPoint\fP & p) const"
+Check if a point is smaller than an other 
+.PP
+\fBParameters:\fP
+.RS 4
+\fICPoint&\fP p - reference to the other point 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+bool true / false - true if the current point is smaller than the other; false in the other case 
+.RE
+.PP
+
+.PP
+Definition at line 142 of file Point\&.cpp\&.
+.SS "void CPoint::setX (const \fBuint\fP x)"
+Set the x coord of the point 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIconst\fP unsigned int - the x coord 
+.RE
+.PP
+
+.PP
+Definition at line 45 of file Point\&.cpp\&.
+.SS "void CPoint::setY (const \fBuint\fP y)"
+Set the y coord of the point 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIconst\fP unsigned int - the y coord 
+.RE
+.PP
+
+.PP
+Definition at line 53 of file Point\&.cpp\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "\fBostream\fP& operator<< (\fBostream\fP & out, const \fBCPoint\fP & point)\fC [friend]\fP"
+operator<< to print a point 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIostream&\fP out - the flow 
+.br
+\fIconst\fP \fBCPoint\fP& point - the point to print 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+ostream& - the modified flow 
+.RE
+.PP
+
+.PP
+Definition at line 162 of file Point\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBuint\fP CPoint::m_x\fC [private]\fP"
+
+.PP
+Definition at line 35 of file Point\&.h\&.
+.SS "\fBuint\fP CPoint::m_y\fC [private]\fP"
+
+.PP
+Definition at line 36 of file Point\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for BattleIA from the source code\&.

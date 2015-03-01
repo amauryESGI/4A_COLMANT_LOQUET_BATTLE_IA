@@ -1,0 +1,46 @@
+.TH "CIA" 3 "Sun Mar 1 2015" "Version Round1" "BattleIA" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+CIA \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <IA\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCAction\fP * \fBoperator()\fP (\fBCUnit\fP *unit, const \fBCArmy\fP &army1, const \fBCArmy\fP &army2) const "
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 5 of file IA\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBCAction\fP * CIA::operator() (\fBCUnit\fP * unit, const \fBCArmy\fP & army1, const \fBCArmy\fP & army2) const"
+operator() - get the action to do with the enemy from the ia code of the unit 
+.PP
+\fBParameters:\fP
+.RS 4
+\fICUnit*\fP - the current unit 
+.br
+\fIconst\fP \fBCArmy\fP& - the army of the current unit 
+.br
+\fIconst\fP \fBCArmy\fP& - the enemy army 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Caction* - the action to do 
+.RE
+.PP
+
+.PP
+Definition at line 10 of file IA\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for BattleIA from the source code\&.
