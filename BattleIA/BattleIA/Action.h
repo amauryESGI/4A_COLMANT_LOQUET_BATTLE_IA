@@ -10,7 +10,7 @@ public:
 	virtual void execute() = 0;
 
 protected:
-	CUnit *m_unit;
+	CUnit *m_unit;/*current unit*/
 };
 
-#endif
+#endif //_CACTION_H

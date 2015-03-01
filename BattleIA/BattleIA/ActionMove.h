@@ -9,7 +9,7 @@ public:
 	~CActionMove();
 	void execute();
 private:
-	CPoint *m_pos;
+	CPoint *m_pos;/*position to move*/
 };
 
-#endif
+#endif //_CACTIONMOVE_H

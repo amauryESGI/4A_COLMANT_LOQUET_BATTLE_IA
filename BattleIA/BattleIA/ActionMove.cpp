@@ -9,6 +9,9 @@ CActionMove::CActionMove(CUnit *unit, CPoint *pos) : CAction(unit)
 CActionMove::~CActionMove()
 {}
 
+/**
+ * Execute actionMove
+ */
 void CActionMove::execute()
 {
 	m_unit->setPos(*m_pos); //TODO : translation ?

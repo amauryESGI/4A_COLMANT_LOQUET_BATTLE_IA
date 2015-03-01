@@ -10,7 +10,7 @@ public:
 	void execute();
 
 private:
-	CUnit *m_target;
+	CUnit *m_target;/*target to shoot*/
 };
 
-#endif
+#endif //_CATIONSHOOT_H

@@ -18,4 +18,4 @@ private:
 	void	computeValue();
 };
 
-#endif
+#endif //_HEALTHPOINT_H

@@ -8,12 +8,12 @@ CActionShoot::CActionShoot(CUnit *unit1, CUnit *unit2) :  CAction(unit1),
 CActionShoot::~CActionShoot()
 {}
 
+/**
+ * Execute actionShoot
+ */
 void CActionShoot::execute()
-{
-	//TODO : bouger jusqu'a etre a portée. 
-	
+{	
 	m_unit->shoot();
-	
 	m_target->takeDamage(m_unit->getDamage().getValue());
 	cout << "Unite " 
 		 << m_unit->getId() 

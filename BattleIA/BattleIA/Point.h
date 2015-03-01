@@ -37,4 +37,4 @@ private:
 };
 
 
-#endif
+#endif //_POINT_H

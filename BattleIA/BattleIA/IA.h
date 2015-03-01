@@ -8,4 +8,4 @@ public:
 	CAction* operator()(CUnit *unit, const CArmy &army1, const CArmy &army2) const;
 };
 
-#endif
+#endif //_CIA_H_

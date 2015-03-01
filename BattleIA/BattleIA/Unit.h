@@ -1,6 +1,5 @@
 #ifndef _UNIT_H_
 #define _UNIT_H_
-
 #include "stdafx.h"
 
 enum IACODE { LD // ennemi le plus proche
@@ -24,23 +23,23 @@ enum IACODE { LD // ennemi le plus proche
 class CUnit
 {
 public:
-	CUnit(const int level);
-	CUnit(const IACODE codeIA, const int speed, const int health, const int armor, const int regeneration, const int damage, const int scope, const int weaponSpeed);
+	CUnit(const uint level);
+	CUnit(const IACODE codeIA, const uint speed, const uint health, const uint armor, const uint regeneration, const uint damage, const uint scope, const uint weaponSpeed);
 	~CUnit();
 
-	int		getId() const;
-	int		getLevel() const;
-	CPoint	getPos() const;
-	IACODE	getIACode() const;
-	void	refresh() const;
-	void	setPos(const CPoint &pos);
-	bool	shoot() const;
-	void	takeDamage(const float value);
-	bool	isAlive() const;
+	uint			getId() const;
+	uint			getLevel() const;
+	CPoint			getPos() const;
+	IACODE			getIACode() const;
+	void			refresh() const;
+	void			setPos(const CPoint &pos);
+	bool			shoot() const;
+	void			takeDamage(const float value);
+	bool			isAlive() const;
 	string			getArmyName() const;
 	void			setArmyName(const string& name);
 	uint			getID() const;
-	void			setID(uint id);
+	void			setID(const uint id);
 
 	CArmor&			getArmor() const;
 	CDamage&		getDamage() const;
@@ -50,15 +49,15 @@ public:
 	CSpeed&			getSpeed() const;
 	CWeaponSpeed&	getWeaponSpeed() const;
 	
-	CCapacity& operator[](const unsigned int id) const;
+	CCapacity&		operator[](const unsigned int id) const;
 
 private:
-	uint		m_id;
-	int			m_level;
-	CPoint		m_pos;
-	CCapacity	*m_capacities[7];
-	IACODE		m_codeIA;
-	string		m_armyName;
+	uint			m_id;
+	uint			m_level;
+	CPoint			m_pos;
+	CCapacity		*m_capacities[7];
+	IACODE			m_codeIA;
+	string			m_armyName;
 };
 
-#endif
+#endif //_UNIT_H_

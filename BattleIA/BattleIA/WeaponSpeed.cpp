@@ -1,31 +1,49 @@
 #include "stdafx.h"
 
-
-
+/**
+ * Default constructor of CWeaponSpeed
+ */
 CWeaponSpeed::CWeaponSpeed(): CCapacity(), m_coolDown(0) //TODO : default value ?!
 {}
 
 
 CWeaponSpeed::~CWeaponSpeed()
 {}
-
-void CWeaponSpeed::computeValue() {
-	m_value = 1000 / (m_level + 1);
+/**
+ * Set the value for WeaponSpeed when Upgrade() is called
+ */
+void CWeaponSpeed::computeValue()
+{
+	m_value = 1000 / ( m_level + 1 );
 }
-
-uint CWeaponSpeed::getCoolDown() const {
+/**
+ * Get the cool down of the weapon
+ * @return unsigned int - the cooldown
+ */
+uint CWeaponSpeed::getCoolDown() const
+{
 	return m_coolDown;
 }
-
-void CWeaponSpeed::turn() {
+/**
+ * called at the end of a turn to decrement the cooldown
+ */
+void CWeaponSpeed::turn()
+{
 	if (m_coolDown >= 1)
 		--m_coolDown;
 }
-
-void CWeaponSpeed::shoot() {
+/**
+ * Shoot someone, set cooldown to the default value
+ */
+void CWeaponSpeed::shoot()
+{
 	m_coolDown = m_value;
 }
-
-bool CWeaponSpeed::canShoot() const {
+/**
+ * Check if unit can shoot
+ * @return bool true if cooldown is 0, false in the other case
+ */
+bool CWeaponSpeed::canShoot() const
+{
 	return m_coolDown == 0 ? false : true;
 }

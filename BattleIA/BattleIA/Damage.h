@@ -13,4 +13,4 @@ private:
 	void	computeValue();
 };
 
-#endif
+#endif //_DAMAGE_H

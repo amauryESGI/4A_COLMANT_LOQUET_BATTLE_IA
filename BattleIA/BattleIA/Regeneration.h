@@ -12,4 +12,4 @@ private:
 	void	computeValue();
 };
 
-#endif
+#endif //_REGENERATION_H

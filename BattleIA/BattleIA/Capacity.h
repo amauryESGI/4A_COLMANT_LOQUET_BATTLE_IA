@@ -33,4 +33,4 @@ protected:
 	virtual void 	computeValue() = 0;
 };
 
-#endif
+#endif //_CAPACITY_H

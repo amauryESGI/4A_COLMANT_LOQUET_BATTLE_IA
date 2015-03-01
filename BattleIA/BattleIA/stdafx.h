@@ -15,11 +15,13 @@
 #include <string>
 
 #define cout		std::cout
+#define cin			std::cin
 #define endl		std::endl
 #define vector		std::vector
 #define ostream		std::ostream
 #define rand		std::rand
 #define string		std::string
+#define to_string	std::to_string
 #define uint		unsigned int
 
 #include "Capacity.h"

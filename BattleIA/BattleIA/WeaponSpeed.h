@@ -19,4 +19,4 @@ private:
 	void	computeValue();
 };
 
-#endif
+#endif //_WEAPONSPEED_H

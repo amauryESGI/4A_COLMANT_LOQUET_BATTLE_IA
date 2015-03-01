@@ -1,5 +1,12 @@
 #include "stdafx.h"
 
+/**
+ * operator() - get the action to do with the enemy from the ia code of the unit
+ * @param CUnit* - the current unit
+ * @param const CArmy& - the army of the current unit
+ * @param const CArmy& - the enemy army
+ * @return Caction* - the action to do
+ */
 CAction* CIA::operator()(CUnit *unit, const CArmy &army1, const CArmy &army2) const
 {
 	CUnit *enemy;
