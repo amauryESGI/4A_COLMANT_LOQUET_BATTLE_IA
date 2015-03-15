@@ -19,12 +19,15 @@ public:
 	CUnit&				getHighestUnit(uint capa_index) const;
 	void				purge();
 
+	CArmy&				operator*( const CArmy& army );
+	void				save();
 	string				getName() const;
-
+	CArmy				mutate();
 	void				refreshAllUnit();
 private:
 	vector<CUnit*>	m_units;
 	string			m_name;
+	uint			m_level;
 
 };
 

@@ -1,4 +1,4 @@
-.TH "CArmy" 3 "Sun Mar 1 2015" "Version Round1" "BattleIA" \" -*- nroff -*-
+.TH "CArmy" 3 "Tue Mar 3 2015" "Version Round1" "BattleIA" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -48,7 +48,16 @@ CArmy \-
 .RI "void \fBpurge\fP ()"
 .br
 .ti -1c
+.RI "\fBCArmy\fP & \fBoperator*\fP (const \fBCArmy\fP &army)"
+.br
+.ti -1c
+.RI "void \fBsave\fP ()"
+.br
+.ti -1c
 .RI "\fBstring\fP \fBgetName\fP () const "
+.br
+.ti -1c
+.RI "\fBCArmy\fP \fBmutate\fP ()"
 .br
 .ti -1c
 .RI "void \fBrefreshAllUnit\fP ()"
@@ -62,6 +71,9 @@ CArmy \-
 .br
 .ti -1c
 .RI "\fBstring\fP \fBm_name\fP"
+.br
+.ti -1c
+.RI "\fBuint\fP \fBm_level\fP"
 .br
 .in -1c
 .SH "Detailed Description"
@@ -107,11 +119,11 @@ copy constructor of \fBCArmy\fP
 .PP
 
 .PP
-Definition at line 36 of file Army\&.cpp\&.
+Definition at line 37 of file Army\&.cpp\&.
 .SS "CArmy::~CArmy ()"
 
 .PP
-Definition at line 47 of file Army\&.cpp\&.
+Definition at line 48 of file Army\&.cpp\&.
 .SH "Member Function Documentation"
 .PP 
 .SS "\fBCUnit\fP & CArmy::getFurtherUnit (const \fBCPoint\fP & p) const"
@@ -129,7 +141,7 @@ Get further unit from a point
 .PP
 
 .PP
-Definition at line 96 of file Army\&.cpp\&.
+Definition at line 97 of file Army\&.cpp\&.
 .SS "\fBCUnit\fP & CArmy::getHighestUnit (\fBuint\fP capa_index) const"
 Get the higher unit of the passed capacity id 
 .PP
@@ -145,7 +157,7 @@ Get the higher unit of the passed capacity id
 .PP
 
 .PP
-Definition at line 124 of file Army\&.cpp\&.
+Definition at line 125 of file Army\&.cpp\&.
 .SS "\fBCUnit\fP & CArmy::getLowestUnit (\fBuint\fP capa_index) const"
 Get the lowest unit of the passed capacity id 
 .PP
@@ -161,7 +173,7 @@ Get the lowest unit of the passed capacity id
 .PP
 
 .PP
-Definition at line 110 of file Army\&.cpp\&.
+Definition at line 111 of file Army\&.cpp\&.
 .SS "\fBstring\fP CArmy::getName () const"
 Get the name of the Army 
 .PP
@@ -172,7 +184,7 @@ std::string - the name
 .PP
 
 .PP
-Definition at line 137 of file Army\&.cpp\&.
+Definition at line 138 of file Army\&.cpp\&.
 .SS "\fBCUnit\fP & CArmy::getNearestUnit (const \fBCPoint\fP & p) const"
 Get the nearest unit from a point 
 .PP
@@ -188,7 +200,7 @@ Get the nearest unit from a point
 .PP
 
 .PP
-Definition at line 82 of file Army\&.cpp\&.
+Definition at line 83 of file Army\&.cpp\&.
 .SS "\fBCUnit\fP & CArmy::getUnit (\fBuint\fP id) const"
 Get unit from an ID 
 .PP
@@ -204,7 +216,7 @@ Get unit from an ID
 .PP
 
 .PP
-Definition at line 62 of file Army\&.cpp\&.
+Definition at line 63 of file Army\&.cpp\&.
 .SS "\fBvector\fP< \fBCUnit\fP * > CArmy::getUnitsList () const"
 get the unit list 
 .PP
@@ -215,15 +227,46 @@ vector<CUnit*> - the list unit
 .PP
 
 .PP
-Definition at line 53 of file Army\&.cpp\&.
+Definition at line 54 of file Army\&.cpp\&.
+.SS "\fBCArmy\fP CArmy::mutate ()"
+mutate two armies 
+.PP
+\fBReturns:\fP
+.RS 4
+\fBCArmy\fP - the mutate army 
+.RE
+.PP
+
+.PP
+Definition at line 166 of file Army\&.cpp\&.
+.SS "\fBCArmy\fP & CArmy::operator* (const \fBCArmy\fP & army)"
+crossing two armies 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIconst\fP \fBCArmy\fP& army - the other army 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBCArmy\fP& - the army crossed with the other 
+.RE
+.PP
+
+.PP
+Definition at line 180 of file Army\&.cpp\&.
 .SS "void CArmy::purge ()"
 Purge the army to delete all dead units 
 .PP
-Definition at line 144 of file Army\&.cpp\&.
+Definition at line 145 of file Army\&.cpp\&.
 .SS "void CArmy::refreshAllUnit ()"
 refresh all the unit of the army 
 .PP
-Definition at line 156 of file Army\&.cpp\&.
+Definition at line 157 of file Army\&.cpp\&.
+.SS "void CArmy::save ()"
+save army in a file 
+.PP
+Definition at line 190 of file Army\&.cpp\&.
 .SS "\fBuint\fP CArmy::size ()"
 Get the current number of units in the army 
 .PP
@@ -234,17 +277,21 @@ unsigned int - the number of unit
 .PP
 
 .PP
-Definition at line 73 of file Army\&.cpp\&.
+Definition at line 74 of file Army\&.cpp\&.
 .SH "Member Data Documentation"
 .PP 
+.SS "\fBuint\fP CArmy::m_level\fC [private]\fP"
+
+.PP
+Definition at line 30 of file Army\&.h\&.
 .SS "\fBstring\fP CArmy::m_name\fC [private]\fP"
 
 .PP
-Definition at line 27 of file Army\&.h\&.
+Definition at line 29 of file Army\&.h\&.
 .SS "\fBvector\fP<\fBCUnit\fP*> CArmy::m_units\fC [private]\fP"
 
 .PP
-Definition at line 26 of file Army\&.h\&.
+Definition at line 28 of file Army\&.h\&.
 
 .SH "Author"
 .PP 

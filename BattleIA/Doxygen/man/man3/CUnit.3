@@ -1,4 +1,4 @@
-.TH "CUnit" 3 "Sun Mar 1 2015" "Version Round1" "BattleIA" \" -*- nroff -*-
+.TH "CUnit" 3 "Tue Mar 3 2015" "Version Round1" "BattleIA" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -16,6 +16,9 @@ CUnit \-
 .br
 .ti -1c
 .RI "\fBCUnit\fP (const \fBIACODE\fP codeIA, const \fBuint\fP speed, const \fBuint\fP health, const \fBuint\fP armor, const \fBuint\fP regeneration, const \fBuint\fP damage, const \fBuint\fP scope, const \fBuint\fP weaponSpeed)"
+.br
+.ti -1c
+.RI "\fBCUnit\fP (const \fBCUnit\fP &unit)"
 .br
 .ti -1c
 .RI "\fB~CUnit\fP ()"
@@ -81,7 +84,13 @@ CUnit \-
 .RI "\fBCWeaponSpeed\fP & \fBgetWeaponSpeed\fP () const "
 .br
 .ti -1c
+.RI "\fBCUnit\fP \fBmutate\fP ()"
+.br
+.ti -1c
 .RI "\fBCCapacity\fP & \fBoperator[]\fP (const unsigned int id) const "
+.br
+.ti -1c
+.RI "\fBCUnit\fP & \fBoperator*\fP (const \fBCUnit\fP &unit) const "
 .br
 .in -1c
 .SS "Private Attributes"
@@ -147,10 +156,14 @@ constructor of \fBCUnit\fP
 
 .PP
 Definition at line 46 of file Unit\&.cpp\&.
+.SS "CUnit::CUnit (const \fBCUnit\fP & unit)"
+
+.PP
+Definition at line 82 of file Unit\&.cpp\&.
 .SS "CUnit::~CUnit ()"
 
 .PP
-Definition at line 83 of file Unit\&.cpp\&.
+Definition at line 117 of file Unit\&.cpp\&.
 .SH "Member Function Documentation"
 .PP 
 .SS "\fBCArmor\fP & CUnit::getArmor () const"
@@ -163,7 +176,7 @@ Get the armor of the unit
 .PP
 
 .PP
-Definition at line 178 of file Unit\&.cpp\&.
+Definition at line 214 of file Unit\&.cpp\&.
 .SS "\fBstring\fP CUnit::getArmyName () const"
 Get the name of the unit 
 .PP
@@ -174,7 +187,7 @@ string - the name
 .PP
 
 .PP
-Definition at line 242 of file Unit\&.cpp\&.
+Definition at line 278 of file Unit\&.cpp\&.
 .SS "\fBCDamage\fP & CUnit::getDamage () const"
 Get the damage of the unit 
 .PP
@@ -185,7 +198,7 @@ Get the damage of the unit
 .PP
 
 .PP
-Definition at line 186 of file Unit\&.cpp\&.
+Definition at line 222 of file Unit\&.cpp\&.
 .SS "\fBCHealthPoint\fP & CUnit::getHealthPoint () const"
 Get the health point of the unit 
 .PP
@@ -196,7 +209,7 @@ Get the health point of the unit
 .PP
 
 .PP
-Definition at line 194 of file Unit\&.cpp\&.
+Definition at line 230 of file Unit\&.cpp\&.
 .SS "\fBIACODE\fP CUnit::getIACode () const"
 Get the ia code of the unit 
 .PP
@@ -207,7 +220,7 @@ IACODE - the ia code
 .PP
 
 .PP
-Definition at line 234 of file Unit\&.cpp\&.
+Definition at line 270 of file Unit\&.cpp\&.
 .SS "\fBuint\fP CUnit::getId () const"
 Get the id of the unit 
 .PP
@@ -218,7 +231,7 @@ int - the id
 .PP
 
 .PP
-Definition at line 89 of file Unit\&.cpp\&.
+Definition at line 125 of file Unit\&.cpp\&.
 .SS "\fBuint\fP CUnit::getID () const"
 
 .SS "\fBuint\fP CUnit::getLevel () const"
@@ -231,7 +244,7 @@ int - the level
 .PP
 
 .PP
-Definition at line 97 of file Unit\&.cpp\&.
+Definition at line 133 of file Unit\&.cpp\&.
 .SS "\fBCPoint\fP CUnit::getPos () const"
 Get the position of the unit 
 .PP
@@ -242,7 +255,7 @@ Get the position of the unit
 .PP
 
 .PP
-Definition at line 105 of file Unit\&.cpp\&.
+Definition at line 141 of file Unit\&.cpp\&.
 .SS "\fBCRegeneration\fP & CUnit::getRegeneration () const"
 Get the regeneration of the unit 
 .PP
@@ -253,7 +266,7 @@ Get the regeneration of the unit
 .PP
 
 .PP
-Definition at line 202 of file Unit\&.cpp\&.
+Definition at line 238 of file Unit\&.cpp\&.
 .SS "\fBCScope\fP & CUnit::getScope () const"
 Get the scopte of the unit 
 .PP
@@ -264,7 +277,7 @@ Get the scopte of the unit
 .PP
 
 .PP
-Definition at line 210 of file Unit\&.cpp\&.
+Definition at line 246 of file Unit\&.cpp\&.
 .SS "\fBCSpeed\fP & CUnit::getSpeed () const"
 Get the speed of the unit 
 .PP
@@ -275,7 +288,7 @@ CSeed& - reference of the speed
 .PP
 
 .PP
-Definition at line 218 of file Unit\&.cpp\&.
+Definition at line 254 of file Unit\&.cpp\&.
 .SS "\fBCWeaponSpeed\fP & CUnit::getWeaponSpeed () const"
 Get the weapon speed of the unit 
 .PP
@@ -286,7 +299,7 @@ Get the weapon speed of the unit
 .PP
 
 .PP
-Definition at line 226 of file Unit\&.cpp\&.
+Definition at line 262 of file Unit\&.cpp\&.
 .SS "bool CUnit::isAlive () const"
 check if the unit is alive 
 .PP
@@ -297,7 +310,34 @@ bool true / false - true if the unit is alive, false in the other case
 .PP
 
 .PP
-Definition at line 159 of file Unit\&.cpp\&.
+Definition at line 195 of file Unit\&.cpp\&.
+.SS "\fBCUnit\fP CUnit::mutate ()"
+mutate two units 
+.PP
+\fBReturns:\fP
+.RS 4
+\fBCUnit\fP - the mutate unit 
+.RE
+.PP
+
+.PP
+Definition at line 319 of file Unit\&.cpp\&.
+.SS "\fBCUnit\fP & CUnit::operator* (const \fBCUnit\fP & unit) const"
+crossing two units 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIconst\fP \fBCUnit\fP& unit - the other unit 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBCUnit\fP& - the unit crossed with the other 
+.RE
+.PP
+
+.PP
+Definition at line 303 of file Unit\&.cpp\&.
 .SS "\fBCCapacity\fP & CUnit::operator[] (const unsigned int id) const"
 operator[] - Get the capacity from an ID 
 .PP
@@ -313,11 +353,11 @@ operator[] - Get the capacity from an ID
 .PP
 
 .PP
-Definition at line 168 of file Unit\&.cpp\&.
+Definition at line 204 of file Unit\&.cpp\&.
 .SS "void CUnit::refresh () const"
 Refresh the unit, regenerate it and decrement the cooldown 
 .PP
-Definition at line 112 of file Unit\&.cpp\&.
+Definition at line 148 of file Unit\&.cpp\&.
 .SS "void CUnit::setArmyName (const \fBstring\fP & name)"
 Set the name of the unit 
 .PP
@@ -328,7 +368,7 @@ Set the name of the unit
 .PP
 
 .PP
-Definition at line 250 of file Unit\&.cpp\&.
+Definition at line 286 of file Unit\&.cpp\&.
 .SS "void CUnit::setID (const \fBuint\fP id)"
 Set the id of the unit 
 .PP
@@ -339,7 +379,7 @@ Set the id of the unit
 .PP
 
 .PP
-Definition at line 258 of file Unit\&.cpp\&.
+Definition at line 294 of file Unit\&.cpp\&.
 .SS "void CUnit::setPos (\fBCPoint\fP * pos)"
 Set the position of the unit 
 .PP
@@ -350,7 +390,7 @@ Set the position of the unit
 .PP
 
 .PP
-Definition at line 121 of file Unit\&.cpp\&.
+Definition at line 157 of file Unit\&.cpp\&.
 .SS "bool CUnit::shoot () const"
 Check if the unit can shoot and shoot in this case 
 .PP
@@ -361,7 +401,7 @@ bool true / false - true if the unit has shoot, false in the other case
 .PP
 
 .PP
-Definition at line 129 of file Unit\&.cpp\&.
+Definition at line 165 of file Unit\&.cpp\&.
 .SS "void CUnit::takeDamage (const float value)"
 Take damages, the damages are substract with the armor's value of the unit 
 .PP
@@ -372,33 +412,33 @@ Take damages, the damages are substract with the armor's value of the unit
 .PP
 
 .PP
-Definition at line 142 of file Unit\&.cpp\&.
+Definition at line 178 of file Unit\&.cpp\&.
 .SH "Member Data Documentation"
 .PP 
 .SS "\fBstring\fP CUnit::m_armyName\fC [private]\fP"
 
 .PP
-Definition at line 60 of file Unit\&.h\&.
+Definition at line 64 of file Unit\&.h\&.
 .SS "\fBCCapacity\fP* CUnit::m_capacities[7]\fC [private]\fP"
 
 .PP
-Definition at line 58 of file Unit\&.h\&.
+Definition at line 62 of file Unit\&.h\&.
 .SS "\fBIACODE\fP CUnit::m_codeIA\fC [private]\fP"
 
 .PP
-Definition at line 59 of file Unit\&.h\&.
+Definition at line 63 of file Unit\&.h\&.
 .SS "\fBuint\fP CUnit::m_id\fC [private]\fP"
 
 .PP
-Definition at line 55 of file Unit\&.h\&.
+Definition at line 59 of file Unit\&.h\&.
 .SS "\fBuint\fP CUnit::m_level\fC [private]\fP"
 
 .PP
-Definition at line 56 of file Unit\&.h\&.
+Definition at line 60 of file Unit\&.h\&.
 .SS "\fBCPoint\fP* CUnit::m_pos\fC [private]\fP"
 
 .PP
-Definition at line 57 of file Unit\&.h\&.
+Definition at line 61 of file Unit\&.h\&.
 
 .SH "Author"
 .PP 

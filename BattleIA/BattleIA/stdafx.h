@@ -8,6 +8,7 @@
 #include "targetver.h"
 #include <windows.h>
 #include <iostream>
+#include <fstream>
 #include <stdio.h>
 #include <tchar.h>
 #include <vector>
@@ -19,6 +20,7 @@
 #define endl		std::endl
 #define vector		std::vector
 #define ostream		std::ostream
+#define ofstream	std::ofstream
 #define rand		std::rand
 #define string		std::string
 #define to_string	std::to_string

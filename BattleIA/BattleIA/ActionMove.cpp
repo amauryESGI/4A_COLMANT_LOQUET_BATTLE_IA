@@ -1,7 +1,7 @@
 #include "stdafx.h"
 
 /**
- * Default constructor of CAction
+ * Default constructor of CActionMove
  * @param CUnit* unit - the unit
  * @param CPoint pois - the position to move
  */
@@ -10,7 +10,9 @@ CActionMove::CActionMove(CUnit *unit, CPoint pos): CAction(unit), m_pos(new CPoi
 
 
 CActionMove::~CActionMove()
-{}
+{
+	delete( m_pos );
+}
 
 /**
  * Execute actionMove

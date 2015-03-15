@@ -25,6 +25,7 @@ class CUnit
 public:
 	CUnit(const uint level);
 	CUnit(const IACODE codeIA, const uint speed, const uint health, const uint armor, const uint regeneration, const uint damage, const uint scope, const uint weaponSpeed);
+	CUnit(const CUnit& unit);
 	~CUnit();
 
 	uint			getId() const;
@@ -49,7 +50,10 @@ public:
 	CSpeed&			getSpeed() const;
 	CWeaponSpeed&	getWeaponSpeed() const;
 	
+	CUnit			mutate();
+
 	CCapacity&		operator[](const unsigned int id) const;
+	CUnit&			operator*( const CUnit& unit ) const;
 
 private:
 	uint			m_id;

@@ -3,7 +3,7 @@
 /**
  * Default constructor of CWeaponSpeed
  */
-CWeaponSpeed::CWeaponSpeed(): CCapacity(), m_coolDown(0) //TODO : default value ?!
+CWeaponSpeed::CWeaponSpeed(): CCapacity(), m_coolDown(0)
 {}
 
 

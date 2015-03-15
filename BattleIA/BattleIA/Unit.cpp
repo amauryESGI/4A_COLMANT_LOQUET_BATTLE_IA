@@ -26,7 +26,7 @@ CUnit::CUnit(const uint level): m_id(0) //default value 0
 
 
 	for (int i = 0; i < m_level; i++)
-		m_capacities[rand() % 6]->upgrade();
+		m_capacities[rand() % 7]->upgrade();
 
 	//m_codeIA = IACODE(rand() % 16);
 
@@ -45,7 +45,7 @@ CUnit::CUnit(const uint level): m_id(0) //default value 0
  */
 CUnit::CUnit(const IACODE codeIA, const uint speed, const uint health, const uint armor, const uint regeneration, const uint damage, const uint scope, const uint weaponSpeed)
 	: m_id(0)
-	, m_level(( speed + health + armor + regeneration + damage + scope + weaponSpeed ) / 7)
+	, m_level(speed + health + armor + regeneration + damage + scope + weaponSpeed)
 	, m_pos(new CPoint(rand() % 50, rand() % 50))
 	, m_codeIA(codeIA)
 	, m_armyName("")
@@ -79,9 +79,45 @@ CUnit::CUnit(const IACODE codeIA, const uint speed, const uint health, const uin
 	for (int i = 0; i <= weaponSpeed; ++i)
 		m_capacities[WeaponSpeed]->upgrade();
 }
+CUnit::CUnit(const CUnit& unit): m_armyName(unit.m_armyName)
+								, m_codeIA(unit.m_codeIA)
+								, m_id(unit.m_id)
+								, m_level(unit.m_level)
+								, m_pos(unit.m_pos)
+{
+	m_capacities[Speed] = new CSpeed();
+	m_capacities[HealthPoint] = new CHealthPoint();
+	m_capacities[Armor] = new CArmor();
+	m_capacities[Regeneration] = new CRegeneration();
+	m_capacities[Damage] = new CDamage();
+	m_capacities[Scope] = new CScope();
+	m_capacities[WeaponSpeed] = new CWeaponSpeed();
+	m_capacities[HealthPoint]->upgrade();
+	m_capacities[Armor]->upgrade();
+	m_capacities[Regeneration]->upgrade();
+	m_capacities[Damage]->upgrade();
+	m_capacities[Scope]->upgrade();
+	m_capacities[WeaponSpeed]->upgrade();
 
+	for (int i = 0; i <= unit.getSpeed().getValue(); ++i)
+		m_capacities[Speed]->upgrade();
+	for (int i = 0; i <= unit.getHealthPoint().getValue(); ++i)
+		m_capacities[HealthPoint]->upgrade();
+	for (int i = 0; i <= unit.getArmor().getValue(); ++i)
+		m_capacities[Armor]->upgrade();
+	for (int i = 0; i <= unit.getRegeneration().getValue(); ++i)
+		m_capacities[Regeneration]->upgrade();
+	for (int i = 0; i <= unit.getDamage().getValue(); ++i)
+		m_capacities[Damage]->upgrade();
+	for (int i = 0; i <= unit.getScope().getValue(); ++i)
+		m_capacities[Scope]->upgrade();
+	for (int i = 0; i <= unit.getWeaponSpeed().getValue(); ++i)
+		m_capacities[WeaponSpeed]->upgrade();
+}
 CUnit::~CUnit()
-{}
+{
+	delete( m_pos );
+}
 /**
  * Get the id of the unit
  * @return int - the id
@@ -258,4 +294,42 @@ void CUnit::setArmyName(const string& name)
 void CUnit::setID(const uint id)
 {
 	m_id = id;
+}
+/**
+ * crossing two units
+ * @param const CUnit& unit - the other unit
+ * @return CUnit& - the unit crossed with the other
+ */
+CUnit& CUnit::operator*( const CUnit& unit ) const
+{
+	vector<uint> caps{1,1,1,1,1,1,1};
+	for (uint i = 0; i < 7; ++i)
+		caps[i] = this->m_capacities[i]->getLevel() >= unit.m_capacities[i]->getLevel() 
+					? this->m_capacities[i]->getLevel() 
+					: unit.m_capacities[i]->getLevel();
+	IACODE iac = rand() % 10 > 5 ? this->m_codeIA : unit.m_codeIA;
+	CUnit rUnit = CUnit(iac, caps[0], caps[1], caps[2], caps[3], caps[4], caps[5], caps[6]);
+	rUnit.m_level = this->m_level >= unit.m_level ? this->m_level : unit.m_level;
+	return rUnit;
+}
+/**
+ * mutate two units
+ * @return CUnit - the mutate unit
+ */
+CUnit CUnit::mutate()
+{
+	uint ran = rand() % 6;
+	if (m_capacities[ran]->getLevel() > 1)
+	{
+		uint downgrade = 1 + rand() % m_capacities[ran]->getLevel() - 1;
+		uint ran2 = rand() % 6;
+		for (uint i = 0; i < downgrade; ++i)
+		{
+			m_capacities[ran]->downgrade();
+			m_capacities[ran2]->upgrade();
+		}
+		return *this;
+	}
+	else
+		mutate();
 }

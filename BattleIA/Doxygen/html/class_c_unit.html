@@ -123,6 +123,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a1e315dfa96503d95695d3f672eba91cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a550ed3357edf9aba852828c634484bec"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_unit.html#a550ed3357edf9aba852828c634484bec">CUnit</a> (const <a class="el" href="_unit_8h.html#a156613907054b98135e940ba16cd3df4">IACODE</a> codeIA, const <a class="el" href="stdafx_8h.html#ad46b2ebcd4c426b06cda147ddc1001e7">uint</a> speed, const <a class="el" href="stdafx_8h.html#ad46b2ebcd4c426b06cda147ddc1001e7">uint</a> health, const <a class="el" href="stdafx_8h.html#ad46b2ebcd4c426b06cda147ddc1001e7">uint</a> armor, const <a class="el" href="stdafx_8h.html#ad46b2ebcd4c426b06cda147ddc1001e7">uint</a> regeneration, const <a class="el" href="stdafx_8h.html#ad46b2ebcd4c426b06cda147ddc1001e7">uint</a> damage, const <a class="el" href="stdafx_8h.html#ad46b2ebcd4c426b06cda147ddc1001e7">uint</a> scope, const <a class="el" href="stdafx_8h.html#ad46b2ebcd4c426b06cda147ddc1001e7">uint</a> weaponSpeed)</td></tr>
 <tr class="separator:a550ed3357edf9aba852828c634484bec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68d6ac922d2ca392bae38856fca3fa38"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_unit.html#a68d6ac922d2ca392bae38856fca3fa38">CUnit</a> (const <a class="el" href="class_c_unit.html">CUnit</a> &amp;unit)</td></tr>
+<tr class="separator:a68d6ac922d2ca392bae38856fca3fa38"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2b326b3671dc94ff4f85da768a937b8d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_unit.html#a2b326b3671dc94ff4f85da768a937b8d">~CUnit</a> ()</td></tr>
 <tr class="separator:a2b326b3671dc94ff4f85da768a937b8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa594b4f0a932af738de2e8477e6ea2a4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="stdafx_8h.html#ad46b2ebcd4c426b06cda147ddc1001e7">uint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_unit.html#aa594b4f0a932af738de2e8477e6ea2a4">getId</a> () const </td></tr>
@@ -165,8 +167,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a912df58aa0baf850be9b7773a4e2eb4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a70872fa3c40fed3fcd8375464623f039"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_c_weapon_speed.html">CWeaponSpeed</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_unit.html#a70872fa3c40fed3fcd8375464623f039">getWeaponSpeed</a> () const </td></tr>
 <tr class="separator:a70872fa3c40fed3fcd8375464623f039"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9ec51a5b0aa0fbf621a5fa1e51c920a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_c_unit.html">CUnit</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_unit.html#aa9ec51a5b0aa0fbf621a5fa1e51c920a">mutate</a> ()</td></tr>
+<tr class="separator:aa9ec51a5b0aa0fbf621a5fa1e51c920a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed371d289eec0ff209df27b6ba3a8e78"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_c_capacity.html">CCapacity</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_unit.html#aed371d289eec0ff209df27b6ba3a8e78">operator[]</a> (const unsigned int id) const </td></tr>
 <tr class="separator:aed371d289eec0ff209df27b6ba3a8e78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a813ef5424622e20180ca7d9c485e884d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_c_unit.html">CUnit</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_unit.html#a813ef5424622e20180ca7d9c485e884d">operator*</a> (const <a class="el" href="class_c_unit.html">CUnit</a> &amp;unit) const </td></tr>
+<tr class="separator:a813ef5424622e20180ca7d9c485e884d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -288,6 +294,24 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a68d6ac922d2ca392bae38856fca3fa38"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CUnit::CUnit </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_c_unit.html">CUnit</a> &amp;&#160;</td>
+          <td class="paramname"><em>unit</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_unit_8cpp_source.html#l00082">82</a> of file <a class="el" href="_unit_8cpp_source.html">Unit.cpp</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a2b326b3671dc94ff4f85da768a937b8d"></a>
 <div class="memitem">
 <div class="memproto">
@@ -301,7 +325,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_unit_8cpp_source.html#l00083">83</a> of file <a class="el" href="_unit_8cpp_source.html">Unit.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_unit_8cpp_source.html#l00117">117</a> of file <a class="el" href="_unit_8cpp_source.html">Unit.cpp</a>.</p>
 
 </div>
 </div>
@@ -320,7 +344,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Get the armor of the unit </p><dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_c_armor.html">CArmor</a>&amp; - reference of the armor </dd></dl>
 
-<p>Definition at line <a class="el" href="_unit_8cpp_source.html#l00178">178</a> of file <a class="el" href="_unit_8cpp_source.html">Unit.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_unit_8cpp_source.html#l00214">214</a> of file <a class="el" href="_unit_8cpp_source.html">Unit.cpp</a>.</p>
 
 </div>
 </div>
@@ -338,7 +362,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Get the name of the unit </p><dl class="section return"><dt>Returns</dt><dd>string - the name </dd></dl>
 
-<p>Definition at line <a class="el" href="_unit_8cpp_source.html#l00242">242</a> of file <a class="el" href="_unit_8cpp_source.html">Unit.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_unit_8cpp_source.html#l00278">278</a> of file <a class="el" href="_unit_8cpp_source.html">Unit.cpp</a>.</p>
 
 </div>
 </div>
@@ -356,7 +380,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Get the damage of the unit </p><dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_c_damage.html">CDamage</a>&amp; - reference of the damage </dd></dl>
 
-<p>Definition at line <a class="el" href="_unit_8cpp_source.html#l00186">186</a> of file <a class="el" href="_unit_8cpp_source.html">Unit.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_unit_8cpp_source.html#l00222">222</a> of file <a class="el" href="_unit_8cpp_source.html">Unit.cpp</a>.</p>
 
 </div>
 </div>
@@ -374,7 +398,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Get the health point of the unit </p><dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_c_health_point.html">CHealthPoint</a>&amp; - reference of the health point </dd></dl>
 
-<p>Definition at line <a class="el" href="_unit_8cpp_source.html#l00194">194</a> of file <a class="el" href="_unit_8cpp_source.html">Unit.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_unit_8cpp_source.html#l00230">230</a> of file <a class="el" href="_unit_8cpp_source.html">Unit.cpp</a>.</p>
 
 </div>
 </div>
@@ -392,7 +416,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Get the ia code of the unit </p><dl class="section return"><dt>Returns</dt><dd>IACODE - the ia code </dd></dl>
 
-<p>Definition at line <a class="el" href="_unit_8cpp_source.html#l00234">234</a> of file <a class="el" href="_unit_8cpp_source.html">Unit.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_unit_8cpp_source.html#l00270">270</a> of file <a class="el" href="_unit_8cpp_source.html">Unit.cpp</a>.</p>
 
 </div>
 </div>
@@ -410,7 +434,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Get the id of the unit </p><dl class="section return"><dt>Returns</dt><dd>int - the id </dd></dl>
 
-<p>Definition at line <a class="el" href="_unit_8cpp_source.html#l00089">89</a> of file <a class="el" href="_unit_8cpp_source.html">Unit.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_unit_8cpp_source.html#l00125">125</a> of file <a class="el" href="_unit_8cpp_source.html">Unit.cpp</a>.</p>
 
 </div>
 </div>
@@ -443,7 +467,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Get the level of the unit </p><dl class="section return"><dt>Returns</dt><dd>int - the level </dd></dl>
 
-<p>Definition at line <a class="el" href="_unit_8cpp_source.html#l00097">97</a> of file <a class="el" href="_unit_8cpp_source.html">Unit.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_unit_8cpp_source.html#l00133">133</a> of file <a class="el" href="_unit_8cpp_source.html">Unit.cpp</a>.</p>
 
 </div>
 </div>
@@ -461,7 +485,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Get the position of the unit </p><dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_c_point.html">CPoint</a> - the position </dd></dl>
 
-<p>Definition at line <a class="el" href="_unit_8cpp_source.html#l00105">105</a> of file <a class="el" href="_unit_8cpp_source.html">Unit.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_unit_8cpp_source.html#l00141">141</a> of file <a class="el" href="_unit_8cpp_source.html">Unit.cpp</a>.</p>
 
 </div>
 </div>
@@ -479,7 +503,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Get the regeneration of the unit </p><dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_c_regeneration.html">CRegeneration</a>&amp; - reference of the regeneration </dd></dl>
 
-<p>Definition at line <a class="el" href="_unit_8cpp_source.html#l00202">202</a> of file <a class="el" href="_unit_8cpp_source.html">Unit.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_unit_8cpp_source.html#l00238">238</a> of file <a class="el" href="_unit_8cpp_source.html">Unit.cpp</a>.</p>
 
 </div>
 </div>
@@ -497,7 +521,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Get the scopte of the unit </p><dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_c_scope.html">CScope</a>&amp; - reference of the scope </dd></dl>
 
-<p>Definition at line <a class="el" href="_unit_8cpp_source.html#l00210">210</a> of file <a class="el" href="_unit_8cpp_source.html">Unit.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_unit_8cpp_source.html#l00246">246</a> of file <a class="el" href="_unit_8cpp_source.html">Unit.cpp</a>.</p>
 
 </div>
 </div>
@@ -515,7 +539,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Get the speed of the unit </p><dl class="section return"><dt>Returns</dt><dd>CSeed&amp; - reference of the speed </dd></dl>
 
-<p>Definition at line <a class="el" href="_unit_8cpp_source.html#l00218">218</a> of file <a class="el" href="_unit_8cpp_source.html">Unit.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_unit_8cpp_source.html#l00254">254</a> of file <a class="el" href="_unit_8cpp_source.html">Unit.cpp</a>.</p>
 
 </div>
 </div>
@@ -533,7 +557,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Get the weapon speed of the unit </p><dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_c_weapon_speed.html">CWeaponSpeed</a>&amp; - reference of the weapond speed </dd></dl>
 
-<p>Definition at line <a class="el" href="_unit_8cpp_source.html#l00226">226</a> of file <a class="el" href="_unit_8cpp_source.html">Unit.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_unit_8cpp_source.html#l00262">262</a> of file <a class="el" href="_unit_8cpp_source.html">Unit.cpp</a>.</p>
 
 </div>
 </div>
@@ -551,7 +575,50 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>check if the unit is alive </p><dl class="section return"><dt>Returns</dt><dd>bool true / false - true if the unit is alive, false in the other case </dd></dl>
 
-<p>Definition at line <a class="el" href="_unit_8cpp_source.html#l00159">159</a> of file <a class="el" href="_unit_8cpp_source.html">Unit.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_unit_8cpp_source.html#l00195">195</a> of file <a class="el" href="_unit_8cpp_source.html">Unit.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa9ec51a5b0aa0fbf621a5fa1e51c920a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_c_unit.html">CUnit</a> CUnit::mutate </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>mutate two units </p><dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_c_unit.html">CUnit</a> - the mutate unit </dd></dl>
+
+<p>Definition at line <a class="el" href="_unit_8cpp_source.html#l00319">319</a> of file <a class="el" href="_unit_8cpp_source.html">Unit.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a813ef5424622e20180ca7d9c485e884d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_c_unit.html">CUnit</a> &amp; CUnit::operator* </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_c_unit.html">CUnit</a> &amp;&#160;</td>
+          <td class="paramname"><em>unit</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>crossing two units </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">const</td><td><a class="el" href="class_c_unit.html">CUnit</a>&amp; unit - the other unit </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_c_unit.html">CUnit</a>&amp; - the unit crossed with the other </dd></dl>
+
+<p>Definition at line <a class="el" href="_unit_8cpp_source.html#l00303">303</a> of file <a class="el" href="_unit_8cpp_source.html">Unit.cpp</a>.</p>
 
 </div>
 </div>
@@ -576,7 +643,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_c_capacity.html">CCapacity</a>&amp; - the capacity </dd></dl>
 
-<p>Definition at line <a class="el" href="_unit_8cpp_source.html#l00168">168</a> of file <a class="el" href="_unit_8cpp_source.html">Unit.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_unit_8cpp_source.html#l00204">204</a> of file <a class="el" href="_unit_8cpp_source.html">Unit.cpp</a>.</p>
 
 </div>
 </div>
@@ -594,7 +661,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Refresh the unit, regenerate it and decrement the cooldown </p>
 
-<p>Definition at line <a class="el" href="_unit_8cpp_source.html#l00112">112</a> of file <a class="el" href="_unit_8cpp_source.html">Unit.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_unit_8cpp_source.html#l00148">148</a> of file <a class="el" href="_unit_8cpp_source.html">Unit.cpp</a>.</p>
 
 </div>
 </div>
@@ -618,7 +685,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_unit_8cpp_source.html#l00250">250</a> of file <a class="el" href="_unit_8cpp_source.html">Unit.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_unit_8cpp_source.html#l00286">286</a> of file <a class="el" href="_unit_8cpp_source.html">Unit.cpp</a>.</p>
 
 </div>
 </div>
@@ -642,7 +709,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_unit_8cpp_source.html#l00258">258</a> of file <a class="el" href="_unit_8cpp_source.html">Unit.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_unit_8cpp_source.html#l00294">294</a> of file <a class="el" href="_unit_8cpp_source.html">Unit.cpp</a>.</p>
 
 </div>
 </div>
@@ -666,7 +733,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_unit_8cpp_source.html#l00121">121</a> of file <a class="el" href="_unit_8cpp_source.html">Unit.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_unit_8cpp_source.html#l00157">157</a> of file <a class="el" href="_unit_8cpp_source.html">Unit.cpp</a>.</p>
 
 </div>
 </div>
@@ -684,7 +751,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Check if the unit can shoot and shoot in this case </p><dl class="section return"><dt>Returns</dt><dd>bool true / false - true if the unit has shoot, false in the other case </dd></dl>
 
-<p>Definition at line <a class="el" href="_unit_8cpp_source.html#l00129">129</a> of file <a class="el" href="_unit_8cpp_source.html">Unit.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_unit_8cpp_source.html#l00165">165</a> of file <a class="el" href="_unit_8cpp_source.html">Unit.cpp</a>.</p>
 
 </div>
 </div>
@@ -708,7 +775,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_unit_8cpp_source.html#l00142">142</a> of file <a class="el" href="_unit_8cpp_source.html">Unit.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_unit_8cpp_source.html#l00178">178</a> of file <a class="el" href="_unit_8cpp_source.html">Unit.cpp</a>.</p>
 
 </div>
 </div>
@@ -731,7 +798,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_unit_8h_source.html#l00060">60</a> of file <a class="el" href="_unit_8h_source.html">Unit.h</a>.</p>
+<p>Definition at line <a class="el" href="_unit_8h_source.html#l00064">64</a> of file <a class="el" href="_unit_8h_source.html">Unit.h</a>.</p>
 
 </div>
 </div>
@@ -753,7 +820,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_unit_8h_source.html#l00058">58</a> of file <a class="el" href="_unit_8h_source.html">Unit.h</a>.</p>
+<p>Definition at line <a class="el" href="_unit_8h_source.html#l00062">62</a> of file <a class="el" href="_unit_8h_source.html">Unit.h</a>.</p>
 
 </div>
 </div>
@@ -775,7 +842,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_unit_8h_source.html#l00059">59</a> of file <a class="el" href="_unit_8h_source.html">Unit.h</a>.</p>
+<p>Definition at line <a class="el" href="_unit_8h_source.html#l00063">63</a> of file <a class="el" href="_unit_8h_source.html">Unit.h</a>.</p>
 
 </div>
 </div>
@@ -797,7 +864,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_unit_8h_source.html#l00055">55</a> of file <a class="el" href="_unit_8h_source.html">Unit.h</a>.</p>
+<p>Definition at line <a class="el" href="_unit_8h_source.html#l00059">59</a> of file <a class="el" href="_unit_8h_source.html">Unit.h</a>.</p>
 
 </div>
 </div>
@@ -819,7 +886,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_unit_8h_source.html#l00056">56</a> of file <a class="el" href="_unit_8h_source.html">Unit.h</a>.</p>
+<p>Definition at line <a class="el" href="_unit_8h_source.html#l00060">60</a> of file <a class="el" href="_unit_8h_source.html">Unit.h</a>.</p>
 
 </div>
 </div>
@@ -841,7 +908,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_unit_8h_source.html#l00057">57</a> of file <a class="el" href="_unit_8h_source.html">Unit.h</a>.</p>
+<p>Definition at line <a class="el" href="_unit_8h_source.html#l00061">61</a> of file <a class="el" href="_unit_8h_source.html">Unit.h</a>.</p>
 
 </div>
 </div>
@@ -855,7 +922,7 @@ Private Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_c_unit.html">CUnit</a></li>
-    <li class="footer">Generated on Sun Mar 1 2015 23:56:00 for BattleIA by
+    <li class="footer">Generated on Tue Mar 3 2015 15:38:12 for BattleIA by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
   </ul>

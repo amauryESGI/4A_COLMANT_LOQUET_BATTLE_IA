@@ -69,9 +69,6 @@
     <ClInclude Include="WeaponSpeed.h">
       <Filter>Fichiers d%27en-tête\Capacity</Filter>
     </ClInclude>
-    <ClInclude Include="Capacity.h">
-      <Filter>Fichiers d%27en-tête\Capacity\Abstract</Filter>
-    </ClInclude>
     <ClInclude Include="Point.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
@@ -92,6 +89,9 @@
     </ClInclude>
     <ClInclude Include="ActionShoot.h">
       <Filter>Fichiers d%27en-tête\Action</Filter>
+    </ClInclude>
+    <ClInclude Include="Capacity.h">
+      <Filter>Fichiers d%27en-tête\Capacity\Abstract</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

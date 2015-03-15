@@ -2,6 +2,7 @@ var class_c_unit =
 [
     [ "CUnit", "class_c_unit.html#a1e315dfa96503d95695d3f672eba91cd", null ],
     [ "CUnit", "class_c_unit.html#a550ed3357edf9aba852828c634484bec", null ],
+    [ "CUnit", "class_c_unit.html#a68d6ac922d2ca392bae38856fca3fa38", null ],
     [ "~CUnit", "class_c_unit.html#a2b326b3671dc94ff4f85da768a937b8d", null ],
     [ "getArmor", "class_c_unit.html#a635b034a7d30a4bea58ba5eb1b312f3e", null ],
     [ "getArmyName", "class_c_unit.html#a1c9059f4fc18809f18f4968bd5ec0a8c", null ],
@@ -17,6 +18,8 @@ var class_c_unit =
     [ "getSpeed", "class_c_unit.html#a912df58aa0baf850be9b7773a4e2eb4a", null ],
     [ "getWeaponSpeed", "class_c_unit.html#a70872fa3c40fed3fcd8375464623f039", null ],
     [ "isAlive", "class_c_unit.html#ac36fcecdac78623c13d0e7c73b8ce440", null ],
+    [ "mutate", "class_c_unit.html#aa9ec51a5b0aa0fbf621a5fa1e51c920a", null ],
+    [ "operator*", "class_c_unit.html#a813ef5424622e20180ca7d9c485e884d", null ],
     [ "operator[]", "class_c_unit.html#aed371d289eec0ff209df27b6ba3a8e78", null ],
     [ "refresh", "class_c_unit.html#a874a4f8f7e4e6c14c6be900c30357be0", null ],
     [ "setArmyName", "class_c_unit.html#ada6fcdd32efe00629313f64f026f6009", null ],

@@ -5,7 +5,7 @@ var searchData=
   ['m_5fcodeia',['m_codeIA',['../class_c_unit.html#a1f5df4e81dc31529bbf82f9093cf6030',1,'CUnit']]],
   ['m_5fcooldown',['m_coolDown',['../class_c_weapon_speed.html#a16a8e0c3e58d7f215cd972befd3138f6',1,'CWeaponSpeed']]],
   ['m_5fid',['m_id',['../class_c_unit.html#a5a8f3f3c127d3c05fa49e434cb497e40',1,'CUnit']]],
-  ['m_5flevel',['m_level',['../class_c_capacity.html#a8b94b0853125f659f560fbc5b07bf9cd',1,'CCapacity::m_level()'],['../class_c_unit.html#ac60ff86f611be636502c2a027858c6a6',1,'CUnit::m_level()']]],
+  ['m_5flevel',['m_level',['../class_c_army.html#a357a61685e4d71ffb03f83c6e461bebe',1,'CArmy::m_level()'],['../class_c_capacity.html#a8b94b0853125f659f560fbc5b07bf9cd',1,'CCapacity::m_level()'],['../class_c_unit.html#ac60ff86f611be636502c2a027858c6a6',1,'CUnit::m_level()']]],
   ['m_5fmaxlife',['m_maxLife',['../class_c_health_point.html#af08889f3894a36e6f494c12e735a5e6c',1,'CHealthPoint']]],
   ['m_5fname',['m_name',['../class_c_army.html#ab6b6b43d64c554e53a51f42b6e279dd8',1,'CArmy']]],
   ['m_5fpos',['m_pos',['../class_c_action_move.html#a61536e8a6bbcca3f90d415070af5e097',1,'CActionMove::m_pos()'],['../class_c_unit.html#a8233bf98f11e62231402436f6b74c41e',1,'CUnit::m_pos()']]],

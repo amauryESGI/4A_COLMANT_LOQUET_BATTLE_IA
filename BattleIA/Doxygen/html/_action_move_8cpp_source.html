@@ -115,41 +115,43 @@ $(document).ready(function(){initNavTree('_action_move_8cpp_source.html','');});
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
 <div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="class_c_action_move.html#a3122d00d71653387ac6792cb5da9969c">   12</a></span>&#160;<a class="code" href="class_c_action_move.html#a3122d00d71653387ac6792cb5da9969c">CActionMove::~CActionMove</a>()</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{}</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="class_c_action_move.html#a7d99aa4ab6b054186dd5ed3c387796a8">   18</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_c_action_move.html#a7d99aa4ab6b054186dd5ed3c387796a8">CActionMove::execute</a>()</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="class_c_action.html#a02e5ca722a5a5113a6d646c2b1012fa9">m_unit</a>-&gt;<a class="code" href="class_c_unit.html#ad206a3fe825394b9bd587828dea263f7">setPos</a>(<a class="code" href="class_c_action_move.html#a61536e8a6bbcca3f90d415070af5e097">m_pos</a>);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="stdafx_8h.html#a101fd144d7d407e15633eba37102f1ed">cout</a> &lt;&lt; <span class="stringliteral">&quot;Unite &quot;</span> </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;         &lt;&lt; <a class="code" href="class_c_action.html#a02e5ca722a5a5113a6d646c2b1012fa9">m_unit</a>-&gt;<a class="code" href="class_c_unit.html#aa594b4f0a932af738de2e8477e6ea2a4">getId</a>() </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;         &lt;&lt; <span class="stringliteral">&quot; (Armee &quot;</span> </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;         &lt;&lt; <a class="code" href="class_c_action.html#a02e5ca722a5a5113a6d646c2b1012fa9">m_unit</a>-&gt;<a class="code" href="class_c_unit.html#a1c9059f4fc18809f18f4968bd5ec0a8c">getArmyName</a>() </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;         &lt;&lt; <span class="stringliteral">&quot;)&quot;</span> </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;         &lt;&lt; <span class="stringliteral">&quot; bouge en position &quot;</span> </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;         &lt;&lt; *<a class="code" href="class_c_action_move.html#a61536e8a6bbcca3f90d415070af5e097">m_pos</a> </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;         &lt;&lt; <a class="code" href="stdafx_8h.html#a600eaf353befc174637855795f12d258">endl</a>;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
-<div class="ttc" id="class_c_unit_html_aa594b4f0a932af738de2e8477e6ea2a4"><div class="ttname"><a href="class_c_unit.html#aa594b4f0a932af738de2e8477e6ea2a4">CUnit::getId</a></div><div class="ttdeci">uint getId() const </div><div class="ttdef"><b>Definition:</b> <a href="_unit_8cpp_source.html#l00089">Unit.cpp:89</a></div></div>
-<div class="ttc" id="class_c_action_move_html_a7d99aa4ab6b054186dd5ed3c387796a8"><div class="ttname"><a href="class_c_action_move.html#a7d99aa4ab6b054186dd5ed3c387796a8">CActionMove::execute</a></div><div class="ttdeci">void execute()</div><div class="ttdef"><b>Definition:</b> <a href="_action_move_8cpp_source.html#l00018">ActionMove.cpp:18</a></div></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keyword">delete</span>( <a class="code" href="class_c_action_move.html#a61536e8a6bbcca3f90d415070af5e097">m_pos</a> );</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;}</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="class_c_action_move.html#a7d99aa4ab6b054186dd5ed3c387796a8">   20</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_c_action_move.html#a7d99aa4ab6b054186dd5ed3c387796a8">CActionMove::execute</a>()</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="class_c_action.html#a02e5ca722a5a5113a6d646c2b1012fa9">m_unit</a>-&gt;<a class="code" href="class_c_unit.html#ad206a3fe825394b9bd587828dea263f7">setPos</a>(<a class="code" href="class_c_action_move.html#a61536e8a6bbcca3f90d415070af5e097">m_pos</a>);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="stdafx_8h.html#a101fd144d7d407e15633eba37102f1ed">cout</a> &lt;&lt; <span class="stringliteral">&quot;Unite &quot;</span> </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;         &lt;&lt; <a class="code" href="class_c_action.html#a02e5ca722a5a5113a6d646c2b1012fa9">m_unit</a>-&gt;<a class="code" href="class_c_unit.html#aa594b4f0a932af738de2e8477e6ea2a4">getId</a>() </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;         &lt;&lt; <span class="stringliteral">&quot; (Armee &quot;</span> </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;         &lt;&lt; <a class="code" href="class_c_action.html#a02e5ca722a5a5113a6d646c2b1012fa9">m_unit</a>-&gt;<a class="code" href="class_c_unit.html#a1c9059f4fc18809f18f4968bd5ec0a8c">getArmyName</a>() </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;         &lt;&lt; <span class="stringliteral">&quot;)&quot;</span> </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;         &lt;&lt; <span class="stringliteral">&quot; bouge en position &quot;</span> </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;         &lt;&lt; *<a class="code" href="class_c_action_move.html#a61536e8a6bbcca3f90d415070af5e097">m_pos</a> </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;         &lt;&lt; <a class="code" href="stdafx_8h.html#a600eaf353befc174637855795f12d258">endl</a>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
+<div class="ttc" id="class_c_unit_html_aa594b4f0a932af738de2e8477e6ea2a4"><div class="ttname"><a href="class_c_unit.html#aa594b4f0a932af738de2e8477e6ea2a4">CUnit::getId</a></div><div class="ttdeci">uint getId() const </div><div class="ttdef"><b>Definition:</b> <a href="_unit_8cpp_source.html#l00125">Unit.cpp:125</a></div></div>
+<div class="ttc" id="class_c_action_move_html_a7d99aa4ab6b054186dd5ed3c387796a8"><div class="ttname"><a href="class_c_action_move.html#a7d99aa4ab6b054186dd5ed3c387796a8">CActionMove::execute</a></div><div class="ttdeci">void execute()</div><div class="ttdef"><b>Definition:</b> <a href="_action_move_8cpp_source.html#l00020">ActionMove.cpp:20</a></div></div>
 <div class="ttc" id="class_c_action_move_html_a3122d00d71653387ac6792cb5da9969c"><div class="ttname"><a href="class_c_action_move.html#a3122d00d71653387ac6792cb5da9969c">CActionMove::~CActionMove</a></div><div class="ttdeci">~CActionMove()</div><div class="ttdef"><b>Definition:</b> <a href="_action_move_8cpp_source.html#l00012">ActionMove.cpp:12</a></div></div>
 <div class="ttc" id="stdafx_8h_html"><div class="ttname"><a href="stdafx_8h.html">stdafx.h</a></div></div>
-<div class="ttc" id="stdafx_8h_html_a600eaf353befc174637855795f12d258"><div class="ttname"><a href="stdafx_8h.html#a600eaf353befc174637855795f12d258">endl</a></div><div class="ttdeci">#define endl</div><div class="ttdef"><b>Definition:</b> <a href="stdafx_8h_source.html#l00019">stdafx.h:19</a></div></div>
+<div class="ttc" id="stdafx_8h_html_a600eaf353befc174637855795f12d258"><div class="ttname"><a href="stdafx_8h.html#a600eaf353befc174637855795f12d258">endl</a></div><div class="ttdeci">#define endl</div><div class="ttdef"><b>Definition:</b> <a href="stdafx_8h_source.html#l00020">stdafx.h:20</a></div></div>
 <div class="ttc" id="class_c_point_html"><div class="ttname"><a href="class_c_point.html">CPoint</a></div><div class="ttdef"><b>Definition:</b> <a href="_point_8h_source.html#l00005">Point.h:5</a></div></div>
 <div class="ttc" id="class_c_action_html"><div class="ttname"><a href="class_c_action.html">CAction</a></div><div class="ttdef"><b>Definition:</b> <a href="_action_8h_source.html#l00007">Action.h:7</a></div></div>
-<div class="ttc" id="stdafx_8h_html_a101fd144d7d407e15633eba37102f1ed"><div class="ttname"><a href="stdafx_8h.html#a101fd144d7d407e15633eba37102f1ed">cout</a></div><div class="ttdeci">#define cout</div><div class="ttdef"><b>Definition:</b> <a href="stdafx_8h_source.html#l00017">stdafx.h:17</a></div></div>
-<div class="ttc" id="class_c_unit_html_ad206a3fe825394b9bd587828dea263f7"><div class="ttname"><a href="class_c_unit.html#ad206a3fe825394b9bd587828dea263f7">CUnit::setPos</a></div><div class="ttdeci">void setPos(CPoint *pos)</div><div class="ttdef"><b>Definition:</b> <a href="_unit_8cpp_source.html#l00121">Unit.cpp:121</a></div></div>
+<div class="ttc" id="stdafx_8h_html_a101fd144d7d407e15633eba37102f1ed"><div class="ttname"><a href="stdafx_8h.html#a101fd144d7d407e15633eba37102f1ed">cout</a></div><div class="ttdeci">#define cout</div><div class="ttdef"><b>Definition:</b> <a href="stdafx_8h_source.html#l00018">stdafx.h:18</a></div></div>
+<div class="ttc" id="class_c_unit_html_ad206a3fe825394b9bd587828dea263f7"><div class="ttname"><a href="class_c_unit.html#ad206a3fe825394b9bd587828dea263f7">CUnit::setPos</a></div><div class="ttdeci">void setPos(CPoint *pos)</div><div class="ttdef"><b>Definition:</b> <a href="_unit_8cpp_source.html#l00157">Unit.cpp:157</a></div></div>
 <div class="ttc" id="class_c_action_move_html_a8ecb0227fb103d1a680ed4021e351846"><div class="ttname"><a href="class_c_action_move.html#a8ecb0227fb103d1a680ed4021e351846">CActionMove::CActionMove</a></div><div class="ttdeci">CActionMove(CUnit *unit, CPoint pos)</div><div class="ttdef"><b>Definition:</b> <a href="_action_move_8cpp_source.html#l00008">ActionMove.cpp:8</a></div></div>
 <div class="ttc" id="class_c_unit_html"><div class="ttname"><a href="class_c_unit.html">CUnit</a></div><div class="ttdef"><b>Definition:</b> <a href="_unit_8h_source.html#l00023">Unit.h:23</a></div></div>
 <div class="ttc" id="class_c_action_move_html_a61536e8a6bbcca3f90d415070af5e097"><div class="ttname"><a href="class_c_action_move.html#a61536e8a6bbcca3f90d415070af5e097">CActionMove::m_pos</a></div><div class="ttdeci">CPoint * m_pos</div><div class="ttdef"><b>Definition:</b> <a href="_action_move_8h_source.html#l00012">ActionMove.h:12</a></div></div>
 <div class="ttc" id="class_c_action_html_a02e5ca722a5a5113a6d646c2b1012fa9"><div class="ttname"><a href="class_c_action.html#a02e5ca722a5a5113a6d646c2b1012fa9">CAction::m_unit</a></div><div class="ttdeci">CUnit * m_unit</div><div class="ttdef"><b>Definition:</b> <a href="_action_8h_source.html#l00015">Action.h:15</a></div></div>
-<div class="ttc" id="class_c_unit_html_a1c9059f4fc18809f18f4968bd5ec0a8c"><div class="ttname"><a href="class_c_unit.html#a1c9059f4fc18809f18f4968bd5ec0a8c">CUnit::getArmyName</a></div><div class="ttdeci">string getArmyName() const </div><div class="ttdef"><b>Definition:</b> <a href="_unit_8cpp_source.html#l00242">Unit.cpp:242</a></div></div>
+<div class="ttc" id="class_c_unit_html_a1c9059f4fc18809f18f4968bd5ec0a8c"><div class="ttname"><a href="class_c_unit.html#a1c9059f4fc18809f18f4968bd5ec0a8c">CUnit::getArmyName</a></div><div class="ttdeci">string getArmyName() const </div><div class="ttdef"><b>Definition:</b> <a href="_unit_8cpp_source.html#l00278">Unit.cpp:278</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="_action_move_8cpp.html">ActionMove.cpp</a></li>
-    <li class="footer">Generated on Sun Mar 1 2015 23:56:00 for BattleIA by
+    <li class="footer">Generated on Tue Mar 3 2015 15:38:11 for BattleIA by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
   </ul>

@@ -14,6 +14,6 @@ var searchData=
   ['cregeneration',['CRegeneration',['../class_c_regeneration.html#ae9ad7c68306146e739ed7cba6c3c6ee7',1,'CRegeneration']]],
   ['cscope',['CScope',['../class_c_scope.html#ad6dac03560960628509b6bf197378681',1,'CScope']]],
   ['cspeed',['CSpeed',['../class_c_speed.html#ac08c776153faa187b17b63f4ff2df5b0',1,'CSpeed']]],
-  ['cunit',['CUnit',['../class_c_unit.html#a1e315dfa96503d95695d3f672eba91cd',1,'CUnit::CUnit(const uint level)'],['../class_c_unit.html#a550ed3357edf9aba852828c634484bec',1,'CUnit::CUnit(const IACODE codeIA, const uint speed, const uint health, const uint armor, const uint regeneration, const uint damage, const uint scope, const uint weaponSpeed)']]],
+  ['cunit',['CUnit',['../class_c_unit.html#a1e315dfa96503d95695d3f672eba91cd',1,'CUnit::CUnit(const uint level)'],['../class_c_unit.html#a550ed3357edf9aba852828c634484bec',1,'CUnit::CUnit(const IACODE codeIA, const uint speed, const uint health, const uint armor, const uint regeneration, const uint damage, const uint scope, const uint weaponSpeed)'],['../class_c_unit.html#a68d6ac922d2ca392bae38856fca3fa38',1,'CUnit::CUnit(const CUnit &amp;unit)']]],
   ['cweaponspeed',['CWeaponSpeed',['../class_c_weapon_speed.html#a5ae203831a48eae9a23e81ea943c477e',1,'CWeaponSpeed']]]
 ];

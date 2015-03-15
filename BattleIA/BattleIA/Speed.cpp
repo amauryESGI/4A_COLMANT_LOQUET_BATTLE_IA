@@ -12,6 +12,7 @@ CSpeed::~CSpeed()
 /**
  * Set the value for Speed when Upgrade() is called
  */
-void CSpeed::computeValue() {
+void CSpeed::computeValue()
+{
 	m_value = m_level + 1;
 }

@@ -1,4 +1,4 @@
-.TH "stdafx.h" 3 "Sun Mar 1 2015" "Version Round1" "BattleIA" \" -*- nroff -*-
+.TH "stdafx.h" 3 "Tue Mar 3 2015" "Version Round1" "BattleIA" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -11,6 +11,8 @@ stdafx.h \-
 \fC#include <windows\&.h>\fP
 .br
 \fC#include <iostream>\fP
+.br
+\fC#include <fstream>\fP
 .br
 \fC#include <stdio\&.h>\fP
 .br
@@ -72,6 +74,9 @@ stdafx.h \-
 .RI "#define \fBostream\fP   std::ostream"
 .br
 .ti -1c
+.RI "#define \fBofstream\fP   std::ofstream"
+.br
+.ti -1c
 .RI "#define \fBrand\fP   std::rand"
 .br
 .ti -1c
@@ -89,39 +94,43 @@ stdafx.h \-
 .SS "#define cin   std::cin"
 
 .PP
-Definition at line 18 of file stdafx\&.h\&.
+Definition at line 19 of file stdafx\&.h\&.
 .SS "#define cout   std::cout"
 
 .PP
-Definition at line 17 of file stdafx\&.h\&.
+Definition at line 18 of file stdafx\&.h\&.
 .SS "#define endl   std::endl"
 
 .PP
-Definition at line 19 of file stdafx\&.h\&.
-.SS "#define ostream   std::ostream"
-
-.PP
-Definition at line 21 of file stdafx\&.h\&.
-.SS "#define rand   std::rand"
-
-.PP
-Definition at line 22 of file stdafx\&.h\&.
-.SS "#define string   std::string"
+Definition at line 20 of file stdafx\&.h\&.
+.SS "#define ofstream   std::ofstream"
 
 .PP
 Definition at line 23 of file stdafx\&.h\&.
-.SS "#define to_string   std::to_string"
+.SS "#define ostream   std::ostream"
+
+.PP
+Definition at line 22 of file stdafx\&.h\&.
+.SS "#define rand   std::rand"
 
 .PP
 Definition at line 24 of file stdafx\&.h\&.
-.SS "#define uint   unsigned int"
+.SS "#define string   std::string"
 
 .PP
 Definition at line 25 of file stdafx\&.h\&.
+.SS "#define to_string   std::to_string"
+
+.PP
+Definition at line 26 of file stdafx\&.h\&.
+.SS "#define uint   unsigned int"
+
+.PP
+Definition at line 27 of file stdafx\&.h\&.
 .SS "#define vector   std::vector"
 
 .PP
-Definition at line 20 of file stdafx\&.h\&.
+Definition at line 21 of file stdafx\&.h\&.
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for BattleIA from the source code\&.

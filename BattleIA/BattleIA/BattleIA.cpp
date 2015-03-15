@@ -27,10 +27,11 @@ int _tmain(int argc, _TCHAR* argv[])
 	{
 		for (j = 0; j < N; ++j)
 		{
-			for (k = j == N ? N : j+1; k < N; k = ++k)
+			for (k = (j == N ? N : j+1); k < N; k = ++k)
 			{
 				CArmy army1(*armies[j]);
 				CArmy army2(*armies[k]);
+				army1.save();
 				cout << "Armee " << army1.getName() << " contre armee " << army2.getName() << endl;
 				int m = 0, n = 0, lap = 0;
 				while(true)
@@ -57,7 +58,7 @@ int _tmain(int argc, _TCHAR* argv[])
 					++lap;
 					army1.refreshAllUnit();
 					army2.refreshAllUnit();
-					//Sleep(1000);
+					//Sleep(100);
 				}
 				if(army2.getUnitsList().size() == 0)
 					scores[j] += army1.getUnitsList().size();
@@ -70,7 +71,21 @@ int _tmain(int argc, _TCHAR* argv[])
 	}
 end:;
 	
+	//Sort
 
+	CArmy *croisArmy = new CArmy(*armies[0]);
+	CArmy *mutArmy = new CArmy(*armies[0]);
+	uint iBest = N * 0.1;
+	if (N*0.1 > 2)
+	{
+		//for (uint b = 0; b < N*0.1; ++b)
+
+		for (int a = 1; a < N*0.3; ++a)
+		{
+			*croisArmy = *croisArmy * (*armies[a]);
+			*mutArmy = armies[a]->mutate();
+		}
+	}
 
 }
 /**
@@ -83,13 +98,11 @@ end:;
  */
 void getInput(int *i, int *t, int *n, int *x, int *y)
 {
+	bool ok = false;
 	cout << "selectionnez les valeurs suivantes : " << endl
 		 << "Nombre de tours : ";
 	cin  >> *i;
-	cout //<< endl
-		 << "Score max : ";
-	cin  >> *t; //TODO : mettre ça en dernier et tester T < (N-1)*X
-	cout	//<< endl
+	cout
 		 << "Nombre d'armees : ";
 	cin  >> *n;
 	cout //<< endl
@@ -98,7 +111,16 @@ void getInput(int *i, int *t, int *n, int *x, int *y)
 	cout //<< endl
 		 << "Niveau global de chaque armee : ";
 	cin  >> *y;
-	cout << endl;
+	while (ok != true)
+	{
+		cout << endl
+			<< "Score max : ";
+		cin >> *t;
+		if (*t < ( *n - 1 )*( *x ))
+			ok = true;
+		else
+			cout << "score max trop eleve !";
+	}
 }
 
 #endif
@@ -109,8 +131,14 @@ void getInput(int *i, int *t, int *n, int *x, int *y)
 #ifdef _MAIN_B
 int _tmain(int argc, _TCHAR* argv[])
 {
-	CArmy army1(10, 100, "A");
-	CArmy army2(10, 100, "B");
+	int lvl, nbUnit;
+	cout << "niveau global : ";
+	cin  >> lvl;
+	cout << "nbUnit : ";
+	cin  >> nbUnit;
+	cout << endl;
+	CArmy army1(nbUnit, lvl, "A");
+	CArmy army2(nbUnit, lvl, "B");
 	CIA ia;	
 	int i = 0, j = 0, lap = 0;
 	while(true)
@@ -147,8 +175,6 @@ int _tmain(int argc, _TCHAR* argv[])
 		cout << "Army " << army2.getName() << " Wins ! *\\o/*" << endl;
 	else
 		cout << "Army " << army1.getName() << " Wins ! *\\o/*" << endl;
-
-
 	return 0;
 }
 #endif

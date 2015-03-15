@@ -1,7 +1,8 @@
 var searchData=
 [
+  ['ofstream',['ofstream',['../stdafx_8h.html#a4e4aa13f12389e2981e98da27b63e49d',1,'stdafx.h']]],
   ['operator_28_29',['operator()',['../class_c_i_a.html#a083401b31db3afaf0f1e79bb8059b659',1,'CIA']]],
-  ['operator_2a',['operator*',['../class_c_point.html#a9ee92e04ae04f97758855a0335ab05db',1,'CPoint']]],
+  ['operator_2a',['operator*',['../class_c_army.html#a03cb08250acc87bd7e9d393fde045884',1,'CArmy::operator*()'],['../class_c_point.html#a9ee92e04ae04f97758855a0335ab05db',1,'CPoint::operator*()'],['../class_c_unit.html#a813ef5424622e20180ca7d9c485e884d',1,'CUnit::operator*()']]],
   ['operator_2a_3d',['operator*=',['../class_c_point.html#a0c9726641134d1f4f601d03bf704efe9',1,'CPoint']]],
   ['operator_2b',['operator+',['../class_c_point.html#a9272e02fb98b46802c333d3f5f03f3e9',1,'CPoint']]],
   ['operator_2b_3d',['operator+=',['../class_c_point.html#ab722a78ee5ecdd71176d68ed6e1c9552',1,'CPoint']]],

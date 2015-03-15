@@ -11,9 +11,13 @@ var class_c_army =
     [ "getNearestUnit", "class_c_army.html#aca6121209e682ba606ae5221b898a306", null ],
     [ "getUnit", "class_c_army.html#a80b7a28152bede37ecfec0911616bc01", null ],
     [ "getUnitsList", "class_c_army.html#ac724882ca24a7763e486af8e47b82f8f", null ],
+    [ "mutate", "class_c_army.html#af38cb62f12288f41b0fda2855ad43346", null ],
+    [ "operator*", "class_c_army.html#a03cb08250acc87bd7e9d393fde045884", null ],
     [ "purge", "class_c_army.html#afab9fadad680e08835737184752caca1", null ],
     [ "refreshAllUnit", "class_c_army.html#a649aba43727de817c442541192b1bdda", null ],
+    [ "save", "class_c_army.html#a11207b9431405a2ea006dae719c745b5", null ],
     [ "size", "class_c_army.html#a49eab19d6fd24b716845399a39c94544", null ],
+    [ "m_level", "class_c_army.html#a357a61685e4d71ffb03f83c6e461bebe", null ],
     [ "m_name", "class_c_army.html#ab6b6b43d64c554e53a51f42b6e279dd8", null ],
     [ "m_units", "class_c_army.html#ab66345c3247ba1f5776eebef11173a9a", null ]
 ];
