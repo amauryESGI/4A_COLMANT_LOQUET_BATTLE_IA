@@ -4,7 +4,7 @@
 #include "Action.hpp"
 #include "Point.hpp"
 #include <iostream>
-
+#include "Util.hpp"
 
 //Class representing the action to move a unit in direction of a specific position
 class MoveAction : public Action {
@@ -17,6 +17,8 @@ public:
     //Constructor taking in paramters the unit to move and the destination
     MoveAction(Unit& unit, const Point& position):unit_(&unit), position_(position)
     {
+		position_.setX(Util::clip(position_.getX(), Util::width));
+		position_.setY(Util::clip(position_.getY(), Util::heigth));
     }
 
     //Run the action

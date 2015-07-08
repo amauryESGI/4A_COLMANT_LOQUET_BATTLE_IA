@@ -3,6 +3,7 @@
 #include <cmath>
 #include <ostream>
 #include <iomanip>
+#include "Util.hpp"
 
 //Class representing a D point
 class Point {
@@ -12,7 +13,11 @@ private:
 
 public:
     //Natural constructor
-    Point(float x=0, float y=0):x_(x), y_(y) {}
+    Point(float x=0, float y=0):x_(x), y_(y) 
+	{
+		Util::clip(x_, Util::width);
+		Util::clip(x_, Util::width);
+	}
 
 
     ////////////////////////
@@ -31,15 +36,17 @@ public:
     ///////////////////////
     //setters
     ///////////////////////
-    void setX(float x)
-    {
-        x_ = x;
-    }
+	void setX(float x)
+	{
+		x_ = x;
+		Util::clip(x_, Util::width);
+	}
 
-    void setY(float y)
-    {
-        y_ = y;
-    }
+	void setY(float y)
+	{
+		y_ = y;
+		Util::clip(y_, Util::heigth);
+	}
 
     /////////////////////////////////////
     //arithmetic operators overloading

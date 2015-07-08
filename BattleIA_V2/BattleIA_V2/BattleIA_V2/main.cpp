@@ -1,3 +1,4 @@
+#include "Util.hpp"
 #include "Army.hpp"
 #include <cstdlib>
 #include <time.h>
@@ -5,6 +6,8 @@
 #include "training.hpp"
 #include "fstream"
 
+float Util::heigth = 100;
+float Util::width = 100;
 
 int main(void)
 {

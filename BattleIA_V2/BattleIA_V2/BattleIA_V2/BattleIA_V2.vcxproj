@@ -75,6 +75,7 @@
     <ClInclude Include="Capacity.hpp" />
     <ClInclude Include="DamageCapacity.hpp" />
     <ClInclude Include="EmptyAction.hpp" />
+    <ClInclude Include="Extractor.hpp" />
     <ClInclude Include="FirerateCapacity.hpp" />
     <ClInclude Include="LifeCapacity.hpp" />
     <ClInclude Include="MoveAction.hpp" />
@@ -85,6 +86,7 @@
     <ClInclude Include="SpeedCapacity.hpp" />
     <ClInclude Include="training.hpp" />
     <ClInclude Include="Unit.hpp" />
+    <ClInclude Include="Util.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AI.cpp" />
