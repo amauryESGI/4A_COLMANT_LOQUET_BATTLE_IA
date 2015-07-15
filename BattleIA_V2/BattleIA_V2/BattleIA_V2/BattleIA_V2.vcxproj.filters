@@ -13,15 +13,18 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Fichiers d%27en-tête\Actions">
+      <UniqueIdentifier>{8a5ac73a-1e21-453f-8a18-19f368e1341e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Capacities">
+      <UniqueIdentifier>{c78918fa-7a00-4856-af46-34e5347ff725}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Extractors">
+      <UniqueIdentifier>{0e88af29-6f6f-476e-afbe-8639e323ab8c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Action.hpp">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
     <ClInclude Include="AI.hpp">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="ArmorCapacity.hpp">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="Army.hpp">
@@ -30,37 +33,7 @@
     <ClInclude Include="battle.hpp">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="Capacity.hpp">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="DamageCapacity.hpp">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="EmptyAction.hpp">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="FirerateCapacity.hpp">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="LifeCapacity.hpp">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="MoveAction.hpp">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
     <ClInclude Include="Point.hpp">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="RangeCapacity.hpp">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="RegenCapacity.hpp">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="ShotAction.hpp">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="SpeedCapacity.hpp">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="training.hpp">
@@ -72,8 +45,65 @@
     <ClInclude Include="Util.hpp">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
+    <ClInclude Include="ArmorCapacity.hpp">
+      <Filter>Fichiers d%27en-tête\Capacities</Filter>
+    </ClInclude>
+    <ClInclude Include="DamageCapacity.hpp">
+      <Filter>Fichiers d%27en-tête\Capacities</Filter>
+    </ClInclude>
+    <ClInclude Include="FirerateCapacity.hpp">
+      <Filter>Fichiers d%27en-tête\Capacities</Filter>
+    </ClInclude>
+    <ClInclude Include="LifeCapacity.hpp">
+      <Filter>Fichiers d%27en-tête\Capacities</Filter>
+    </ClInclude>
+    <ClInclude Include="RangeCapacity.hpp">
+      <Filter>Fichiers d%27en-tête\Capacities</Filter>
+    </ClInclude>
+    <ClInclude Include="RegenCapacity.hpp">
+      <Filter>Fichiers d%27en-tête\Capacities</Filter>
+    </ClInclude>
+    <ClInclude Include="SpeedCapacity.hpp">
+      <Filter>Fichiers d%27en-tête\Capacities</Filter>
+    </ClInclude>
+    <ClInclude Include="Capacity.hpp">
+      <Filter>Fichiers d%27en-tête\Capacities</Filter>
+    </ClInclude>
+    <ClInclude Include="Action.hpp">
+      <Filter>Fichiers d%27en-tête\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="EmptyAction.hpp">
+      <Filter>Fichiers d%27en-tête\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="MoveAction.hpp">
+      <Filter>Fichiers d%27en-tête\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="ShotAction.hpp">
+      <Filter>Fichiers d%27en-tête\Actions</Filter>
+    </ClInclude>
     <ClInclude Include="Extractor.hpp">
-      <Filter>Fichiers d%27en-tête</Filter>
+      <Filter>Fichiers d%27en-tête\Extractors</Filter>
+    </ClInclude>
+    <ClInclude Include="ExtractorU.hpp">
+      <Filter>Fichiers d%27en-tête\Extractors</Filter>
+    </ClInclude>
+    <ClInclude Include="ExtractorA.hpp">
+      <Filter>Fichiers d%27en-tête\Extractors</Filter>
+    </ClInclude>
+    <ClInclude Include="ExtractorP.hpp">
+      <Filter>Fichiers d%27en-tête\Extractors</Filter>
+    </ClInclude>
+    <ClInclude Include="ExtractorH0.hpp">
+      <Filter>Fichiers d%27en-tête\Extractors</Filter>
+    </ClInclude>
+    <ClInclude Include="ExtractorHD.hpp">
+      <Filter>Fichiers d%27en-tête\Extractors</Filter>
+    </ClInclude>
+    <ClInclude Include="ExtractorL0.hpp">
+      <Filter>Fichiers d%27en-tête\Extractors</Filter>
+    </ClInclude>
+    <ClInclude Include="ExtractorLD.hpp">
+      <Filter>Fichiers d%27en-tête\Extractors</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

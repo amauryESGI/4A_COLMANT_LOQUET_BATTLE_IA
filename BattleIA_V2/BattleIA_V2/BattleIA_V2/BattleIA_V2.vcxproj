@@ -76,6 +76,13 @@
     <ClInclude Include="DamageCapacity.hpp" />
     <ClInclude Include="EmptyAction.hpp" />
     <ClInclude Include="Extractor.hpp" />
+    <ClInclude Include="ExtractorA.hpp" />
+    <ClInclude Include="ExtractorH0.hpp" />
+    <ClInclude Include="ExtractorHD.hpp" />
+    <ClInclude Include="ExtractorL0.hpp" />
+    <ClInclude Include="ExtractorLD.hpp" />
+    <ClInclude Include="ExtractorP.hpp" />
+    <ClInclude Include="ExtractorU.hpp" />
     <ClInclude Include="FirerateCapacity.hpp" />
     <ClInclude Include="LifeCapacity.hpp" />
     <ClInclude Include="MoveAction.hpp" />
