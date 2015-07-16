@@ -19,8 +19,23 @@
     <Filter Include="Fichiers d%27en-tête\Capacities">
       <UniqueIdentifier>{c78918fa-7a00-4856-af46-34e5347ff725}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Fichiers d%27en-tête\Extractors">
+    <Filter Include="Fichiers d%27en-tête\Tree">
+      <UniqueIdentifier>{7fec500e-0865-4d80-81a3-5fb155d87d24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Tree\Extractors">
       <UniqueIdentifier>{0e88af29-6f6f-476e-afbe-8639e323ab8c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Tree\Extractors\Lowest">
+      <UniqueIdentifier>{36ed3ab8-0e64-4992-af24-aee50db902ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Tree\Extractors\Higest">
+      <UniqueIdentifier>{49ba8090-282b-458c-82d2-281dc606cd77}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Tree\Extractors\Higest\Capacities">
+      <UniqueIdentifier>{2f431732-7fd2-4bca-a144-31e81101d7b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Tree\Extractors\Lowest\Capacities">
+      <UniqueIdentifier>{f20ba901-fe11-45b4-8369-5bf40cc1ade2}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -82,31 +97,73 @@
       <Filter>Fichiers d%27en-tête\Actions</Filter>
     </ClInclude>
     <ClInclude Include="Extractor.hpp">
-      <Filter>Fichiers d%27en-tête\Extractors</Filter>
+      <Filter>Fichiers d%27en-tête\Tree\Extractors</Filter>
     </ClInclude>
     <ClInclude Include="ExtractorU.hpp">
-      <Filter>Fichiers d%27en-tête\Extractors</Filter>
+      <Filter>Fichiers d%27en-tête\Tree\Extractors</Filter>
     </ClInclude>
     <ClInclude Include="ExtractorA.hpp">
-      <Filter>Fichiers d%27en-tête\Extractors</Filter>
+      <Filter>Fichiers d%27en-tête\Tree\Extractors</Filter>
     </ClInclude>
     <ClInclude Include="ExtractorP.hpp">
-      <Filter>Fichiers d%27en-tête\Extractors</Filter>
-    </ClInclude>
-    <ClInclude Include="ExtractorH0.hpp">
-      <Filter>Fichiers d%27en-tête\Extractors</Filter>
-    </ClInclude>
-    <ClInclude Include="ExtractorHD.hpp">
-      <Filter>Fichiers d%27en-tête\Extractors</Filter>
-    </ClInclude>
-    <ClInclude Include="ExtractorL0.hpp">
-      <Filter>Fichiers d%27en-tête\Extractors</Filter>
-    </ClInclude>
-    <ClInclude Include="ExtractorLD.hpp">
-      <Filter>Fichiers d%27en-tête\Extractors</Filter>
+      <Filter>Fichiers d%27en-tête\Tree\Extractors</Filter>
     </ClInclude>
     <ClInclude Include="ECapacities.hpp">
       <Filter>Fichiers d%27en-tête\Capacities</Filter>
+    </ClInclude>
+    <ClInclude Include="ExtractorO.hpp">
+      <Filter>Fichiers d%27en-tête\Tree\Extractors</Filter>
+    </ClInclude>
+    <ClInclude Include="Build.hpp">
+      <Filter>Fichiers d%27en-tête\Tree</Filter>
+    </ClInclude>
+    <ClInclude Include="ExtractorH0.hpp">
+      <Filter>Fichiers d%27en-tête\Tree\Extractors\Higest\Capacities</Filter>
+    </ClInclude>
+    <ClInclude Include="ExtractorH1.hpp">
+      <Filter>Fichiers d%27en-tête\Tree\Extractors\Higest\Capacities</Filter>
+    </ClInclude>
+    <ClInclude Include="ExtractorH2.hpp">
+      <Filter>Fichiers d%27en-tête\Tree\Extractors\Higest\Capacities</Filter>
+    </ClInclude>
+    <ClInclude Include="ExtractorH3.hpp">
+      <Filter>Fichiers d%27en-tête\Tree\Extractors\Higest\Capacities</Filter>
+    </ClInclude>
+    <ClInclude Include="ExtractorH4.hpp">
+      <Filter>Fichiers d%27en-tête\Tree\Extractors\Higest\Capacities</Filter>
+    </ClInclude>
+    <ClInclude Include="ExtractorH5.hpp">
+      <Filter>Fichiers d%27en-tête\Tree\Extractors\Higest\Capacities</Filter>
+    </ClInclude>
+    <ClInclude Include="ExtractorH6.hpp">
+      <Filter>Fichiers d%27en-tête\Tree\Extractors\Higest\Capacities</Filter>
+    </ClInclude>
+    <ClInclude Include="ExtractorHD.hpp">
+      <Filter>Fichiers d%27en-tête\Tree\Extractors\Higest</Filter>
+    </ClInclude>
+    <ClInclude Include="ExtractorL0.hpp">
+      <Filter>Fichiers d%27en-tête\Tree\Extractors\Lowest\Capacities</Filter>
+    </ClInclude>
+    <ClInclude Include="ExtractorL1.hpp">
+      <Filter>Fichiers d%27en-tête\Tree\Extractors\Lowest\Capacities</Filter>
+    </ClInclude>
+    <ClInclude Include="ExtractorL2.hpp">
+      <Filter>Fichiers d%27en-tête\Tree\Extractors\Lowest\Capacities</Filter>
+    </ClInclude>
+    <ClInclude Include="ExtractorL3.hpp">
+      <Filter>Fichiers d%27en-tête\Tree\Extractors\Lowest\Capacities</Filter>
+    </ClInclude>
+    <ClInclude Include="ExtractorL4.hpp">
+      <Filter>Fichiers d%27en-tête\Tree\Extractors\Lowest\Capacities</Filter>
+    </ClInclude>
+    <ClInclude Include="ExtractorL5.hpp">
+      <Filter>Fichiers d%27en-tête\Tree\Extractors\Lowest\Capacities</Filter>
+    </ClInclude>
+    <ClInclude Include="ExtractorL6.hpp">
+      <Filter>Fichiers d%27en-tête\Tree\Extractors\Lowest\Capacities</Filter>
+    </ClInclude>
+    <ClInclude Include="ExtractorLD.hpp">
+      <Filter>Fichiers d%27en-tête\Tree\Extractors\Lowest</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -126,6 +183,9 @@
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="Unit.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Build.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>
