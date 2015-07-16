@@ -74,6 +74,7 @@
     <ClInclude Include="battle.hpp" />
     <ClInclude Include="Capacity.hpp" />
     <ClInclude Include="DamageCapacity.hpp" />
+    <ClInclude Include="ECapacities.hpp" />
     <ClInclude Include="EmptyAction.hpp" />
     <ClInclude Include="Extractor.hpp" />
     <ClInclude Include="ExtractorA.hpp" />

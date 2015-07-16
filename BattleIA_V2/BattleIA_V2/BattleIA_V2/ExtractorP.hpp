@@ -14,8 +14,8 @@ public:
 
     Point get(Unit u, Army& a, Army& o) const
     {
-        return eu_->get(u, a, o)->getPosition();
+        return eu_->get(u, a, o).getPosition();
     }
 };
 
-#endif _EXTRACTORP_HPP_
+#endif // _EXTRACTORP_HPP_

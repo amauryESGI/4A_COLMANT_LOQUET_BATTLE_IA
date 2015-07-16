@@ -13,4 +13,4 @@ public:
     }
 };
 
-#endif _EXTRACTORA_HPP_
+#endif // _EXTRACTORA_HPP_

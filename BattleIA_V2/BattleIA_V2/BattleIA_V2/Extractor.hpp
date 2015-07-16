@@ -9,4 +9,4 @@ class Extractor {
 public:
     virtual R get(Unit u, Army& a, Army& o) const = 0;
 };
-#endif _EXTRACTOR_HPP_
+#endif // _EXTRACTOR_HPP_

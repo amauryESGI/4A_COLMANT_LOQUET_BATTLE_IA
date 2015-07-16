@@ -133,7 +133,7 @@ public:
     }
 
     //Provide the position of the unit
-    Point getPosition()const
+    Point getPosition() const
     {
         return position_;
     }

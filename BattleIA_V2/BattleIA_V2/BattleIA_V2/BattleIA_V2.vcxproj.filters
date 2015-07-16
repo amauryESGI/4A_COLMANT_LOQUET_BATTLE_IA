@@ -105,6 +105,9 @@
     <ClInclude Include="ExtractorLD.hpp">
       <Filter>Fichiers d%27en-tête\Extractors</Filter>
     </ClInclude>
+    <ClInclude Include="ECapacities.hpp">
+      <Filter>Fichiers d%27en-tête\Capacities</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AI.cpp">

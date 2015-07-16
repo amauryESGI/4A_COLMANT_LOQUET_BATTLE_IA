@@ -7,12 +7,15 @@
 
 // ennemi qui a le plus de vitesse
 class ExtractorH0 : public Extractor<Unit> {
+private:
+    Extractor<Army> * ea_;
+
 public:
-    ExtractorH0() {}
+    ExtractorH0(Extractor<Army> * ea, Extractor<Point>* ep) : ea_(ea) {}
 
     Unit get(Unit u, Army& a, Army& o) const {
-        return u; // TODO FIX IT
+        return ea_->get(u, a, o).getHigestUnit();
     }
 };
 
-#endif _EXTRACTORH0_HPP_
+#endif // _EXTRACTORH0_HPP_
