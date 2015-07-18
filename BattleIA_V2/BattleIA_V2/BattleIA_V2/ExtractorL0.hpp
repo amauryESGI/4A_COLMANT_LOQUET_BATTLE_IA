@@ -1,22 +1,21 @@
 #ifndef _EXTRACTORL0_HPP_
 #define _EXTRACTORL0_HPP_
 
-#include "Extractor.hpp"
-#include "Army.hpp"
-#include "Unit.hpp"
-#include "ECapacities.hpp"
+#include "ExtractorLX.hpp"
 
 // ennemi qui a le moins de vitesse
 class ExtractorL0 : public Extractor<Unit> {
 private:
-    Extractor<Army> * eo_;
+    Extractor<Unit> * ec_;
 
 public:
-    ExtractorL0(Extractor<Army> * eo) : eo_(eo) {}
+    ExtractorL0(Extractor<Army> * ea) {
+        ec_ = new ExtractorLX(ea, ECapacities::Speed);
+    }
 
     Unit get(Unit u, Army& a, Army& o) const {
-        return eo_->get(u, a, o).getLowestUnit(ECapacities::Speed);
+        return ec_->get(u, a, o);
     }
 };
 
-#endif _EXTRACTORL0_HPP_
+#endif // _EXTRACTORL0_HPP_

@@ -2,12 +2,8 @@
 #define _EXTRACTORLD_HPP_
 
 #include "Extractor.hpp"
-#include "ExtractorP.hpp"
-#include "ExtractorU.hpp"
-#include "Army.hpp"
-#include "Unit.hpp"
 
-// ennemi qui a le plus de vitesse
+// 
 class ExtractorLD : public Extractor<Unit> {
 private:
     Extractor<Army> * ea_;

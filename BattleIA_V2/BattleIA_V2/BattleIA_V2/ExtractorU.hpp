@@ -13,4 +13,11 @@ public:
     }
 };
 
+class ExtractorU : public Extractor<float> {
+public:
+    float get(Unit u, Army& a, Army& o) const {
+        return 0; // TODO FIX IT
+    }
+};
+
 #endif // _EXTRACTORU_HPP_

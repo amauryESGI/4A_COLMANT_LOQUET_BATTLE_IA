@@ -1,21 +1,20 @@
 #ifndef _EXTRACTORL4_HPP_
 #define _EXTRACTORL4_HPP_
 
-#include "Extractor.hpp"
-#include "Army.hpp"
-#include "Unit.hpp"
-#include "ECapacities.hpp"
+#include "ExtractorLX.hpp"
 
 // ennemi qui a le moins de dommage
 class ExtractorL4 : public Extractor<Unit> {
 private:
-    Extractor<Army> * eo_;
+    Extractor<Unit> * ec_;
 
 public:
-    ExtractorL4(Extractor<Army> * eo) : eo_(eo) {}
+    ExtractorL4(Extractor<Army> * ea) {
+        ec_ = new ExtractorLX(ea, ECapacities::Damage);
+    }
 
     Unit get(Unit u, Army& a, Army& o) const {
-        return eo_->get(u, a, o).getLowestUnit(ECapacities::Damage);
+        return ec_->get(u, a, o);
     }
 };
 
