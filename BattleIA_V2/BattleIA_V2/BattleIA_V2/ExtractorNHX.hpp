@@ -21,7 +21,7 @@ public:
             return a->getCapacity(id)->getLevel() < b->getCapacity(id)->getLevel();
         });
 
-        return Army(std::vector<Unit>(subArmy.begin(), subArmy.begin() + ei_->get(u, a, o)));
+        return Army(std::vector<std::unique_ptr<Unit>>(subArmy.begin(), subArmy.begin() + ei_->get(u, a, o)));
     }
 };
 

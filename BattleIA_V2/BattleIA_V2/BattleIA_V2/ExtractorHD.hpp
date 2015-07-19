@@ -19,13 +19,13 @@ public:
     }
 };
 
-class ExtractorHD : public Extractor<float> {
+class ExtractorHD2 : public Extractor<float> {
 private:
     Extractor<Army> * ea_;
     Extractor<Point> * ep_;
 
 public:
-    ExtractorHD(Extractor<Army> * ea, Extractor<Point>* ep) : ea_(ea), ep_(ep) {}
+    ExtractorHD2(Extractor<Army> * ea, Extractor<Point>* ep) : ea_(ea), ep_(ep) {}
 
     float get(Unit u, Army& a, Army& o) const {
         Point p(ep_->get(u, a, o));

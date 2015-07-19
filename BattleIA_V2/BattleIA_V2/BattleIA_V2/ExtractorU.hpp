@@ -13,7 +13,7 @@ public:
     }
 };
 
-class ExtractorU : public Extractor<float> {
+class ExtractorU2 : public Extractor<float> {
 public:
     float get(Unit u, Army& a, Army& o) const {
         return 0; // TODO FIX IT

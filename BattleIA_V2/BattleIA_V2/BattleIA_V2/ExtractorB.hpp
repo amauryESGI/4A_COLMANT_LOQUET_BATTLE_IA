@@ -12,12 +12,12 @@ public:
 
     Point get(Unit u, Army& a, Army& o) const {
         Point p = Point();
-        Army a = ea_->get(u, a, o);
+        Army a2 = ea_->get(u, a, o);
 
-        for (auto &unit : a.getUnitsList()) {
+        for (auto &unit : a2.getUnitsList()) {
             p += unit->getPosition();
         }
-        p /= a.size();
+        p /= static_cast<float>(a2.size());
         return p;
     }
 };

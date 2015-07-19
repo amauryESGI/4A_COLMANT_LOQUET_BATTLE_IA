@@ -13,13 +13,13 @@ public:
     ExtractorMinD(Extractor<Army> * ea, Extractor<Point> * ep) : ea_(ea), ep_(ep) {}
 
     float get(Unit u, Army& a, Army& o) const {
-        Army a = ea_->get(u, a, o);
+        Army a2 = ea_->get(u, a, o);
         Point p = ep_->get(u, a, o);
 
         // Distance Max
         float dMin = std::sqrt(Util::width * Util::width + Util::heigth * Util::heigth);
 
-        for (auto &unit : a.getUnitsList()) {
+        for (auto &unit : a2.getUnitsList()) {
             float dTmp = unit->getPosition().distance(p);
             if (dTmp < dMin)
                 dMin = dTmp;

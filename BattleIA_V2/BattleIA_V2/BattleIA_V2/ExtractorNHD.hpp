@@ -19,7 +19,7 @@ public:
         std::sort(subArmy.begin(), subArmy.end(), [&p](const std::shared_ptr<Unit> a, const std::shared_ptr<Unit> b) {
             return a->getPosition().distance(p) > b->getPosition().distance(p);
         });
-        return Army(std::vector<Unit>(subArmy.begin(), subArmy.begin() + ei_->get(u, a, o)));
+        return Army(std::vector<std::unique_ptr<Unit>>(subArmy.begin(), subArmy.begin() + ei_->get(u, a, o)));
     }
 };
 

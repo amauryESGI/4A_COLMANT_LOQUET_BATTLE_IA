@@ -6,11 +6,11 @@
 
 class Build {
 private:
-    Extractor<int>*     buildIntExtractor(std::stringstream code);
-    Extractor<float>*   buildFloatExtractor(std::stringstream code);
-    Extractor<Point>*   buildPointExtractor(std::stringstream code);
-    Extractor<Unit>*    buildUnitExtractor(std::stringstream code);
-    Extractor<Army>*    buildArmyExtractor(std::stringstream code);
+    Extractor<int>*     buildIntExtractor(std::stringstream* code);
+    Extractor<float>*   buildFloatExtractor(std::stringstream* code);
+    Extractor<Point>*   buildPointExtractor(std::stringstream* code);
+    Extractor<Unit>*    buildUnitExtractor(std::stringstream* code);
+    Extractor<Army>*    buildArmyExtractor(std::stringstream* code);
 
 public:
     Build();

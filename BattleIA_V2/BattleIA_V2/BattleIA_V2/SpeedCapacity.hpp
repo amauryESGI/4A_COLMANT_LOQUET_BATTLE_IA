@@ -8,7 +8,7 @@ private:
 
     void updateValue_()
     {
-        value_ = 1+level_;
+        value_ = 1+static_cast<float>(level_);
     }
 
 public:

@@ -37,32 +37,32 @@ Build::Build() {
 Build::~Build() {
 }
 
-Extractor<int>* buildIntExtractor(std::stringstream code) {
+Extractor<int>* Build::buildIntExtractor(std::stringstream* code) {
     char c;
-    code >> c;
+    *code >> c;
     if (c == '[') {
         std::string s = "";
-        code >> c;
+        *code >> c;
         while (c != ']') {
             s += c;
-            code >> c;
+            *code >> c;
         }
-        return new ExtractorDirect(atoi(s.c_srt()));
+        return new ExtractorDirect(atoi(s.c_str()));
     }
 }
 
-Extractor<float>* buildFloatExtractor(std::stringstream code) {
+Extractor<float>* Build::buildFloatExtractor(std::stringstream* code) {
     char c;
-    code >> c;
+    *code >> c;
     switch (c) {
     case 'C':
-        code >> c;
+        *code >> c;
         if (c >= '0' && c <= '6')
             return new ExtractorCX(buildUnitExtractor(code), (ECapacities) (c - 0x30));
     case 'D':
         return new ExtractorD(buildPointExtractor(code));
     case 'M':
-        code >> c;
+        *code >> c;
         if (c >= '0' && c <= '6')
             return new ExtractorMaxCX(buildArmyExtractor(code), (ECapacities) (c - 0x30));
         else if (c == 'D') {
@@ -72,7 +72,7 @@ Extractor<float>* buildFloatExtractor(std::stringstream code) {
             return new ExtractorMaxD(ea, ep);
         }
     case 'm':
-        code >> c;
+        *code >> c;
         if (c >= '0' && c <= '6')
             return new ExtractorMinCX(buildArmyExtractor(code), (ECapacities) (c - 0x30));
         else if (c == 'D') {
@@ -82,7 +82,7 @@ Extractor<float>* buildFloatExtractor(std::stringstream code) {
             return new ExtractorMinD(es, ep);
         }
     case 'a':
-        code >> c;
+        *code >> c;
         if (c >= '0' && c <= '6')
             return new ExtractorMoyCX(buildArmyExtractor(code), (ECapacities) (c - 0x30));
         else if (c == 'D') {
@@ -94,9 +94,9 @@ Extractor<float>* buildFloatExtractor(std::stringstream code) {
     }
 }
 
-Extractor<Point>* buildPointExtractor(std::stringstream code) {
+Extractor<Point>* Build::buildPointExtractor(std::stringstream* code) {
     char c;
-    code >> c;
+    *code >> c;
     switch (c) {
     case 'B':
         return new ExtractorB(buildArmyExtractor(code));
@@ -105,14 +105,14 @@ Extractor<Point>* buildPointExtractor(std::stringstream code) {
     }
 }
 
-Extractor<Unit>* buildUnitExtractor(std::stringstream code) {
+Extractor<Unit>* Build::buildUnitExtractor(std::stringstream* code) {
     char c;
-    code >> c;
+    *code >> c;
     switch (c) {
     case 'U':
         return new ExtractorU();
     case 'L':
-        code >> c;
+        *code >> c;
         if (c >= '0' && c <= '6')
             return new ExtractorLCX(buildArmyExtractor(code), (ECapacities) (c - 0x30));
         else if (c == 'D') {
@@ -122,7 +122,7 @@ Extractor<Unit>* buildUnitExtractor(std::stringstream code) {
             return new ExtractorLD(es, ep);
         }
     case 'H':
-        code >> c;
+        *code >> c;
         if (c >= '0' && c <= '6')
             return new ExtractorHCX(buildArmyExtractor(code), (ECapacities) (c - 0x30));
         else if (c == 'D') {
@@ -134,18 +134,18 @@ Extractor<Unit>* buildUnitExtractor(std::stringstream code) {
     }
 }
 
-Extractor<Army>* buildArmyExtractor(std::stringstream code) {
+Extractor<Army>* Build::buildArmyExtractor(std::stringstream* code) {
     char c;
-    code >> c;
+    *code >> c;
     switch (c) {
     case 'A':
         return new ExtractorA();
     case 'O':
         return new ExtractorO();
     case 'N':
-        code >> c;
+        *code >> c;
         if (c == 'L') {
-            code >> c;
+            *code >> c;
             if (c == 'D') {
                 Extractor<int> * ei = buildIntExtractor(code);
                 Extractor<Army>* es = buildArmyExtractor(code);
@@ -157,7 +157,7 @@ Extractor<Army>* buildArmyExtractor(std::stringstream code) {
                 return new ExtractorNLX(ei, es, c - 0x30);
             }
         } else {
-            code >> c;
+            *code >> c;
             if (c == 'D') {
                 Extractor<int> * ei = buildIntExtractor(code);
                 Extractor<Army>* es = buildArmyExtractor(code);
@@ -170,7 +170,7 @@ Extractor<Army>* buildArmyExtractor(std::stringstream code) {
             }
         }
     case 'T':
-        code >> c;
+        *code >> c;
         if (c == 'L') {
             Extractor<int> * ei = buildIntExtractor(code);
             Extractor<Army>* es = buildArmyExtractor(code);

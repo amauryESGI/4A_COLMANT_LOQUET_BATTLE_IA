@@ -10,7 +10,7 @@ private:
 
     void updateValue_()
     {
-        maxLife_ = value_ = 10*(1+level_);
+        maxLife_ = value_ = 10.f*(1.f+static_cast<float>(level_));
     }
 
 public:

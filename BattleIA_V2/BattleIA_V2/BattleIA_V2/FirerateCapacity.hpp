@@ -12,7 +12,7 @@ private:
     void updateValue_()
     {
         value_ = 0;
-        reloadingTime_ = 1000.0/(level_+1.0);
+        reloadingTime_ = 1000.0f/(static_cast<float>(level_)+1.0f);
     }
 
 public:

@@ -14,13 +14,13 @@ public:
     ExtractorMoyCX(Extractor<Army> * ea, ECapacities idCapacity) : ea_(ea), idCapacity_(idCapacity){}
 
     float get(Unit u, Army& a, Army& o) const {
-        Army a = ea_->get(u, a, o);
+        Army a2 = ea_->get(u, a, o);
         float moy = 0;
 
-        for (auto &unit : a.getUnitsList())
+        for (auto &unit : a2.getUnitsList())
             moy += unit->getCapacity(idCapacity_)->getValue();
 
-        moy /= a.size();
+        moy /= a2.size();
         return moy;
     }
 };

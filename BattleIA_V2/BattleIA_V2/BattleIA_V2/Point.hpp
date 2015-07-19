@@ -74,7 +74,7 @@ public:
 
     Point& operator/=(float s)
     {
-        return *this *= (1.0/s);
+        return *this *= (1.0f/s);
     }
 
     Point operator+(Point p)const

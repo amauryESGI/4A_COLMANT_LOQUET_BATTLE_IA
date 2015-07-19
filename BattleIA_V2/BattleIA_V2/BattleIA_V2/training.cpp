@@ -83,7 +83,7 @@ std::unique_ptr<Army> train(int iterations, int threshold, int populationSize, i
         newArmies.reserve(populationSize);
 
         //copy the best armies
-        int keepAmount = 0.1*populationSize;
+        int keepAmount = 0.1f*populationSize;
         std::copy_n(armies.begin(), keepAmount, std::back_inserter(newArmies));
         std::for_each(newArmies.begin(), newArmies.end(), [](ArmyWrapper& aw) {
             aw.score = 0;
