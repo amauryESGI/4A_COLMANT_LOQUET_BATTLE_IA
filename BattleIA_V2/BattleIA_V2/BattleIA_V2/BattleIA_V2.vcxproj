@@ -85,9 +85,7 @@
     <ClInclude Include="ExtractorLCX.hpp" />
     <ClInclude Include="ExtractorCX.hpp" />
     <ClInclude Include="ExtractorD.hpp" />
-    <ClInclude Include="ExtractorHX.hpp" />
     <ClInclude Include="ExtractorHD.hpp" />
-    <ClInclude Include="ExtractorLX.hpp" />
     <ClInclude Include="ExtractorLD.hpp" />
     <ClInclude Include="ExtractorMaxCX.hpp" />
     <ClInclude Include="ExtractorMaxD.hpp" />

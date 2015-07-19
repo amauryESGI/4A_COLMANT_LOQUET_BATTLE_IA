@@ -17,21 +17,4 @@ public:
     }
 };
 
-class ExtractorLD2 : public Extractor<float> {
-private:
-    Extractor<Army> * ea_;
-    Extractor<Point> * ep_;
-
-public:
-    ExtractorLD2(Extractor<Army> * ea, Extractor<Point>* ep) : ea_(ea), ep_(ep) {}
-
-    float get(Unit u, Army& a, Army& o) const {
-        Point p(ep_->get(u, a, o));
-
-        return p.distance(
-            ep_->get(ea_->get(u, a, o).getNearestUnit(p), a, o)
-            );
-    }
-};
-
 #endif // _EXTRACTORLD_HPP_

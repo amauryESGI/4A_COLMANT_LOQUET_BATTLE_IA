@@ -1,23 +1,21 @@
 #ifndef _EXTRACTORLCX_HPP_
 #define _EXTRACTORLCX_HPP_
 
-#include "ExtractorLX.hpp"
+#include "Extractor.hpp"
 #include "ECapacities.hpp"
 
 // valeurs d'une capacité ECapacities
 
-class ExtractorLCX : public Extractor<float> {
+class ExtractorLCX : public Extractor<Unit> {
 private:
-    Extractor<Unit> * eu_;
+    Extractor<Army> * ea_;
     ECapacities idCapacity_;
 
 public:
-    ExtractorLCX(Extractor<Army> * ea, ECapacities idC) : idCapacity_(idC) {
-        eu_ = new ExtractorLX(ea, idC);
-    }
+    ExtractorLCX(Extractor<Army> * ea, ECapacities idC) : ea_(ea), idCapacity_(idC) {}
 
-    float get(Unit u, Army& a, Army& o) const {
-        return eu_->get(u, a, o).getCapacity(idCapacity_)->getValue();
+    Unit get(Unit u, Army& a, Army& o) const {
+        return ea_->get(u, a, o).getLowestUnit(idCapacity_);
     }
 };
 

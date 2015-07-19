@@ -126,13 +126,7 @@
     <ClInclude Include="ExtractorHCX.hpp">
       <Filter>Fichiers d%27en-tête\Tree\Extractors\Capacities</Filter>
     </ClInclude>
-    <ClInclude Include="ExtractorHX.hpp">
-      <Filter>Fichiers d%27en-tête\Tree\Extractors\Capacities</Filter>
-    </ClInclude>
     <ClInclude Include="ExtractorLCX.hpp">
-      <Filter>Fichiers d%27en-tête\Tree\Extractors\Capacities</Filter>
-    </ClInclude>
-    <ClInclude Include="ExtractorLX.hpp">
       <Filter>Fichiers d%27en-tête\Tree\Extractors\Capacities</Filter>
     </ClInclude>
     <ClInclude Include="ExtractorCX.hpp">

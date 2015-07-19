@@ -60,7 +60,7 @@ Extractor<float>* Build::buildFloatExtractor(std::stringstream* code) {
         if (c >= '0' && c <= '6')
             return new ExtractorCX(buildUnitExtractor(code), (ECapacities) (c - 0x30));
     case 'D':
-        return new ExtractorD(buildPointExtractor(code));
+        return new ExtractorD(buildUnitExtractor(code), buildPointExtractor(code));
     case 'M':
         *code >> c;
         if (c >= '0' && c <= '6')
