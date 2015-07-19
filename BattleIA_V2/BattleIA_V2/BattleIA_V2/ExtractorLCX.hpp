@@ -1,18 +1,18 @@
-#ifndef _EXTRACTORCLX_HPP_
-#define _EXTRACTORCLX_HPP_
+#ifndef _EXTRACTORLCX_HPP_
+#define _EXTRACTORLCX_HPP_
 
 #include "ExtractorLX.hpp"
 #include "ECapacities.hpp"
 
 // valeurs d'une capacité ECapacities
 
-class ExtractorCHX : public Extractor<float> {
+class ExtractorLCX : public Extractor<float> {
 private:
     Extractor<Unit> * eu_;
     ECapacities idCapacity_;
 
 public:
-    ExtractorCHX(Extractor<Army> * ea, ECapacities idC) : idCapacity_(idC) {
+    ExtractorLCX(Extractor<Army> * ea, ECapacities idC) : idCapacity_(idC) {
         eu_ = new ExtractorLX(ea, idC);
     }
 
@@ -21,4 +21,4 @@ public:
     }
 };
 
-#endif // _EXTRACTORCLX_HPP_
+#endif // _EXTRACTORLCX_HPP_

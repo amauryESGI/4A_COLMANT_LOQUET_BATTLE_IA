@@ -2,17 +2,32 @@
 
 #include "Extractor.hpp"
 
+#include "ExtractorP.hpp"
 #include "ExtractorU.hpp"
-#include "ExtractorD.hpp"
+#include "ExtractorA.hpp"
+#include "ExtractorO.hpp"
 #include "ExtractorB.hpp"
+#include "ExtractorDirect.hpp"
 
 #include "ExtractorCX.hpp"
-
 #include "ExtractorLCX.hpp"
-#include "ExtractorLD.hpp"
-
 #include "ExtractorHCX.hpp"
+#include "ExtractorMinCX.hpp"
+#include "ExtractorMaxCX.hpp"
+#include "ExtractorMoyCX.hpp"
+#include "ExtractorNLX.hpp"
+#include "ExtractorNHX.hpp"
+#include "ExtractorTLX.hpp"
+#include "ExtractorTHX.hpp"
+
+#include "ExtractorD.hpp"
+#include "ExtractorLD.hpp"
 #include "ExtractorHD.hpp"
+#include "ExtractorMinD.hpp"
+#include "ExtractorMaxD.hpp"
+#include "ExtractorMoyD.hpp"
+#include "ExtractorNLD.hpp"
+#include "ExtractorNHD.hpp"
 
 
 Build::Build() {
@@ -23,6 +38,17 @@ Build::~Build() {
 }
 
 Extractor<int>* buildIntExtractor(std::stringstream code) {
+    char c;
+    code >> c;
+    if (c == '[') {
+        std::string s = "";
+        code >> c;
+        while (c != ']') {
+            s += c;
+            code >> c;
+        }
+        return new ExtractorDirect(atoi(s.c_srt()));
+    }
 }
 
 Extractor<float>* buildFloatExtractor(std::stringstream code) {
@@ -32,13 +58,13 @@ Extractor<float>* buildFloatExtractor(std::stringstream code) {
     case 'C':
         code >> c;
         if (c >= '0' && c <= '6')
-            return new ExtractorCX(buildUnitExtractor(code), c - 0x30);
+            return new ExtractorCX(buildUnitExtractor(code), (ECapacities) (c - 0x30));
     case 'D':
         return new ExtractorD(buildPointExtractor(code));
     case 'M':
         code >> c;
         if (c >= '0' && c <= '6')
-            return new ExtractorMaxCX(buildArmyExtractor(code), c - 0x30);
+            return new ExtractorMaxCX(buildArmyExtractor(code), (ECapacities) (c - 0x30));
         else if (c == 'D') {
             Extractor<Army> * ea = buildArmyExtractor(code);
             Extractor<Point> * ep = buildPointExtractor(code);
@@ -48,7 +74,7 @@ Extractor<float>* buildFloatExtractor(std::stringstream code) {
     case 'm':
         code >> c;
         if (c >= '0' && c <= '6')
-            return new ExtractorMinCX(buildArmyExtractor(code), c - 0x30);
+            return new ExtractorMinCX(buildArmyExtractor(code), (ECapacities) (c - 0x30));
         else if (c == 'D') {
             Extractor<Army> * es = buildArmyExtractor(code);
             Extractor<Point> * ep = buildPointExtractor(code);
@@ -58,12 +84,12 @@ Extractor<float>* buildFloatExtractor(std::stringstream code) {
     case 'a':
         code >> c;
         if (c >= '0' && c <= '6')
-            return new ExtractorACX(buildArmyExtractor(code), c - 0x30);
+            return new ExtractorMoyCX(buildArmyExtractor(code), (ECapacities) (c - 0x30));
         else if (c == 'D') {
             Extractor<Army> * es = buildArmyExtractor(code);
             Extractor<Point> * ep = buildPointExtractor(code);
 
-            return new ExtractorAD(es, ep);
+            return new ExtractorMoyD(es, ep);
         }
     }
 }
@@ -88,7 +114,7 @@ Extractor<Unit>* buildUnitExtractor(std::stringstream code) {
     case 'L':
         code >> c;
         if (c >= '0' && c <= '6')
-            return new ExtractorLCX(buildArmyExtractor(code), c - 0x30);
+            return new ExtractorLCX(buildArmyExtractor(code), (ECapacities) (c - 0x30));
         else if (c == 'D') {
             Extractor<Army> * es = buildArmyExtractor(code);
             Extractor<Point> * ep = buildPointExtractor(code);
@@ -98,7 +124,7 @@ Extractor<Unit>* buildUnitExtractor(std::stringstream code) {
     case 'H':
         code >> c;
         if (c >= '0' && c <= '6')
-            return new ExtractorHCX(buildArmyExtractor(code), c - 0x30);
+            return new ExtractorHCX(buildArmyExtractor(code), (ECapacities) (c - 0x30));
         else if (c == 'D') {
             Extractor<Army> * es = buildArmyExtractor(code);
             Extractor<Point> * ep = buildPointExtractor(code);
@@ -109,4 +135,50 @@ Extractor<Unit>* buildUnitExtractor(std::stringstream code) {
 }
 
 Extractor<Army>* buildArmyExtractor(std::stringstream code) {
+    char c;
+    code >> c;
+    switch (c) {
+    case 'A':
+        return new ExtractorA();
+    case 'O':
+        return new ExtractorO();
+    case 'N':
+        code >> c;
+        if (c == 'L') {
+            code >> c;
+            if (c == 'D') {
+                Extractor<int> * ei = buildIntExtractor(code);
+                Extractor<Army>* es = buildArmyExtractor(code);
+                Extractor<Point>* ep = buildPointExtractor(code);
+                return new ExtractorNLD(ei, es, ep);
+            } else {
+                Extractor<int> * ei = buildIntExtractor(code);
+                Extractor<Army>* es = buildArmyExtractor(code);
+                return new ExtractorNLX(ei, es, c - 0x30);
+            }
+        } else {
+            code >> c;
+            if (c == 'D') {
+                Extractor<int> * ei = buildIntExtractor(code);
+                Extractor<Army>* es = buildArmyExtractor(code);
+                Extractor<Point>* ep = buildPointExtractor(code);
+                return new ExtractorNHD(ei, es, ep);
+            } else {
+                Extractor<int> * ei = buildIntExtractor(code);
+                Extractor<Army>* es = buildArmyExtractor(code);
+                return new ExtractorNHX(ei, es, c - 0x30);
+            }
+        }
+    case 'T':
+        code >> c;
+        if (c == 'L') {
+            Extractor<int> * ei = buildIntExtractor(code);
+            Extractor<Army>* es = buildArmyExtractor(code);
+            return new ExtractorTLX(ei, es, c - 0x30);
+        } else {
+            Extractor<int> * ei = buildIntExtractor(code);
+            Extractor<Army>* es = buildArmyExtractor(code);
+            return new ExtractorTHX(ei, es, c - 0x30);
+        }
+    }
 }

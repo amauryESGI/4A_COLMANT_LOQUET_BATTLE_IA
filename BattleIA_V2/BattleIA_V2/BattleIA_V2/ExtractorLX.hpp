@@ -1,5 +1,5 @@
-#ifndef _EXTRACTORLCX_HPP_
-#define _EXTRACTORLCX_HPP_
+#ifndef _EXTRACTORLX_HPP_
+#define _EXTRACTORLX_HPP_
 
 #include "Extractor.hpp"
 #include "ECapacities.hpp"
@@ -18,17 +18,4 @@ public:
     }
 };
 
-class ExtractorLCX : public Extractor<float> {
-private:
-    Extractor<Army> * ea_;
-    ECapacities idCapacity_;
-
-public:
-    ExtractorLCX(Extractor<Army> * ea, ECapacities idC) : ea_(ea), idCapacity_(idC) {}
-
-    float get(Unit u, Army& a, Army& o) const {
-        return ea_->get(u, a, o).getLowestUnit(idCapacity_).getCapacity(idCapacity_)->getValue();
-    }
-};
-
-#endif // _EXTRACTORLCX_HPP_
+#endif // _EXTRACTORLX_HPP_

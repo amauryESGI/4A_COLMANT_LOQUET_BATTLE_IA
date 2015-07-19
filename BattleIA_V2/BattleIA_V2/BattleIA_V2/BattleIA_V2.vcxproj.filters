@@ -28,23 +28,8 @@
     <Filter Include="Fichiers d%27en-tête\Tree\Extractors\Capacities">
       <UniqueIdentifier>{756479c4-faf1-492a-8a8b-2601cd3ada71}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Fichiers d%27en-tête\Tree\Extractors\Capacities\Value">
-      <UniqueIdentifier>{114c7f71-4416-45f5-9ce1-fc72562b3c2f}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Fichiers d%27en-tête\Tree\Extractors\Distences">
       <UniqueIdentifier>{474c419e-af3a-457b-bb29-078b40db8a14}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Fichiers d%27en-tête\Tree\Extractors\Capacities\Higest">
-      <UniqueIdentifier>{49ba8090-282b-458c-82d2-281dc606cd77}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Fichiers d%27en-tête\Tree\Extractors\Capacities\Lowest">
-      <UniqueIdentifier>{36ed3ab8-0e64-4992-af24-aee50db902ec}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Fichiers d%27en-tête\Tree\Extractors\Capacities\Higest\Value">
-      <UniqueIdentifier>{d6e7efb1-6ee4-46a1-a632-96cac94e4712}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Fichiers d%27en-tête\Tree\Extractors\Capacities\Lowest\Value">
-      <UniqueIdentifier>{38c7d083-4f5c-4cee-a171-0666441fad31}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -138,104 +123,59 @@
     <ClInclude Include="ExtractorD.hpp">
       <Filter>Fichiers d%27en-tête\Tree\Extractors\Distences</Filter>
     </ClInclude>
-    <ClInclude Include="ExtractorL0.hpp">
-      <Filter>Fichiers d%27en-tête\Tree\Extractors\Capacities\Lowest</Filter>
-    </ClInclude>
-    <ClInclude Include="ExtractorL1.hpp">
-      <Filter>Fichiers d%27en-tête\Tree\Extractors\Capacities\Lowest</Filter>
-    </ClInclude>
-    <ClInclude Include="ExtractorL2.hpp">
-      <Filter>Fichiers d%27en-tête\Tree\Extractors\Capacities\Lowest</Filter>
-    </ClInclude>
-    <ClInclude Include="ExtractorL3.hpp">
-      <Filter>Fichiers d%27en-tête\Tree\Extractors\Capacities\Lowest</Filter>
-    </ClInclude>
-    <ClInclude Include="ExtractorL4.hpp">
-      <Filter>Fichiers d%27en-tête\Tree\Extractors\Capacities\Lowest</Filter>
-    </ClInclude>
-    <ClInclude Include="ExtractorL5.hpp">
-      <Filter>Fichiers d%27en-tête\Tree\Extractors\Capacities\Lowest</Filter>
-    </ClInclude>
-    <ClInclude Include="ExtractorL6.hpp">
-      <Filter>Fichiers d%27en-tête\Tree\Extractors\Capacities\Lowest</Filter>
-    </ClInclude>
-    <ClInclude Include="ExtractorH0.hpp">
-      <Filter>Fichiers d%27en-tête\Tree\Extractors\Capacities\Higest</Filter>
-    </ClInclude>
-    <ClInclude Include="ExtractorH1.hpp">
-      <Filter>Fichiers d%27en-tête\Tree\Extractors\Capacities\Higest</Filter>
-    </ClInclude>
-    <ClInclude Include="ExtractorH2.hpp">
-      <Filter>Fichiers d%27en-tête\Tree\Extractors\Capacities\Higest</Filter>
-    </ClInclude>
-    <ClInclude Include="ExtractorH3.hpp">
-      <Filter>Fichiers d%27en-tête\Tree\Extractors\Capacities\Higest</Filter>
-    </ClInclude>
-    <ClInclude Include="ExtractorH4.hpp">
-      <Filter>Fichiers d%27en-tête\Tree\Extractors\Capacities\Higest</Filter>
-    </ClInclude>
-    <ClInclude Include="ExtractorH5.hpp">
-      <Filter>Fichiers d%27en-tête\Tree\Extractors\Capacities\Higest</Filter>
-    </ClInclude>
-    <ClInclude Include="ExtractorH6.hpp">
-      <Filter>Fichiers d%27en-tête\Tree\Extractors\Capacities\Higest</Filter>
-    </ClInclude>
-    <ClInclude Include="ExtractorCX.hpp">
-      <Filter>Fichiers d%27en-tête\Tree\Extractors\Capacities\Value</Filter>
-    </ClInclude>
-    <ClInclude Include="ExtractorC0.hpp">
-      <Filter>Fichiers d%27en-tête\Tree\Extractors\Capacities\Value</Filter>
-    </ClInclude>
-    <ClInclude Include="ExtractorC1.hpp">
-      <Filter>Fichiers d%27en-tête\Tree\Extractors\Capacities\Value</Filter>
-    </ClInclude>
-    <ClInclude Include="ExtractorC2.hpp">
-      <Filter>Fichiers d%27en-tête\Tree\Extractors\Capacities\Value</Filter>
-    </ClInclude>
-    <ClInclude Include="ExtractorC3.hpp">
-      <Filter>Fichiers d%27en-tête\Tree\Extractors\Capacities\Value</Filter>
-    </ClInclude>
-    <ClInclude Include="ExtractorC4.hpp">
-      <Filter>Fichiers d%27en-tête\Tree\Extractors\Capacities\Value</Filter>
-    </ClInclude>
-    <ClInclude Include="ExtractorC5.hpp">
-      <Filter>Fichiers d%27en-tête\Tree\Extractors\Capacities\Value</Filter>
-    </ClInclude>
-    <ClInclude Include="ExtractorC6.hpp">
-      <Filter>Fichiers d%27en-tête\Tree\Extractors\Capacities\Value</Filter>
-    </ClInclude>
-    <ClInclude Include="ExtractorCH0.hpp">
-      <Filter>Fichiers d%27en-tête\Tree\Extractors\Capacities\Higest\Value</Filter>
-    </ClInclude>
-    <ClInclude Include="ExtractorCH1.hpp">
-      <Filter>Fichiers d%27en-tête\Tree\Extractors\Capacities\Higest\Value</Filter>
-    </ClInclude>
-    <ClInclude Include="ExtractorCH2.hpp">
-      <Filter>Fichiers d%27en-tête\Tree\Extractors\Capacities\Higest\Value</Filter>
-    </ClInclude>
-    <ClInclude Include="ExtractorCH3.hpp">
-      <Filter>Fichiers d%27en-tête\Tree\Extractors\Capacities\Higest\Value</Filter>
-    </ClInclude>
-    <ClInclude Include="ExtractorCH4.hpp">
-      <Filter>Fichiers d%27en-tête\Tree\Extractors\Capacities\Higest\Value</Filter>
-    </ClInclude>
-    <ClInclude Include="ExtractorCH5.hpp">
-      <Filter>Fichiers d%27en-tête\Tree\Extractors\Capacities\Higest\Value</Filter>
-    </ClInclude>
-    <ClInclude Include="ExtractorCH6.hpp">
-      <Filter>Fichiers d%27en-tête\Tree\Extractors\Capacities\Higest\Value</Filter>
-    </ClInclude>
-    <ClInclude Include="ExtractorCHX.hpp">
-      <Filter>Fichiers d%27en-tête\Tree\Extractors\Capacities\Higest\Value</Filter>
+    <ClInclude Include="ExtractorHCX.hpp">
+      <Filter>Fichiers d%27en-tête\Tree\Extractors\Capacities</Filter>
     </ClInclude>
     <ClInclude Include="ExtractorHX.hpp">
-      <Filter>Fichiers d%27en-tête\Tree\Extractors\Capacities\Higest</Filter>
+      <Filter>Fichiers d%27en-tête\Tree\Extractors\Capacities</Filter>
+    </ClInclude>
+    <ClInclude Include="ExtractorLCX.hpp">
+      <Filter>Fichiers d%27en-tête\Tree\Extractors\Capacities</Filter>
     </ClInclude>
     <ClInclude Include="ExtractorLX.hpp">
-      <Filter>Fichiers d%27en-tête\Tree\Extractors\Capacities\Lowest</Filter>
+      <Filter>Fichiers d%27en-tête\Tree\Extractors\Capacities</Filter>
     </ClInclude>
-    <ClInclude Include="ExtractorCLX.hpp">
-      <Filter>Fichiers d%27en-tête\Tree\Extractors\Capacities\Lowest\Value</Filter>
+    <ClInclude Include="ExtractorCX.hpp">
+      <Filter>Fichiers d%27en-tête\Tree\Extractors\Capacities</Filter>
+    </ClInclude>
+    <ClInclude Include="ExtractorMinD.hpp">
+      <Filter>Fichiers d%27en-tête\Tree\Extractors\Distences</Filter>
+    </ClInclude>
+    <ClInclude Include="ExtractorMaxD.hpp">
+      <Filter>Fichiers d%27en-tête\Tree\Extractors\Distences</Filter>
+    </ClInclude>
+    <ClInclude Include="ExtractorMoyD.hpp">
+      <Filter>Fichiers d%27en-tête\Tree\Extractors\Distences</Filter>
+    </ClInclude>
+    <ClInclude Include="ExtractorMaxCX.hpp">
+      <Filter>Fichiers d%27en-tête\Tree\Extractors\Capacities</Filter>
+    </ClInclude>
+    <ClInclude Include="ExtractorMinCX.hpp">
+      <Filter>Fichiers d%27en-tête\Tree\Extractors\Capacities</Filter>
+    </ClInclude>
+    <ClInclude Include="ExtractorMoyCX.hpp">
+      <Filter>Fichiers d%27en-tête\Tree\Extractors\Capacities</Filter>
+    </ClInclude>
+    <ClInclude Include="ExtractorDirect.hpp">
+      <Filter>Fichiers d%27en-tête\Tree\Extractors</Filter>
+    </ClInclude>
+    <ClInclude Include="ExtractorNHD.hpp">
+      <Filter>Fichiers d%27en-tête\Tree\Extractors\Distences</Filter>
+    </ClInclude>
+    <ClInclude Include="ExtractorNLD.hpp">
+      <Filter>Fichiers d%27en-tête\Tree\Extractors\Distences</Filter>
+    </ClInclude>
+    <ClInclude Include="ExtractorNHX.hpp">
+      <Filter>Fichiers d%27en-tête\Tree\Extractors\Capacities</Filter>
+    </ClInclude>
+    <ClInclude Include="ExtractorNLX.hpp">
+      <Filter>Fichiers d%27en-tête\Tree\Extractors\Capacities</Filter>
+    </ClInclude>
+    <ClInclude Include="ExtractorTHX.hpp">
+      <Filter>Fichiers d%27en-tête\Tree\Extractors</Filter>
+    </ClInclude>
+    <ClInclude Include="ExtractorTLX.hpp">
+      <Filter>Fichiers d%27en-tête\Tree\Extractors</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
