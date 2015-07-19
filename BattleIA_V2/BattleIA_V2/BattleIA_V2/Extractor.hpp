@@ -3,6 +3,8 @@
 
 #include "Army.hpp"
 #include "Unit.hpp"
+#include <functional>
+#include <complex.h>
 
 template <typename R>
 class Extractor {
