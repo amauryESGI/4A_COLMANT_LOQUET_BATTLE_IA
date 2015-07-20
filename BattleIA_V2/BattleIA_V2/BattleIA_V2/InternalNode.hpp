@@ -14,8 +14,12 @@ public:
         this->_leftSide = leftSide;
         this->_rightSide = rightSide;
     }
-    int getValue() const {
-        return _operator->getResult(_rson, _lson);
+
+    Action* getAction(Unit u, Army& a, Army& o) const {
+        if (_operator->getResult(_leftSide, _rightSide, u, a, o))
+            return _lson->getAction(u, a, o);
+
+        return _rson->getAction(u, a, o);
     }
 
 private:

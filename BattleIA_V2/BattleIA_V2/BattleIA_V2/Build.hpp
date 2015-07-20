@@ -15,7 +15,7 @@ private:
     Extractor<Army>*    buildArmyExtractor(std::stringstream* code);
 
     InternalNode*       buildInternalNode(std::stringstream* code);
-    Leaf*               buildLeaf(std::stringstream* code);
+    Node*               buildLeaf(std::stringstream* code);
     Node*               buildTree(std::stringstream* code);
 
 public:

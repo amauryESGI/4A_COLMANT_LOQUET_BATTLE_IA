@@ -2,10 +2,11 @@
 #define _OPERATOR_H_
 
 #include "Node.hpp"
+#include "Extractor.hpp"
 
 class Operator {
 public:
-    virtual bool getResult(const Node *lson, const Node *rson) const = 0;
+    virtual bool getResult(const Extractor<float> *lson, const Extractor<float> *rson, Unit u, Army& a, Army& o) const = 0;
 private:
 };
 

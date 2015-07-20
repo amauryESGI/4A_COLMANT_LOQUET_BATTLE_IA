@@ -16,7 +16,7 @@ private:
 public:
 
     //Constructor taking in paramters the unit to move and the destination
-    FleeAction(Unit& unit, const Point& position) :unit_(&unit), position_(position) {
+    FleeAction(Unit& unit, const Point& position) : unit_(&unit), position_(position) {
         // TODO : Fix FleeAction
     }
 

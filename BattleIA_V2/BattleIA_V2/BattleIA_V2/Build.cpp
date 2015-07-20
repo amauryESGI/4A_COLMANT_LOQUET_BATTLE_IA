@@ -33,6 +33,7 @@
 #include "EmptyAction.hpp"
 #include "MoveAction.hpp"
 #include "ShotAction.hpp"
+#include "FleeAction.hpp"
 
 #include "OperatorInf.hpp"
 #include "OperatorSup.hpp"
@@ -177,6 +178,7 @@ Extractor<Army>* Build::buildArmyExtractor(std::stringstream* code) {
                 return new ExtractorNHX(ei, es, c - 0x30);
             }
         }
+        break;
     case 'T':
         *code >> c;
         if (c == 'L') {
@@ -188,6 +190,7 @@ Extractor<Army>* Build::buildArmyExtractor(std::stringstream* code) {
             Extractor<Army>* es = buildArmyExtractor(code);
             return new ExtractorTHX(ei, es, c - 0x30);
         }
+        break;
     }
 }
 InternalNode * Build::buildInternalNode(std::stringstream* code) {
@@ -198,8 +201,10 @@ InternalNode * Build::buildInternalNode(std::stringstream* code) {
     switch (c) {
     case '<':
         cmp = new OperatorInf();
+        break;
     case '>':
         cmp = new OperatorSup();
+        break;
     }
     Extractor<float> * rightSide = buildFloatExtractor(code);
     Node * l_son = buildTree(code);
@@ -207,24 +212,37 @@ InternalNode * Build::buildInternalNode(std::stringstream* code) {
     return new InternalNode(cmp, l_son, r_son, leftSide, rightSide);
 }
 
-Leaf * Build::buildLeaf(std::stringstream* code) {
-    Action * action;
+Node * Build::buildLeaf(std::stringstream* code) {
+    Node * action;
     char c;
     *code >> c;
     switch (c) {
     case 'M':
+    {
         Extractor<Point> * ep = buildPointExtractor(code);
-        action = new MoveAction(ep->get(u, a, o));
-    case 'E':
-        Extractor<Point> * ep = buildPointExtractor(code);
-        action = new FleeAction(ep->get(u, a, o));
-    case 'A':
-        Extractor<Unit> * eu = buildUnitExtractor(code);
-        action = new ShotAction(eu->get(u, a, o));
-    case 'N':
-        Extractor<Unit> * eu = buildUnitExtractor(code);
-        action = new EmptyAction(eu->get(u, a, o));
+        action = new LeafMove(ep);
+        break;
     }
+    case 'E':
+    {
+        Extractor<Point> * ep = buildPointExtractor(code);
+        action = new LeafFlee(ep);
+        break;
+    }
+    case 'A':
+    {
+        Extractor<Unit> * eu = buildUnitExtractor(code);
+        action = new LeafShot(eu);
+        break;
+    }
+    case 'N':
+    {
+        action = new LeafEmpty();
+        break;
+    }
+    }
+
+    return action;
 }
 
 Node * Build::buildTree(std::stringstream* code) {
