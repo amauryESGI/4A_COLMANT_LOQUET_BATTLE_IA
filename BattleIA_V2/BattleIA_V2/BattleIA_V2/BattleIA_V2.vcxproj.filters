@@ -31,6 +31,9 @@
     <Filter Include="Fichiers d%27en-tête\Tree\Extractors\Distences">
       <UniqueIdentifier>{474c419e-af3a-457b-bb29-078b40db8a14}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Fichiers d%27en-tête\Tree\Operators">
+      <UniqueIdentifier>{a1034a92-6d51-421d-9059-bc677b8626ab}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AI.hpp">
@@ -170,6 +173,27 @@
     </ClInclude>
     <ClInclude Include="ExtractorTLX.hpp">
       <Filter>Fichiers d%27en-tête\Tree\Extractors</Filter>
+    </ClInclude>
+    <ClInclude Include="Leaf.hpp">
+      <Filter>Fichiers d%27en-tête\Tree</Filter>
+    </ClInclude>
+    <ClInclude Include="Node.hpp">
+      <Filter>Fichiers d%27en-tête\Tree</Filter>
+    </ClInclude>
+    <ClInclude Include="InternalNode.hpp">
+      <Filter>Fichiers d%27en-tête\Tree</Filter>
+    </ClInclude>
+    <ClInclude Include="Operator.hpp">
+      <Filter>Fichiers d%27en-tête\Tree\Operators</Filter>
+    </ClInclude>
+    <ClInclude Include="OperatorInf.hpp">
+      <Filter>Fichiers d%27en-tête\Tree\Operators</Filter>
+    </ClInclude>
+    <ClInclude Include="OperatorSup.hpp">
+      <Filter>Fichiers d%27en-tête\Tree\Operators</Filter>
+    </ClInclude>
+    <ClInclude Include="FleeAction.hpp">
+      <Filter>Fichiers d%27en-tête\Actions</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

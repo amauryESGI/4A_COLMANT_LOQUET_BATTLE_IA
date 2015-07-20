@@ -1,0 +1,28 @@
+#ifndef _INTERNALNODE_H_
+#define _INTERNALNODE_H_
+
+#include "Node.hpp"
+#include "Operator.hpp"
+#include "Extractor.hpp"
+
+class InternalNode : public Node {
+public:
+    InternalNode(Operator *operator_, Node *rson, Node *lson, Extractor<float> *leftSide, Extractor<float> *rightSide) {
+        this->_operator = operator_;
+        this->_rson = rson;
+        this->_lson = lson;
+        this->_leftSide = leftSide;
+        this->_rightSide = rightSide;
+    }
+    int getValue() const {
+        return _operator->getResult(_rson, _lson);
+    }
+
+private:
+    Operator *_operator;
+    Node *_rson;
+    Node *_lson;
+    Extractor<float> *_leftSide;
+    Extractor<float> *_rightSide;
+};
+#endif // _INTERNALNODE_H_

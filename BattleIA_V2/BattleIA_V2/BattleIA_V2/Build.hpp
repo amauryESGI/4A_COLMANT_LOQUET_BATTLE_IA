@@ -3,6 +3,8 @@
 
 #include <sstream>
 #include "Extractor.hpp"
+#include "InternalNode.hpp"
+#include "Leaf.hpp"
 
 class Build {
 private:
@@ -11,6 +13,10 @@ private:
     Extractor<Point>*   buildPointExtractor(std::stringstream* code);
     Extractor<Unit>*    buildUnitExtractor(std::stringstream* code);
     Extractor<Army>*    buildArmyExtractor(std::stringstream* code);
+
+    InternalNode*       buildInternalNode(std::stringstream* code);
+    Leaf*               buildLeaf(std::stringstream* code);
+    Node*               buildTree(std::stringstream* code);
 
 public:
     Build();

@@ -103,8 +103,15 @@
     <ClInclude Include="ExtractorTLX.hpp" />
     <ClInclude Include="ExtractorU.hpp" />
     <ClInclude Include="FirerateCapacity.hpp" />
+    <ClInclude Include="FleeAction.hpp" />
+    <ClInclude Include="InternalNode.hpp" />
+    <ClInclude Include="Leaf.hpp" />
     <ClInclude Include="LifeCapacity.hpp" />
     <ClInclude Include="MoveAction.hpp" />
+    <ClInclude Include="Node.hpp" />
+    <ClInclude Include="Operator.hpp" />
+    <ClInclude Include="OperatorInf.hpp" />
+    <ClInclude Include="OperatorSup.hpp" />
     <ClInclude Include="Point.hpp" />
     <ClInclude Include="RangeCapacity.hpp" />
     <ClInclude Include="RegenCapacity.hpp" />
