@@ -13,7 +13,7 @@ struct UnitChoice {
     Army* army;
     Army* opponents;
     int unitId;
-    UnitChoice(int id, Army* a, Army* o):unitId(id),army(a), opponents(o) {}
+    UnitChoice(int id, Army* a, Army* o ):unitId(id),army(a), opponents(o) {}
 };
 
 

@@ -4,7 +4,6 @@
 #include <iostream>
 #include "Army.hpp"
 
-
 void Army::copyUnits_(const std::vector<Unit*>& units)
 {
     units_.clear();
@@ -97,8 +96,6 @@ void Army::purge()
         return !(u->isAlive());
     }), units_.end());
 }
-
-
 
 Army Army::mutate()const
 {

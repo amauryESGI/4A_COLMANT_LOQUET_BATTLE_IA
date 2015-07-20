@@ -195,7 +195,7 @@ Extractor<Army>* Build::buildArmyExtractor(std::stringstream* code) {
 }
 InternalNode * Build::buildInternalNode(std::stringstream* code) {
     Extractor<float> * leftSide = buildFloatExtractor(code);
-    Operator * cmp;
+	Operator * cmp = nullptr;
     char c;
     *code >> c;
     switch (c) {
@@ -213,7 +213,7 @@ InternalNode * Build::buildInternalNode(std::stringstream* code) {
 }
 
 Node * Build::buildLeaf(std::stringstream* code) {
-    Node * action;
+    Node * action = nullptr;
     char c;
     *code >> c;
     switch (c) {

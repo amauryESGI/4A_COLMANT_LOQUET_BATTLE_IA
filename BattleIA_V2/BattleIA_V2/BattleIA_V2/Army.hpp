@@ -8,7 +8,6 @@
 #include <iostream>
 #include <ostream>
 
-
 //Class representing an army, i.e. a set of units
 class Army {
 private:
@@ -104,6 +103,5 @@ inline std::ostream& operator<<(std::ostream& out, const Army& army)
 
 	return out;
 }
-
 
 #endif
