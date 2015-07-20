@@ -4,23 +4,23 @@
 #include <sstream>
 #include "Extractor.hpp"
 #include "InternalNode.hpp"
-#include "Leaf.hpp"
 
 class Build {
 private:
-    Extractor<int>*     buildIntExtractor(std::stringstream* code);
-    Extractor<float>*   buildFloatExtractor(std::stringstream* code);
-    Extractor<Point>*   buildPointExtractor(std::stringstream* code);
-    Extractor<Unit>*    buildUnitExtractor(std::stringstream* code);
-    Extractor<Army>*    buildArmyExtractor(std::stringstream* code);
+    static Extractor<int>*     Creat_IntExtractor(std::stringstream* code);
+    static Extractor<float>*   Creat_FloatExtractor(std::stringstream* code);
+    static Extractor<Point>*   Creat_PointExtractor(std::stringstream* code);
+    static Extractor<Unit>*    Creat_UnitExtractor(std::stringstream* code);
+    static Extractor<Army>*    Creat_ArmyExtractor(std::stringstream* code);
 
-    InternalNode*       buildInternalNode(std::stringstream* code);
-    Node*               buildLeaf(std::stringstream* code);
-    Node*               buildTree(std::stringstream* code);
+    static InternalNode*       Creat_InternalNode(std::stringstream* code);
+    static Node*               Creat_Leaf(std::stringstream* code);
+    static Node*               Creat_Tree(std::stringstream* code);
 
 public:
     Build();
     ~Build();
+    static Node* BuildTree(std::string* str);
 };
 
 #endif // _BUILD_HPP_

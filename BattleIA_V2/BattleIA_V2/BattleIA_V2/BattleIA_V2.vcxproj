@@ -105,7 +105,10 @@
     <ClInclude Include="FirerateCapacity.hpp" />
     <ClInclude Include="FleeAction.hpp" />
     <ClInclude Include="InternalNode.hpp" />
-    <ClInclude Include="Leaf.hpp" />
+    <ClInclude Include="LeafEmpty.hpp" />
+    <ClInclude Include="LeafMove.hpp" />
+    <ClInclude Include="LeafFlee.hpp" />
+    <ClInclude Include="LeafShot.hpp" />
     <ClInclude Include="LifeCapacity.hpp" />
     <ClInclude Include="MoveAction.hpp" />
     <ClInclude Include="Node.hpp" />

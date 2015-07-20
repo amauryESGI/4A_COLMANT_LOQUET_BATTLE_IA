@@ -18,7 +18,7 @@
 #include "RangeCapacity.hpp"
 #include "ArmorCapacity.hpp"
 #include "Point.hpp"
-
+#include "Node.hpp"
 
 
 //Class representing a unit, i.e. element of an army
@@ -35,9 +35,12 @@ private:
     //code representing the AI used by the unit
     std::string iaCode_;
 
+    //
+    Node* tree_;
+
     //vector of the unit's capacities
     //order is : speed, life, armor, regen, damage, range, firerate
-    std::vector<std::unique_ptr<Capacity> > capacities_;
+    std::vector<std::unique_ptr<Capacity>> capacities_;
 
     //position of the unit
     Point position_;
@@ -50,6 +53,9 @@ public:
 
     //Constructor : global level will be randomly dispatched among the capacities
     Unit(int globalLevel);
+
+    //Constructor : global level ...
+    Unit::Unit(int globalLevel, std::string iaCode);
 
     //Constructor from the code of AI and the level of the different capacities
     Unit(std::string iaCode, int speedLevel, int lifeLevel, int armorLevel, int regenLevel, int damageLevel, int rangeLevel, int firerateLevel);
@@ -76,6 +82,11 @@ public:
     std::string getIACode()const
     {
         return iaCode_;
+    }
+
+    //provide the AI code of the unit
+    Node* getTree() const {
+        return tree_;
     }
 
     //Provide the speed capacity of the unit
@@ -144,7 +155,6 @@ public:
         position_ = position;
     }
 
-
     //Change the position of the unit by moving in direction of the new one
     void moveToPosition(const Point& position)
     {
@@ -185,7 +195,7 @@ public:
     //Load a unit from the input stream
     static Unit load(std::istream& in);
 
-
+    
 };
 
 //Shift operator overloading, printing the unit in the output stream.

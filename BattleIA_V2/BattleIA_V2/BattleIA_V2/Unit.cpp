@@ -3,6 +3,7 @@
 #include "Unit.hpp"
 #include <memory>
 #include <numeric>
+#include "Build.hpp"
 
 //static counter used for unique id creation
 int Unit::idCount_=0;
@@ -26,13 +27,31 @@ void Unit::init_()
 //Constructor : global level will be randomly dispatched among the capacities
 Unit::Unit(int globalLevel)
 {
+    //init_();
+    //if(std::rand()%2)this->iaCode_ = "L";
+    //else this->iaCode_ = "H";
+    //if(rand()%8==0)this->iaCode_ += "D";
+    //else this->iaCode_ += '0'+ (char)(rand()%7);
+    //while(globalLevel--) {
+    //    this->capacities_[std::rand()%this->capacities_.size()]->upgrade();
+    //}
     init_();
-    if(std::rand()%2)this->iaCode_ = "L";
-    else this->iaCode_ = "H";
-    if(rand()%8==0)this->iaCode_ += "D";
-    else this->iaCode_ += '0'+ (char)(rand()%7);
-    while(globalLevel--) {
-        this->capacities_[std::rand()%this->capacities_.size()]->upgrade();
+    this->iaCode_ = "?C1LDOPU<C1U!ALDOPU?aDOPU<a5O!MBO!ALDOPU";
+    tree_ = Build::BuildTree(&iaCode_);
+    this->iaCode_ = "?C1LDOPU<C1U!ALDOPU?aDOPU<a5O!MBO!ALDOPU";
+    while (globalLevel--) {
+        this->capacities_[std::rand() % this->capacities_.size()]->upgrade();
+    }
+}
+
+//Constructor : global level will be randomly dispatched among the capacities
+Unit::Unit(int globalLevel, std::string iaCode) {
+    init_();
+    this->iaCode_ = iaCode;
+    tree_ = Build::BuildTree(&iaCode_);
+    this->iaCode_ = iaCode;
+    while (globalLevel--) {
+        this->capacities_[std::rand() % this->capacities_.size()]->upgrade();
     }
 }
 

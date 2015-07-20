@@ -34,6 +34,9 @@
     <Filter Include="Fichiers d%27en-tête\Tree\Operators">
       <UniqueIdentifier>{a1034a92-6d51-421d-9059-bc677b8626ab}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Fichiers d%27en-tête\Tree\Leaf">
+      <UniqueIdentifier>{11768816-9882-407f-a921-be03bacb8ac9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AI.hpp">
@@ -174,9 +177,6 @@
     <ClInclude Include="ExtractorTLX.hpp">
       <Filter>Fichiers d%27en-tête\Tree\Extractors</Filter>
     </ClInclude>
-    <ClInclude Include="Leaf.hpp">
-      <Filter>Fichiers d%27en-tête\Tree</Filter>
-    </ClInclude>
     <ClInclude Include="Node.hpp">
       <Filter>Fichiers d%27en-tête\Tree</Filter>
     </ClInclude>
@@ -194,6 +194,18 @@
     </ClInclude>
     <ClInclude Include="FleeAction.hpp">
       <Filter>Fichiers d%27en-tête\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="LeafFlee.hpp">
+      <Filter>Fichiers d%27en-tête\Tree\Leaf</Filter>
+    </ClInclude>
+    <ClInclude Include="LeafMove.hpp">
+      <Filter>Fichiers d%27en-tête\Tree\Leaf</Filter>
+    </ClInclude>
+    <ClInclude Include="LeafShot.hpp">
+      <Filter>Fichiers d%27en-tête\Tree\Leaf</Filter>
+    </ClInclude>
+    <ClInclude Include="LeafEmpty.hpp">
+      <Filter>Fichiers d%27en-tête\Tree\Leaf</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
