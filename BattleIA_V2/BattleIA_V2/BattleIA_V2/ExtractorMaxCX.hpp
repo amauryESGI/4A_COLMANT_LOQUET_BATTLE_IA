@@ -27,6 +27,10 @@ public:
 
         return max;
     }
+
+    std::string getIACode() {
+        return std::string("M") + std::to_string(idCapacity_) + ea_->getIACode();
+    }
 };
 
 #endif // _EXTRACTORMINCX_HPP_

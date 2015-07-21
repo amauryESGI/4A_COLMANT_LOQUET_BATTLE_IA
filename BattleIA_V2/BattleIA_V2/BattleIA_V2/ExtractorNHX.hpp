@@ -26,6 +26,10 @@ public:
 
         return Army(std::vector<Unit*>(subArmy.begin(), subArmy.begin() + ei_->get(u, a, o)));
     }
+
+    std::string getIACode() {
+        return std::string("NH") + std::to_string(idCapacity_) + ei_->getIACode() + ea_->getIACode();
+    }
 };
 
 

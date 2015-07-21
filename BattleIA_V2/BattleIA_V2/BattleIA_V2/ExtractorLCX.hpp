@@ -17,6 +17,10 @@ public:
     Unit get(Unit u, Army& a, Army& o) const {
         return ea_->get(u, a, o).getLowestUnit(idCapacity_);
     }
+
+    std::string getIACode() {
+        return std::string("L") + std::to_string(idCapacity_) + ea_->getIACode();
+    }
 };
 
 #endif // _EXTRACTORLCX_HPP_

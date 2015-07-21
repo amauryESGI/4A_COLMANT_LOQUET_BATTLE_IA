@@ -13,6 +13,10 @@ public:
     int get(Unit u, Army& a, Army& o) const {
         return val_;
     }
+
+    std::string getIACode() {
+        return std::string("[") + std::to_string(val_) + std::string("]");
+    }
 };
 
 #endif // _EXTRACTORDIRECT_HPP_

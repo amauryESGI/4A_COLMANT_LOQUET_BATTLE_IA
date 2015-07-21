@@ -10,6 +10,10 @@ public:
     Army get(Unit u, Army& a, Army& o) const {
         return o;
     }
+
+    std::string getIACode() {
+        return std::string("O");
+    }
 };
 
 #endif // _EXTRACTORO_HPP_

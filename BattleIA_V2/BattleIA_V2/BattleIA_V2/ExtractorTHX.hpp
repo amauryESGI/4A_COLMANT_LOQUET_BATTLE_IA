@@ -23,6 +23,10 @@ public:
 
         return Army(subArmy);
     }
+
+    std::string getIACode() {
+        return std::string("TH") + std::to_string(idCapacity_) + ei_->getIACode() + ea_->getIACode();
+    }
 };
 
 #endif // _EXTRACTORTHX_HPP_

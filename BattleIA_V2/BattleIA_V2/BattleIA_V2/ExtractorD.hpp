@@ -13,6 +13,10 @@ public:
     float get(Unit u, Army& a, Army& o) const {
         return eu_->get(u, a, o).getPosition().distance(ep_->get(u, a, o));
     }
+
+    std::string getIACode() {
+        return std::string("D") + eu_->getIACode() + ep_->getIACode();
+    }
 };
 
 #endif // _EXTRACTORD_HPP_

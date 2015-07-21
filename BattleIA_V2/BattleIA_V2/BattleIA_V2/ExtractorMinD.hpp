@@ -27,6 +27,10 @@ public:
 
         return dMin;
     }
+
+    std::string getIACode() {
+        return std::string("mD") + ea_->getIACode() + ep_->getIACode();
+    }
 };
 
 #endif // _EXTRACTORMIND_HPP_

@@ -20,6 +20,10 @@ public:
         p /= static_cast<float>(a2.size());
         return p;
     }
+
+    std::string getIACode() {
+        return std::string("B") + ea_->getIACode();
+    }
 };
 
 #endif // _EXTRACTORB_HPP_

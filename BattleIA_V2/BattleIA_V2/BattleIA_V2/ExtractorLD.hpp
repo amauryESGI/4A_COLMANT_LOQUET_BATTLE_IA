@@ -15,6 +15,10 @@ public:
     Unit get(Unit u, Army& a, Army& o) const {
         return ea_->get(u, a, o).getNearestUnit(ep_->get(u, a, o));
     }
+
+    std::string getIACode() {
+        return std::string("LD") + ea_->getIACode() + ep_->getIACode();
+    }
 };
 
 #endif // _EXTRACTORLD_HPP_

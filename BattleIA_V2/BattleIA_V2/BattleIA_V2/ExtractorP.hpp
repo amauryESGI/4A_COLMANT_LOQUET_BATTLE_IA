@@ -16,6 +16,10 @@ public:
     {
         return eu_->get(u, a, o).getPosition();
     }
+
+    std::string getIACode() {
+        return std::string("P") + eu_->getIACode();
+    }
 };
 
 #endif // _EXTRACTORP_HPP_

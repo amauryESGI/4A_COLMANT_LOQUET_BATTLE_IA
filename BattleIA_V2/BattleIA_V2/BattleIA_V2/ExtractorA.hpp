@@ -11,6 +11,10 @@ public:
     {
         return a;
     }
+
+    std::string getIACode() {
+        return std::string("A");
+    }
 };
 
 #endif // _EXTRACTORA_HPP_

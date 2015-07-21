@@ -24,6 +24,10 @@ public:
         std::sort(subArmy.begin(), subArmy.end(), std::bind(compareDistanceH, std::placeholders::_1, std::placeholders::_2, p));
         return Army(std::vector<Unit*>(subArmy.begin(), subArmy.begin() + ei_->get(u, a, o)));
     }
+
+    std::string getIACode() {
+        return std::string("NHD") + ei_->getIACode() + ea_->getIACode() + ep_->getIACode();
+    }
 };
 
 #endif // _EXTRACTORNHD_HPP_

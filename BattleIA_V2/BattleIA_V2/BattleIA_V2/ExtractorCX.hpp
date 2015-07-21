@@ -17,6 +17,10 @@ public:
     float get(Unit u, Army& a, Army& o) const {
         return eu_->get(u, a, o).getCapacity(idCapacity_)->getValue();
     }
+
+    std::string getIACode() {
+        return std::string("C") + std::to_string(idCapacity_) + eu_->getIACode();
+    }
 };
 
 #endif // _EXTRACTORHCX_HPP_

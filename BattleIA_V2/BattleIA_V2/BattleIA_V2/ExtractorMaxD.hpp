@@ -25,6 +25,10 @@ public:
 
         return dMax;
     }
+
+    std::string getIACode() {
+        return std::string("MD") + ea_->getIACode() + ep_->getIACode();
+    }
 };
 
 #endif // _EXTRACTORMAXD_HPP_

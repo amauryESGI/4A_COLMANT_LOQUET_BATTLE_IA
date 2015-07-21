@@ -17,10 +17,22 @@ private:
     static Node*               Creat_Leaf(std::stringstream* code);
     static Node*               Creat_Tree(std::stringstream* code);
 
+
+    static std::string Creat_IntIACode();
+    static std::string Creat_FloatIACode();
+    static std::string Creat_PointIACode();
+    static std::string Creat_UnitIACode();
+    static std::string Creat_ArmyIACode();
+
+    static std::string Creat_InternalNodeIACode(int height);
+    static std::string Creat_LeafIACode();
+    static std::string Creat_TreeIACode(int height);
+
 public:
     Build();
     ~Build();
     static Node* BuildTree(std::string* str);
+    static std::string* BuildIACode();
 };
 
 #endif // _BUILD_HPP_

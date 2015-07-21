@@ -23,6 +23,10 @@ public:
         dMoy /= a2.size();
         return dMoy;
     }
+
+    std::string getIACode() {
+        return std::string("aD") + ea_->getIACode() + ep_->getIACode();
+    }
 };
 
 #endif // _EXTRACTORMOYD_HPP_

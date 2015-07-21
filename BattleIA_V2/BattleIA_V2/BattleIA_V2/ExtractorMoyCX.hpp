@@ -23,6 +23,10 @@ public:
         moy /= a2.size();
         return moy;
     }
+
+    std::string getIACode() {
+        return std::string("a") + std::to_string(idCapacity_) + ea_->getIACode();
+    }
 };
 
 #endif // _EXTRACTORMOYCX_HPP_
