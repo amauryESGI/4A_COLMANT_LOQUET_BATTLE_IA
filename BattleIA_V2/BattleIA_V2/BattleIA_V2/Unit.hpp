@@ -18,8 +18,8 @@
 #include "RangeCapacity.hpp"
 #include "ArmorCapacity.hpp"
 #include "Point.hpp"
-#include "Node.hpp"
-
+	
+class Node;
 
 //Class representing a unit, i.e. element of an army
 class Unit {
@@ -53,7 +53,7 @@ public:
 
     //Constructor : global level will be randomly dispatched among the capacities
     Unit(int globalLevel);
-
+	Unit() {};
     //Constructor : global level ...
     Unit::Unit(int globalLevel, std::string iaCode);
 
@@ -69,6 +69,7 @@ public:
     //Assignment operator overload
     Unit& operator=(Unit unit);
 
+	~Unit() {};
     //Swap the content of the parameter and the current object
     void swap(Unit& unit);
 

@@ -15,11 +15,11 @@ public:
 
     Army get(Unit u, Army& a, Army& o) const {
         int seuil = ei_->get(u, a, o);
-		std::vector<Unit*> subArmy;
+		std::vector<std::shared_ptr<Unit>> subArmy;
 
         for (auto &unit : ea_->get(u, a, o).getUnitsList())
             if (unit->getCapacity(idCapacity_)->getValue() < seuil)
-				subArmy.push_back(new Unit(u));
+				subArmy.push_back(std::shared_ptr<Unit>(new Unit(u)));
 
         return Army(subArmy);
     }

@@ -1,10 +1,4 @@
-#include "Util.hpp"
-#include "Army.hpp"
-#include <cstdlib>
-#include <time.h>
-#include <iostream>
-#include "training.hpp"
-#include "fstream"
+#include "stdafx.h"
 
 float Util::heigth = 100;
 float Util::width = 100;
@@ -12,16 +6,16 @@ float Util::width = 100;
 int main(void)
 {
     std::srand(time(NULL));
-    std::vector<std::unique_ptr<Army> > champions;
+    std::vector<Army* > champions;
     try {
         std::ifstream in("Army_10_100.save");
         Army army = Army::load(in);
         std::cout<<army<<std::endl;
-        champions.push_back(std::unique_ptr<Army>(new Army(army)));
+        champions.push_back(new Army(army));
     } catch(...) {
 
     }
-    std::unique_ptr<Army> army = train(10,100, 20, 10, 100, champions);
+    Army* army = train(10,100, 20, 10, 100, champions);
     std::cout<<*army<<std::endl;
     std::ofstream out("Army_10_100.save");
     army->save(out);

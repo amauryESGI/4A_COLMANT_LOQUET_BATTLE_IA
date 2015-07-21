@@ -12,10 +12,10 @@
 class Army {
 private:
 	//vector storing the units
-	std::vector<Unit*> units_;
+	std::vector<std::shared_ptr<Unit>> units_;
 
 	//Method for deep copying the units vector
-	void copyUnits_(const std::vector<Unit*>& units);
+	void copyUnits_(const std::vector<std::shared_ptr<Unit>>& units);
 
 public:
 
@@ -23,7 +23,7 @@ public:
 	Army(int size, int level);
 
 	//Constructor from a vector of units, which will be deep copied
-	Army(std::vector<Unit*>& units);
+	Army(std::vector<std::shared_ptr<Unit>>& units);
 
 	//Copy constructor
 	Army(const Army& army);
@@ -35,7 +35,7 @@ public:
 	Army& operator=(Army army);
 
 	//Getter fot the units list
-	std::vector<Unit*>& getUnitsList()
+	std::vector<std::shared_ptr<Unit>>& getUnitsList()
 	{
 		return units_;
 	}
@@ -95,7 +95,7 @@ public:
 inline std::ostream& operator<<(std::ostream& out, const Army& army)
 {
 	out << "====================ARMY====================================" << std::endl;
-	std::vector<Unit*>& units = const_cast<Army&>(army).getUnitsList();
+	std::vector<std::shared_ptr<Unit>>& units = const_cast<Army&>(army).getUnitsList();
 	for (auto it = units.begin(); it != units.end(); ++it) {
 		out << **it << std::endl;
 	}

@@ -10,7 +10,7 @@
 //Class representing the action to move a unit in direction opposite of a specific position
 class FleeAction : public Action {
 private:
-    Unit* unit_;
+	std::shared_ptr<Unit> unit_;
     Point position_;
 
 public:

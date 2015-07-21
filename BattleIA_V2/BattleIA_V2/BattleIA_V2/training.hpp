@@ -14,7 +14,7 @@
 // - armySize : number of units per army
 // - unitLevel : global level of each unit in each army
 // - champions : optionnal armies which have to be defeated
-std::unique_ptr<Army> train(int iterations, int threshold, int populationSize, int armySize, int unitLevel, std::vector<std::unique_ptr<Army> >& champions);
+Army* train(int iterations, int threshold, int populationSize, int armySize, int unitLevel, std::vector<Army* >& champions);
 
 
 

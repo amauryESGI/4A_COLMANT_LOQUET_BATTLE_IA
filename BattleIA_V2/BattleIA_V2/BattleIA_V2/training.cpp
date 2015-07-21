@@ -1,15 +1,11 @@
-#include "training.hpp"
-#include "battle.hpp"
-#include <memory>
-#include <vector>
-#include <iterator>
+#include "stdafx.h"
 
 
 //struct storing together an army and its score,
 //usefull for storing and sorting the armies
 struct ArmyWrapper {
     int score;
-    std::shared_ptr<Army> army;
+    Army* army;
     ArmyWrapper(Army* army_ptr):score(0),army(army_ptr) {}
 
     bool operator<(const ArmyWrapper& aw)const
@@ -30,7 +26,7 @@ struct ArmyWrapper {
 // - armySize : number of units per army
 // - unitLevel : global level of each unit in each army
 // - champions : optionnal armies which have to be defeated
-std::unique_ptr<Army> train(int iterations, int threshold, int populationSize, int armySize, int unitLevel, std::vector<std::unique_ptr<Army> >& champions)
+Army* train(int iterations, int threshold, int populationSize, int armySize, int unitLevel, std::vector<Army* >& champions)
 {
     std::vector<ArmyWrapper> armies;
     int championsBonus = 1;
@@ -114,6 +110,6 @@ std::unique_ptr<Army> train(int iterations, int threshold, int populationSize, i
 
 
     }
-    return std::unique_ptr<Army>(new Army(*(armies[0].army)));
+    return new Army(*(armies[0].army));
 }
 

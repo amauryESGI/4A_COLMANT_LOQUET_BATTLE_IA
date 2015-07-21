@@ -1,47 +1,4 @@
-#include "Build.hpp"
-
-#include "Extractor.hpp"
-
-#include "ExtractorP.hpp"
-#include "ExtractorU.hpp"
-#include "ExtractorA.hpp"
-#include "ExtractorO.hpp"
-#include "ExtractorB.hpp"
-#include "ExtractorDirect.hpp"
-
-#include "ExtractorCX.hpp"
-#include "ExtractorLCX.hpp"
-#include "ExtractorHCX.hpp"
-#include "ExtractorMinCX.hpp"
-#include "ExtractorMaxCX.hpp"
-#include "ExtractorMoyCX.hpp"
-#include "ExtractorNLX.hpp"
-#include "ExtractorNHX.hpp"
-#include "ExtractorTLX.hpp"
-#include "ExtractorTHX.hpp"
-
-#include "ExtractorD.hpp"
-#include "ExtractorLD.hpp"
-#include "ExtractorHD.hpp"
-#include "ExtractorMinD.hpp"
-#include "ExtractorMaxD.hpp"
-#include "ExtractorMoyD.hpp"
-#include "ExtractorNLD.hpp"
-#include "ExtractorNHD.hpp"
-
-#include "Action.hpp"
-#include "EmptyAction.hpp"
-#include "MoveAction.hpp"
-#include "ShotAction.hpp"
-#include "FleeAction.hpp"
-
-#include "OperatorInf.hpp"
-#include "OperatorSup.hpp"
-
-#include "LeafMove.hpp"
-#include "LeafFlee.hpp"
-#include "LeafShot.hpp"
-#include "LeafEmpty.hpp"
+#include "stdafx.h"
 
 
 Build::Build() {
@@ -262,14 +219,14 @@ Node * Build::Creat_Tree(std::stringstream* code) {
 }
 
 Node* Build::BuildTree(std::string* str) {
-    return Creat_Tree((std::stringstream*)str);
+    return Creat_Tree(new std::stringstream(*str));
 }
 
-std::string Creat_IntIACode() {
+std::string Build::Creat_IntIACode() {
     return "[" + std::to_string(std::rand() % 100) + "]"; // TODO FIX IT
 }
 
-std::string Creat_FloatIACode() {
+std::string Build::Creat_FloatIACode() {
     int i = std::rand() % 5;
     switch (i) {
     case 0:
@@ -291,13 +248,13 @@ std::string Creat_FloatIACode() {
     }
 }
 
-std::string Creat_PointIACode() {
+std::string Build::Creat_PointIACode() {
     return (std::rand() % 2) == 0
         ? "B" + Creat_ArmyIACode()
         : "P" + Creat_UnitIACode();
 }
 
-std::string Creat_UnitIACode() {
+std::string Build::Creat_UnitIACode() {
     int i = std::rand() % 3;
     switch (i) {
     case 0:
@@ -313,7 +270,7 @@ std::string Creat_UnitIACode() {
     }
 }
 
-std::string Creat_ArmyIACode() {
+std::string Build::Creat_ArmyIACode() {
     int i = std::rand() % 3;
     switch (i) {
     case 0:
@@ -337,12 +294,12 @@ std::string Creat_ArmyIACode() {
     }
 }
 
-std::string Creat_InternalNodeIACode(int height) {
+std::string Build::Creat_InternalNodeIACode(int height) {
     std::string cmp = std::rand() % 2 ? "<" : ">";
-    return Creat_TreeIACode(height) + cmp + Creat_TreeIACode(height);
+	return Creat_FloatIACode() + cmp + Creat_FloatIACode() + Creat_TreeIACode(height) + Creat_TreeIACode(height);
 }
 
-std::string Creat_LeafIACode() {
+std::string Build::Creat_LeafIACode() {
     switch (std::rand()%4) {
     case 0:
         return "M" + Creat_PointIACode();
@@ -355,7 +312,7 @@ std::string Creat_LeafIACode() {
     }
 }
 
-std::string Creat_TreeIACode(int height) {
+std::string Build::Creat_TreeIACode(int height) {
     if (height <= 0)
         return Creat_LeafIACode();
 

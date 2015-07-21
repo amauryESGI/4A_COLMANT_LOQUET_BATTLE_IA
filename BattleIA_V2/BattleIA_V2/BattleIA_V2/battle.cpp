@@ -1,12 +1,4 @@
-#include "battle.hpp"
-#include "Army.hpp"
-#include "AI.hpp"
-
-#include <vector>
-#include <algorithm>
-#include <memory>
-#include <stdexcept>
-#include <iostream>
+#include "stdafx.h"
 
 //Struct used to manipulate a unit together with its army and its opponents
 struct UnitChoice {
@@ -26,8 +18,8 @@ void fight(const Army& a, const Army& b, int& scoreA, int& scoreB, bool log)
         std::cout<<"-------------------------------"<<std::endl;
     }
 
-    Army A = a;
-    Army B = b;
+    Army A = a ;
+    Army B = b ;
     AI ai;
     int turn = 1;
     while(A.size()>0 && B.size()>0 && turn++ < 10000) {
@@ -40,12 +32,12 @@ void fight(const Army& a, const Army& b, int& scoreA, int& scoreB, bool log)
 
         std::vector<UnitChoice> order;
         std::transform(A.getUnitsList().begin(),A.getUnitsList().end(), std::back_inserter(order),
-        [&A,&B](Unit*& u) {
+        [&A,&B](std::shared_ptr<Unit>& u) {
             u->refresh();
             return UnitChoice(u->getId(), &A, &B);
         });
         std::transform(B.getUnitsList().begin(),B.getUnitsList().end(), std::back_inserter(order),
-        [&A,&B](Unit*& u) {
+        [&A,&B](std::shared_ptr<Unit>& u) {
             u->refresh();
             return UnitChoice(u->getId(), &B, &A);
         });
@@ -55,7 +47,7 @@ void fight(const Army& a, const Army& b, int& scoreA, int& scoreB, bool log)
             try {
                 if(log)std::cout<<"Unit#"<<it->unitId<<" (Army "<<((it->army)==&A?"A":"B")<<") : ";
                 Unit& unit = it->army->getUnit(it->unitId);
-                std::unique_ptr<Action> action = ai(unit, *(it->army), *(it->opponents));
+                Action* action = ai(unit, *(it->army), *(it->opponents));
                 action->execute(log);
                 it->opponents->purge();
             } catch(std::invalid_argument e) {

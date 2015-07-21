@@ -7,8 +7,8 @@
 //Class representing the action of attacking one unit with another
 class ShotAction : public Action {
 private:
-    Unit* unit_;
-    Unit* opponent_;
+    std::shared_ptr<Unit> unit_;
+    std::shared_ptr<Unit> opponent_;
 
 public:
     //Constructor with as first paramter the unit attacking, and as second, its target

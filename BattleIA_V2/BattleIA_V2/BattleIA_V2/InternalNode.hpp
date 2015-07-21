@@ -15,7 +15,7 @@ public:
         this->_rightSide = rightSide;
     }
 
-    std::unique_ptr<Action> getAction(Unit u, Army& a, Army& o) const {
+    Action* getAction(Unit u, Army& a, Army& o) const {
         if (_operator->getResult(_leftSide, _rightSide, u, a, o))
             return _lson->getAction(u, a, o);
 

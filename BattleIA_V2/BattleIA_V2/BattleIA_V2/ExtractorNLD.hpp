@@ -3,11 +3,6 @@
 
 #include "Extractor.hpp"
 
-bool compareDistanceL(Unit* a, Unit* b, Point p)
-{
-	return a->getPosition().distance(p) < b->getPosition().distance(p);
-}
-
 class ExtractorNLD : public Extractor<Army> {
 private:
     Extractor<int>* ei_;
@@ -19,10 +14,12 @@ public:
 
     Army get(Unit u, Army& a, Army& o) const {
         Point p = ep_->get(u, a, o);
-		std::vector<Unit*> subArmy = ea_->get(u, a, o).getUnitsList();
+		std::vector<std::shared_ptr<Unit>> subArmy = ea_->get(u, a, o).getUnitsList();
 
-        std::sort(subArmy.begin(), subArmy.end(), std::bind(compareDistanceL, std::placeholders::_1, std::placeholders::_2, p));
-        return Army(std::vector<Unit*>(subArmy.begin(), subArmy.begin() + ei_->get(u, a, o)));
+		std::sort(subArmy.begin(), subArmy.end(), [&p](const std::shared_ptr<Unit> a, const std::shared_ptr<Unit> b) {
+			return a->getPosition().distance(p) < b->getPosition().distance(p);
+		});
+		return Army(std::vector<std::shared_ptr<Unit>>(subArmy.begin(), subArmy.begin() + ei_->get(u, a, o)));
     }
 
     std::string getIACode() {

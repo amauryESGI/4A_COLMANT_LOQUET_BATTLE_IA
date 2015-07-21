@@ -7,7 +7,7 @@
 class LeafEmpty : public Node {
 public:
     LeafEmpty() {}
-    std::unique_ptr<Action> getAction(Unit u, Army& a, Army& o) const { return std::unique_ptr<Action>(new EmptyAction(u)); }
+    Action* getAction(Unit u, Army& a, Army& o) const { return new EmptyAction(u); }
 };
 
 #endif // _LEAFEMPTY_H_
