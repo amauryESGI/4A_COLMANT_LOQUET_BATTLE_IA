@@ -36,7 +36,7 @@ private:
     std::string iaCode_;
 
     //
-    Node* tree_;
+	Node* tree_;
 
     //vector of the unit's capacities
     //order is : speed, life, armor, regen, damage, range, firerate
@@ -86,7 +86,7 @@ public:
     }
 
     //provide the AI code of the unit
-    Node* getTree() const {
+	Node* getTree() const {
         return tree_;
     }
 

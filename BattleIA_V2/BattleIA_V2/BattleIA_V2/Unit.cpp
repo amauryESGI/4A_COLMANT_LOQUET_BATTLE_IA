@@ -22,15 +22,16 @@ void Unit::init_()
 //Constructor : global level will be randomly dispatched among the capacities
 Unit::Unit(int globalLevel)
 {
-    /*init_();
+    init_();
     if(std::rand()%2)this->iaCode_ = "L";
     else this->iaCode_ = "H";
     if(rand()%8==0)this->iaCode_ += "D";
     else this->iaCode_ += '0'+ (char)(rand()%7);
+	tree_ = Build::BuildTree(&iaCode_); //TODO :
     while(globalLevel--) {
         this->capacities_[std::rand()%this->capacities_.size()]->upgrade();
-    }*/
-    Unit(globalLevel, "?C1LDOPU<C1U!ALDOPU?aDOPU<a5O!MBO!ALDOPU");
+    }
+    //Unit(globalLevel, "?C1LDOPU<C1U!ALDOPU?aDOPU<a5O!MBO!ALDOPU");
 }
 
 //Constructor : global level will be randomly dispatched among the capacities

@@ -6,16 +6,16 @@ float Util::width = 100;
 int main(void)
 {
     std::srand(time(NULL));
-    std::vector<Army* > champions;
+    std::vector<std::unique_ptr<Army> > champions;
     try {
         std::ifstream in("Army_10_100.save");
         Army army = Army::load(in);
         std::cout<<army<<std::endl;
-        champions.push_back(new Army(army));
+        champions.push_back(std::unique_ptr<Army>(new Army(army)));
     } catch(...) {
 
     }
-    Army* army = train(10,100, 20, 10, 100, champions);
+    std::unique_ptr<Army> army = train(10,100, 20, 10, 100, champions);
     std::cout<<*army<<std::endl;
     std::ofstream out("Army_10_100.save");
     army->save(out);
