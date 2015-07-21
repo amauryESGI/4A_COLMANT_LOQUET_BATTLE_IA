@@ -9,7 +9,7 @@
 //Class representing the action to move a unit in direction of a specific position
 class MoveAction : public Action {
 private:
-	std::shared_ptr<Unit> unit_;
+	Unit* unit_;
     Point position_;
 
 public:

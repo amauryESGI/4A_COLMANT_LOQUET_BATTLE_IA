@@ -8,7 +8,7 @@
 //Class representing an action which do nothing
 class EmptyAction : public Action {
 private:
-	std::shared_ptr<Unit> unit_;
+	Unit* unit_;
 
 public:
 

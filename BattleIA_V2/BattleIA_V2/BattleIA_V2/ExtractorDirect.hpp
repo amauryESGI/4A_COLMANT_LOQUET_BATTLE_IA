@@ -10,7 +10,7 @@ private:
 public:
     ExtractorDirect(int val) : val_(val) {}
 
-    int get(Unit u, Army& a, Army& o) const {
+    int get(Unit& u, Army& a, Army& o) const {
         return val_;
     }
 

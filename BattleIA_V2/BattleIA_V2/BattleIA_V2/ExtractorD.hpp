@@ -4,13 +4,13 @@
 #include "Extractor.hpp"
 class ExtractorD : public Extractor<float> {
 private:
-    Extractor<Unit> * eu_;
-    Extractor<Point> * ep_;
+    Extractor<Unit&> * eu_;
+    Extractor<Point&> * ep_;
 
 public:
-    ExtractorD(Extractor<Unit>* eu, Extractor<Point>* ep) : eu_(eu), ep_(ep) {}
+    ExtractorD(Extractor<Unit&>* eu, Extractor<Point&>* ep) : eu_(eu), ep_(ep) {}
 
-    float get(Unit u, Army& a, Army& o) const {
+    float get(Unit& u, Army& a, Army& o) const {
         return eu_->get(u, a, o).getPosition().distance(ep_->get(u, a, o));
     }
 

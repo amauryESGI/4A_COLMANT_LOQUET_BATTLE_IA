@@ -8,12 +8,12 @@
 class ExtractorMinCX : public Extractor<float> {
 private:
     ECapacities idCapacity_;
-    Extractor<Army> * ea_;
+    Extractor<Army&> * ea_;
 
 public:
-    ExtractorMinCX(Extractor<Army> * ea, ECapacities idCapacity) : ea_(ea), idCapacity_(idCapacity) {}
+    ExtractorMinCX(Extractor<Army&> * ea, ECapacities idCapacity) : ea_(ea), idCapacity_(idCapacity) {}
 
-    float get(Unit u, Army& a, Army& o) const {
+    float get(Unit& u, Army& a, Army& o) const {
         Army a2 = ea_->get(u, a, o);
 
         // Value of Capacity Max

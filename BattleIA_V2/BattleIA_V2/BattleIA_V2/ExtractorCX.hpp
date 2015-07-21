@@ -8,13 +8,13 @@
 
 class ExtractorCX : public Extractor<float> {
 private:
-    Extractor<Unit> * eu_;
+    Extractor<Unit&> * eu_;
     ECapacities idCapacity_;
 
 public:
-    ExtractorCX(Extractor<Unit> * eu, ECapacities idC) : eu_(eu), idCapacity_(idC) {}
+    ExtractorCX(Extractor<Unit&> * eu, ECapacities idC) : eu_(eu), idCapacity_(idC) {}
 
-    float get(Unit u, Army& a, Army& o) const {
+    float get(Unit& u, Army& a, Army& o) const {
         return eu_->get(u, a, o).getCapacity(idCapacity_)->getValue();
     }
 

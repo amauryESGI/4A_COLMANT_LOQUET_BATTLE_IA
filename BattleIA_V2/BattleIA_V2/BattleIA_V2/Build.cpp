@@ -36,8 +36,8 @@ Extractor<float>* Build::Creat_FloatExtractor(std::stringstream* code) {
         if (c >= '0' && c <= '6')
             return new ExtractorMaxCX(Creat_ArmyExtractor(code), (ECapacities) (c - 0x30));
         else if (c == 'D') {
-            Extractor<Army> * ea = Creat_ArmyExtractor(code);
-            Extractor<Point> * ep = Creat_PointExtractor(code);
+            Extractor<Army&> * ea = Creat_ArmyExtractor(code);
+            Extractor<Point&> * ep = Creat_PointExtractor(code);
 
             return new ExtractorMaxD(ea, ep);
         }
@@ -46,8 +46,8 @@ Extractor<float>* Build::Creat_FloatExtractor(std::stringstream* code) {
         if (c >= '0' && c <= '6')
             return new ExtractorMinCX(Creat_ArmyExtractor(code), (ECapacities) (c - 0x30));
         else if (c == 'D') {
-            Extractor<Army> * es = Creat_ArmyExtractor(code);
-            Extractor<Point> * ep = Creat_PointExtractor(code);
+            Extractor<Army&> * es = Creat_ArmyExtractor(code);
+            Extractor<Point&> * ep = Creat_PointExtractor(code);
 
             return new ExtractorMinD(es, ep);
         }
@@ -56,15 +56,15 @@ Extractor<float>* Build::Creat_FloatExtractor(std::stringstream* code) {
         if (c >= '0' && c <= '6')
             return new ExtractorMoyCX(Creat_ArmyExtractor(code), (ECapacities) (c - 0x30));
         else if (c == 'D') {
-            Extractor<Army> * es = Creat_ArmyExtractor(code);
-            Extractor<Point> * ep = Creat_PointExtractor(code);
+            Extractor<Army&> * es = Creat_ArmyExtractor(code);
+            Extractor<Point&> * ep = Creat_PointExtractor(code);
 
             return new ExtractorMoyD(es, ep);
         }
     }
 }
 
-Extractor<Point>* Build::Creat_PointExtractor(std::stringstream* code) {
+Extractor<Point&>* Build::Creat_PointExtractor(std::stringstream* code) {
     char c;
     *code >> c;
     switch (c) {
@@ -75,7 +75,7 @@ Extractor<Point>* Build::Creat_PointExtractor(std::stringstream* code) {
     }
 }
 
-Extractor<Unit>* Build::Creat_UnitExtractor(std::stringstream* code) {
+Extractor<Unit&>* Build::Creat_UnitExtractor(std::stringstream* code) {
     char c;
     *code >> c;
     switch (c) {
@@ -86,8 +86,8 @@ Extractor<Unit>* Build::Creat_UnitExtractor(std::stringstream* code) {
         if (c >= '0' && c <= '6')
             return new ExtractorLCX(Creat_ArmyExtractor(code), (ECapacities) (c - 0x30));
         else if (c == 'D') {
-            Extractor<Army> * es = Creat_ArmyExtractor(code);
-            Extractor<Point> * ep = Creat_PointExtractor(code);
+            Extractor<Army&> * es = Creat_ArmyExtractor(code);
+            Extractor<Point&> * ep = Creat_PointExtractor(code);
 
             return new ExtractorLD(es, ep);
         }
@@ -96,15 +96,15 @@ Extractor<Unit>* Build::Creat_UnitExtractor(std::stringstream* code) {
         if (c >= '0' && c <= '6')
             return new ExtractorHCX(Creat_ArmyExtractor(code), (ECapacities) (c - 0x30));
         else if (c == 'D') {
-            Extractor<Army> * es = Creat_ArmyExtractor(code);
-            Extractor<Point> * ep = Creat_PointExtractor(code);
+            Extractor<Army&> * es = Creat_ArmyExtractor(code);
+            Extractor<Point&> * ep = Creat_PointExtractor(code);
 
             return new ExtractorHD(es, ep);
         }
     }
 }
 
-Extractor<Army>* Build::Creat_ArmyExtractor(std::stringstream* code) {
+Extractor<Army&>* Build::Creat_ArmyExtractor(std::stringstream* code) {
     char c;
     *code >> c;
     switch (c) {
@@ -118,24 +118,24 @@ Extractor<Army>* Build::Creat_ArmyExtractor(std::stringstream* code) {
             *code >> c;
             if (c == 'D') {
                 Extractor<int> * ei = Creat_IntExtractor(code);
-                Extractor<Army>* es = Creat_ArmyExtractor(code);
-                Extractor<Point>* ep = Creat_PointExtractor(code);
+                Extractor<Army&>* es = Creat_ArmyExtractor(code);
+                Extractor<Point&>* ep = Creat_PointExtractor(code);
                 return new ExtractorNLD(ei, es, ep);
             } else {
                 Extractor<int> * ei = Creat_IntExtractor(code);
-                Extractor<Army>* es = Creat_ArmyExtractor(code);
+                Extractor<Army&>* es = Creat_ArmyExtractor(code);
                 return new ExtractorNLX(ei, es, c - 0x30);
             }
         } else {
             *code >> c;
             if (c == 'D') {
                 Extractor<int> * ei = Creat_IntExtractor(code);
-                Extractor<Army>* es = Creat_ArmyExtractor(code);
-                Extractor<Point>* ep = Creat_PointExtractor(code);
+                Extractor<Army&>* es = Creat_ArmyExtractor(code);
+                Extractor<Point&>* ep = Creat_PointExtractor(code);
                 return new ExtractorNHD(ei, es, ep);
             } else {
                 Extractor<int> * ei = Creat_IntExtractor(code);
-                Extractor<Army>* es = Creat_ArmyExtractor(code);
+                Extractor<Army&>* es = Creat_ArmyExtractor(code);
                 return new ExtractorNHX(ei, es, c - 0x30);
             }
         }
@@ -144,11 +144,11 @@ Extractor<Army>* Build::Creat_ArmyExtractor(std::stringstream* code) {
         *code >> c;
         if (c == 'L') {
             Extractor<int> * ei = Creat_IntExtractor(code);
-            Extractor<Army>* es = Creat_ArmyExtractor(code);
+            Extractor<Army&>* es = Creat_ArmyExtractor(code);
             return new ExtractorTLX(ei, es, c - 0x30);
         } else {
             Extractor<int> * ei = Creat_IntExtractor(code);
-            Extractor<Army>* es = Creat_ArmyExtractor(code);
+            Extractor<Army&>* es = Creat_ArmyExtractor(code);
             return new ExtractorTHX(ei, es, c - 0x30);
         }
         break;
@@ -181,19 +181,19 @@ Node * Build::Creat_Leaf(std::stringstream* code) {
     switch (c) {
     case 'M':
     {
-        Extractor<Point> * ep = Creat_PointExtractor(code);
+        Extractor<Point&> * ep = Creat_PointExtractor(code);
         action = new LeafMove(ep);
         break;
     }
     case 'E':
     {
-        Extractor<Point> * ep = Creat_PointExtractor(code);
+        Extractor<Point&> * ep = Creat_PointExtractor(code);
         action = new LeafFlee(ep);
         break;
     }
     case 'A':
     {
-        Extractor<Unit> * eu = Creat_UnitExtractor(code);
+        Extractor<Unit&> * eu = Creat_UnitExtractor(code);
         action = new LeafShot(eu);
         break;
     }

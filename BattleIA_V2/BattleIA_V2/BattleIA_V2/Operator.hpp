@@ -6,7 +6,7 @@
 
 class Operator {
 public:
-    virtual bool getResult(const Extractor<float> *lson, const Extractor<float> *rson, Unit u, Army& a, Army& o) const = 0;
+    virtual bool getResult(const Extractor<float> *lson, const Extractor<float> *rson, Unit& u, Army& a, Army& o) const = 0;
 private:
 };
 

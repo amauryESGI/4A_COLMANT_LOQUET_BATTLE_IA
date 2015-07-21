@@ -3,16 +3,16 @@
 
 #include "Extractor.hpp"
 
-class ExtractorNLD : public Extractor<Army> {
+class ExtractorNLD : public Extractor<Army&> {
 private:
     Extractor<int>* ei_;
-    Extractor<Army>* ea_;
-    Extractor<Point>* ep_;
+    Extractor<Army&>* ea_;
+    Extractor<Point&>* ep_;
 
 public:
-    ExtractorNLD(Extractor<int>* ei, Extractor<Army>* ea, Extractor<Point>* ep) : ei_(ei), ea_(ea), ep_(ep) {}
+    ExtractorNLD(Extractor<int>* ei, Extractor<Army&>* ea, Extractor<Point&>* ep) : ei_(ei), ea_(ea), ep_(ep) {}
 
-    Army get(Unit u, Army& a, Army& o) const {
+    Army& get(Unit& u, Army& a, Army& o) const {
         Point p = ep_->get(u, a, o);
 		std::vector<std::shared_ptr<Unit>> subArmy = ea_->get(u, a, o).getUnitsList();
 

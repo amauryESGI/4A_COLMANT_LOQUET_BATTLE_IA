@@ -6,15 +6,15 @@
 
 // valeurs d'une capacité ECapacities
 
-class ExtractorHCX : public Extractor<Unit> {
+class ExtractorHCX : public Extractor<Unit&> {
 private:
-    Extractor<Army> * ea_;
+    Extractor<Army&> * ea_;
     ECapacities idCapacity_;
 
 public:
-    ExtractorHCX(Extractor<Army> * ea, ECapacities idC) : ea_(ea), idCapacity_(idC) {}
+    ExtractorHCX(Extractor<Army&> * ea, ECapacities idC) : ea_(ea), idCapacity_(idC) {}
 
-    Unit get(Unit u, Army& a, Army& o) const {
+    Unit& get(Unit& u, Army& a, Army& o) const {
         return ea_->get(u, a, o).getHigestUnit(idCapacity_);
     }
 

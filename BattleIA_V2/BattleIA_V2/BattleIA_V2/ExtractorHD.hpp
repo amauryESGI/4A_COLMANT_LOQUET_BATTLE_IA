@@ -6,15 +6,15 @@
 #include "Unit.hpp"
 
 // 
-class ExtractorHD : public Extractor<Unit> {
+class ExtractorHD : public Extractor<Unit&> {
 private:
-    Extractor<Army> * ea_;
-    Extractor<Point> * ep_;
+    Extractor<Army&> * ea_;
+    Extractor<Point&> * ep_;
 
 public:
-    ExtractorHD(Extractor<Army> * ea, Extractor<Point>* ep) : ea_(ea), ep_(ep) {}
+    ExtractorHD(Extractor<Army&> * ea, Extractor<Point&>* ep) : ea_(ea), ep_(ep) {}
 
-    Unit get(Unit u, Army& a, Army& o) const {
+    Unit& get(Unit& u, Army& a, Army& o) const {
         return ea_->get(u, a, o).getFurthestUnit(ep_->get(u, a, o));
     }
 

@@ -6,13 +6,13 @@
 #include "Unit.hpp"
 #include "Point.hpp"
 
-class ExtractorP : public Extractor<Point> {
+class ExtractorP : public Extractor<Point&> {
 private:
-    Extractor<Unit>* eu_;
+    Extractor<Unit&>* eu_;
 public:
-    ExtractorP(Extractor<Unit>* eu) : eu_(eu) {}
+    ExtractorP(Extractor<Unit&>* eu) : eu_(eu) {}
 
-    Point get(Unit u, Army& a, Army& o) const
+    Point& get(Unit& u, Army& a, Army& o) const
     {
         return eu_->get(u, a, o).getPosition();
     }

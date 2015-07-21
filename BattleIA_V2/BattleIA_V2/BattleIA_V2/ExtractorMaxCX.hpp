@@ -8,12 +8,12 @@
 class ExtractorMaxCX : public Extractor<float> {
 private:
     ECapacities idCapacity_;
-    Extractor<Army> * ea_;
+    Extractor<Army&> * ea_;
 
 public:
-    ExtractorMaxCX(Extractor<Army> * ea, ECapacities idCapacity) : ea_(ea), idCapacity_(idCapacity) {}
+    ExtractorMaxCX(Extractor<Army&> * ea, ECapacities idCapacity) : ea_(ea), idCapacity_(idCapacity) {}
 
-    float get(Unit u, Army& a, Army& o) const {
+    float get(Unit& u, Army& a, Army& o) const {
         Army a2 = ea_->get(u, a, o);
 
         // Distance Max

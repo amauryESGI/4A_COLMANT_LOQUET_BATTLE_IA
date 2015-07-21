@@ -4,16 +4,16 @@
 #include "Extractor.hpp"
 #include "ECapacities.hpp"
 
-class ExtractorNHX : public Extractor<Army> {
+class ExtractorNHX : public Extractor<Army&> {
 private:
     Extractor<int>* ei_;
-    Extractor<Army>* ea_;
+    Extractor<Army&>* ea_;
     ECapacities idCapacity_;
 
 public:
-    ExtractorNHX(Extractor<int>* ei, Extractor<Army>* ea, int idCapacity) : ei_(ei), ea_(ea), idCapacity_((ECapacities)idCapacity) {}
+    ExtractorNHX(Extractor<int>* ei, Extractor<Army&>* ea, int idCapacity) : ei_(ei), ea_(ea), idCapacity_((ECapacities)idCapacity) {}
 
-    Army get(Unit u, Army& a, Army& o) const {
+    Army& get(Unit& u, Army& a, Army& o) const {
         std::vector<std::shared_ptr<Unit>> subArmy = ea_->get(u, a, o).getUnitsList();
         int id = idCapacity_;
 

@@ -3,14 +3,14 @@
 
 #include "Extractor.hpp"
 
-class ExtractorB : public Extractor < Point > {
+class ExtractorB : public Extractor<Point&> {
 private:
-    Extractor<Army> * ea_;
+    Extractor<Army&> * ea_;
 
 public:
-    ExtractorB(Extractor<Army> * ea) : ea_(ea) {}
+    ExtractorB(Extractor<Army&> * ea) : ea_(ea) {}
 
-    Point get(Unit u, Army& a, Army& o) const {
+    Point& get(Unit& u, Army& a, Army& o) const {
         Point p = Point();
         Army a2 = ea_->get(u, a, o);
 

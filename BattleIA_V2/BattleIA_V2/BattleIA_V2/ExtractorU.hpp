@@ -5,9 +5,9 @@
 #include "Army.hpp"
 #include "Unit.hpp"
 
-class ExtractorU : public Extractor<Unit> {
+class ExtractorU : public Extractor<Unit&> {
 public:
-    Unit get(Unit u, Army& a, Army& o) const
+    Unit& get(Unit& u, Army& a, Army& o) const
     {
         return u;
     }

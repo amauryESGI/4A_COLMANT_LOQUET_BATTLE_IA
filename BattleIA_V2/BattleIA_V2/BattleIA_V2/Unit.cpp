@@ -77,6 +77,7 @@ Unit::Unit(const Unit& unit)
 {
     init_();
     this->iaCode_ = unit.iaCode_;
+	tree_ = Build::BuildTree(&iaCode_);
     for(int i = 0;  i < capacities_.size(); ++i) {
         capacities_[i]->upgrade(unit.capacities_[i]->getLevel());
     }

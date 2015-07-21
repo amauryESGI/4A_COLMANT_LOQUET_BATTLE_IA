@@ -6,13 +6,13 @@
 // ennemi qui a le plus haut dans une capacité ECapacities
 class ExtractorMinD : public Extractor<float> {
 private:
-    Extractor<Army> * ea_;
-    Extractor<Point> * ep_;
+    Extractor<Army&> * ea_;
+    Extractor<Point&> * ep_;
 
 public:
-    ExtractorMinD(Extractor<Army> * ea, Extractor<Point> * ep) : ea_(ea), ep_(ep) {}
+    ExtractorMinD(Extractor<Army&> * ea, Extractor<Point&> * ep) : ea_(ea), ep_(ep) {}
 
-    float get(Unit u, Army& a, Army& o) const {
+    float get(Unit& u, Army& a, Army& o) const {
         Army a2 = ea_->get(u, a, o);
         Point p = ep_->get(u, a, o);
 
