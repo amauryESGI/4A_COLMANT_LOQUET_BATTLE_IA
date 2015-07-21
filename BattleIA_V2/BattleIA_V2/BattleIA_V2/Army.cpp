@@ -11,7 +11,7 @@ void Army::copyUnits_(const std::vector<std::shared_ptr<Unit>>& units)
 Army::Army(int size, int level)
 {
     while(size--) {
-        units_.push_back(std::shared_ptr<Unit>(new Unit(level)));
+        units_.push_back(std::shared_ptr<Unit>(new Unit(level, "?C1LDOPU<C1U!ALDOPU?aDOPU<a5O!MBO!ALDOPU")));
     }
 }
 
