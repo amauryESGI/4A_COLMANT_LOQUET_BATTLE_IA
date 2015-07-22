@@ -227,8 +227,7 @@ std::string Build::Creat_IntIACode() {
 }
 
 std::string Build::Creat_FloatIACode() {
-    int i = std::rand() % 5;
-    switch (i) {
+    switch (std::rand() % 5) {
     case 0:
         return "C" + std::to_string(std::rand() % 7) + Creat_UnitIACode();
     case 1:
@@ -255,8 +254,7 @@ std::string Build::Creat_PointIACode() {
 }
 
 std::string Build::Creat_UnitIACode() {
-    int i = std::rand() % 3;
-    switch (i) {
+    switch (std::rand() % 3) {
     case 0:
         return "U";
     case 1:
@@ -271,32 +269,31 @@ std::string Build::Creat_UnitIACode() {
 }
 
 std::string Build::Creat_ArmyIACode() {
-    int i = std::rand() % 3;
-    switch (i) {
+    switch (std::rand() % 4) {
     case 0:
         return "A";
     case 1:
         return "O";
-    case 'N':
+    case 2:
         if (std::rand() % 2 == 0) {
             return (std::rand() % 2) == 0
                 ? "NLD" + Creat_IntIACode() + Creat_ArmyIACode() + Creat_PointIACode()
-                : "NL" + Creat_IntIACode() + Creat_ArmyIACode() + std::to_string(std::rand() % 7);
+                : "NL" + std::to_string(std::rand() % 7) + Creat_IntIACode() + Creat_ArmyIACode();
         } else {
             return (std::rand() % 2) == 0
                 ? "NHD" + Creat_IntIACode() + Creat_ArmyIACode() + Creat_PointIACode()
-                : "NH" + Creat_IntIACode() + Creat_ArmyIACode() + std::to_string(std::rand() % 7);
+                : "NH" + std::to_string(std::rand() % 7) + Creat_IntIACode() + Creat_ArmyIACode();
         }
-    case 'T':
+    case 3:
         return (std::rand() % 2) == 0
-            ? "TL" + Creat_IntIACode() + Creat_ArmyIACode() + std::to_string(std::rand() % 7)
-            : "TH" + Creat_IntIACode() + Creat_ArmyIACode() + std::to_string(std::rand() % 7);
+            ? "TL" + std::to_string(std::rand() % 7) + Creat_IntIACode() + Creat_ArmyIACode()
+            : "TH" + std::to_string(std::rand() % 7) + Creat_IntIACode() + Creat_ArmyIACode();
     }
 }
 
 std::string Build::Creat_InternalNodeIACode(int height) {
     std::string cmp = std::rand() % 2 ? "<" : ">";
-	return Creat_FloatIACode() + cmp + Creat_FloatIACode() + Creat_TreeIACode(height) + Creat_TreeIACode(height);
+    return Creat_FloatIACode() + cmp + Creat_FloatIACode() + Creat_TreeIACode(height--) + Creat_TreeIACode(height--);
 }
 
 std::string Build::Creat_LeafIACode() {
@@ -314,17 +311,17 @@ std::string Build::Creat_LeafIACode() {
 
 std::string Build::Creat_TreeIACode(int height) {
     if (height <= 0)
-        return Creat_LeafIACode();
+        return "!" + Creat_LeafIACode();
 
     switch (std::rand()%2) {
-    case '?':
-        return "?" + Creat_InternalNodeIACode(height--);
-    case '!':
+    case 0:
+        return "?" + Creat_InternalNodeIACode(height);
+    case 1:
         return "!" + Creat_LeafIACode();
     }
 }
 
-std::string* Build::BuildIACode() {
-    int height = std::rand() % 10;
-    return &Creat_TreeIACode(height);
+std::string Build::BuildIACode() {
+    int height = std::rand() % 3;
+    return Creat_TreeIACode(height--);
 }

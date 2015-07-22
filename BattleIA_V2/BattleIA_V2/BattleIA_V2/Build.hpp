@@ -32,7 +32,7 @@ public:
     Build();
     ~Build();
     static Node* BuildTree(std::string* str);
-    static std::string* BuildIACode();
+    static std::string BuildIACode();
 };
 
 #endif // _BUILD_HPP_
