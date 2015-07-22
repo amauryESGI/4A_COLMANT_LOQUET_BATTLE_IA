@@ -122,9 +122,10 @@ Extractor<Army&>* Build::Creat_ArmyExtractor(std::stringstream* code) {
                 Extractor<Point&>* ep = Creat_PointExtractor(code);
                 return new ExtractorNLD(ei, es, ep);
             } else {
+                *code >> c;
                 Extractor<int> * ei = Creat_IntExtractor(code);
                 Extractor<Army&>* es = Creat_ArmyExtractor(code);
-                return new ExtractorNLX(ei, es, c - 0x30);
+                return new ExtractorNLX(ei, es, (ECapacities) (c - 0x30));
             }
         } else {
             *code >> c;
@@ -134,22 +135,25 @@ Extractor<Army&>* Build::Creat_ArmyExtractor(std::stringstream* code) {
                 Extractor<Point&>* ep = Creat_PointExtractor(code);
                 return new ExtractorNHD(ei, es, ep);
             } else {
+                *code >> c;
                 Extractor<int> * ei = Creat_IntExtractor(code);
                 Extractor<Army&>* es = Creat_ArmyExtractor(code);
-                return new ExtractorNHX(ei, es, c - 0x30);
+                return new ExtractorNHX(ei, es, (ECapacities) (c - 0x30));
             }
         }
         break;
     case 'T':
         *code >> c;
         if (c == 'L') {
+            *code >> c;
             Extractor<int> * ei = Creat_IntExtractor(code);
             Extractor<Army&>* es = Creat_ArmyExtractor(code);
-            return new ExtractorTLX(ei, es, c - 0x30);
+            return new ExtractorTLX(ei, es, (ECapacities) (c - 0x30));
         } else {
+            *code >> c;
             Extractor<int> * ei = Creat_IntExtractor(code);
             Extractor<Army&>* es = Creat_ArmyExtractor(code);
-            return new ExtractorTHX(ei, es, c - 0x30);
+            return new ExtractorTHX(ei, es, (ECapacities) (c - 0x30));
         }
         break;
     }
@@ -223,7 +227,7 @@ Node* Build::BuildTree(std::string* str) {
 }
 
 std::string Build::Creat_IntIACode() {
-    return "[" + std::to_string(std::rand() % 100) + "]"; // TODO FIX IT
+    return "[" + std::to_string(std::rand() % 5) + "]";
 }
 
 std::string Build::Creat_FloatIACode() {
