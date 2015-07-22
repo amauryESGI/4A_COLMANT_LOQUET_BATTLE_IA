@@ -51,6 +51,7 @@ Unit::Unit(std::string iaCode, int speedLevel, int lifeLevel, int armorLevel, in
 {
     init_();
     this->iaCode_ = iaCode;
+	tree_ = Build::BuildTree(&iaCode_);
     getSpeed().upgrade(speedLevel);
     getLife().upgrade(lifeLevel);
     getArmor().upgrade(armorLevel);
@@ -66,6 +67,7 @@ Unit::Unit(std::string iaCode, std::vector<int>& levels)
 {
     init_();
     this->iaCode_ = iaCode;
+	tree_ = Build::BuildTree(&iaCode_);
     for(int i = 0; i < levels.size() && i < capacities_.size(); ++i) {
         capacities_[i]->upgrade(levels[i]);
     }
